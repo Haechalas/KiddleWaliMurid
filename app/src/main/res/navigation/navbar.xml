@@ -23,7 +23,7 @@
     <fragment
         android:id="@+id/pembayaran"
         android:name="com.kiddle.kiddlewalimurid.pembayaran"
-        android:label="pembayaran"
+        android:label="Pembayaran"
         tools:layout="@layout/fragment_pembayaran" />
     <fragment
         android:id="@+id/profil"
