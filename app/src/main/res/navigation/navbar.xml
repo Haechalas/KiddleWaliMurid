@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/navbar"
+    app:startDestination="@id/beranda">
+
+    <fragment
+        android:id="@+id/beranda"
+        android:name="com.kiddle.kiddlewalimurid.beranda"
+        android:label="Kiddle"
+        tools:layout="@layout/fragment_beranda" />
+    <fragment
+        android:id="@+id/jurnal"
+        android:name="com.kiddle.kiddlewalimurid.jurnal"
+        android:label="Jurnal"
+        tools:layout="@layout/fragment_jurnal" />
+    <fragment
+        android:id="@+id/rapor"
+        android:name="com.kiddle.kiddlewalimurid.rapor"
+        android:label="Rapor"
+        tools:layout="@layout/fragment_rapor" />
+    <fragment
+        android:id="@+id/pembayaran"
+        android:name="com.kiddle.kiddlewalimurid.pembayaran"
+        android:label="pembayaran"
+        tools:layout="@layout/fragment_pembayaran" />
+    <fragment
+        android:id="@+id/profil"
+        android:name="com.kiddle.kiddlewalimurid.profil"
+        android:label="Profil"
+        tools:layout="@layout/fragment_profil" />
+</navigation>

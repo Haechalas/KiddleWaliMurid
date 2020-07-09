@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/beranda"
+        android:title="Beranda"
+        android:icon="@drawable/beranda_selector"
+        />
+    <item
+        android:id="@+id/jurnal"
+        android:title="Jurnal"
+        android:icon="@drawable/jurnal_selector"/>
+    <item
+        android:id="@+id/rapor"
+        android:title="Rapor"
+        android:icon="@drawable/rapor_selector"/>
+    <item
+        android:id="@+id/pembayaran"
+        android:title="SPP"
+        android:icon="@drawable/pembayaran_selector"/>
+    <item
+        android:id="@+id/profil"
+        android:title="Profil"
+        android:icon="@drawable/profil_selector"/>
+</menu>
