@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="80dp"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    app:cardCornerRadius="5dp"
+    app:cardElevation="3dp"
+    app:cardUseCompatPadding="true"
+    android:layout_marginLeft="16dp"
+    android:layout_marginRight="16dp"
+    >
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#60A1FA"
+        android:paddingLeft="10dp">
+
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/Viewjudul"
+            android:text="Judul"
+            android:textStyle="bold"
+            android:textColor="#fff"
+            android:textSize="18sp"
+            android:layout_marginTop="10dp"
+            />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/Viewtanggal"
+            android:text="Tanggal"
+            android:textStyle="normal"
+            android:textColor="#fff"
+            android:layout_marginTop="35dp"
+            />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/Viewbidang"
+            android:text="Bidang"
+            android:textStyle="normal"
+            android:textColor="#fff"
+            android:layout_marginTop="25dp"
+            android:layout_marginStart="300dp"
+            />
+    </RelativeLayout>
+
+    <!-- Lanjut Jurnal_model -->
+
+</androidx.cardview.widget.CardView>
