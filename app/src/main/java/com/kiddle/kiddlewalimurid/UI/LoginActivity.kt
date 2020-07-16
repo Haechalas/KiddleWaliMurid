@@ -1,7 +1,8 @@
-package com.kiddle.kiddlewalimurid
+package com.kiddle.kiddlewalimurid.UI
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import com.kiddle.kiddlewalimurid.R
 
 class LoginActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
