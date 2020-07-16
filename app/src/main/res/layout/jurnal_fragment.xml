@@ -35,7 +35,7 @@
         android:layout_height="198dp"
         android:layout_marginLeft="67dp"
         android:layout_marginTop="10dp"
-        android:layout_marginRight="67dp"
+        android:layout_marginRight="0dp"
         android:src="@drawable/jurnal_murid" />
 
 

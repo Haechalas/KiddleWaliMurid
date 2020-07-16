@@ -36,16 +36,21 @@
             android:textColor="#fff"
             android:layout_marginTop="35dp"
             />
+
         <TextView
+            android:id="@+id/Viewbidang"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:id="@+id/Viewbidang"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentEnd="true"
+
+            android:layout_alignParentBottom="true"
+            android:layout_marginTop="20dp"
+            android:layout_marginEnd="10dp"
+            android:layout_marginBottom="20dp"
             android:text="Bidang"
-            android:textStyle="normal"
             android:textColor="#fff"
-            android:layout_marginTop="25dp"
-            android:layout_marginStart="300dp"
-            />
+            android:textStyle="normal" />
     </RelativeLayout>
 
     <!-- Lanjut Jurnal_model -->

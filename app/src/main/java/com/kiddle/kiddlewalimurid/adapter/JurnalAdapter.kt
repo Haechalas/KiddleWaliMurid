@@ -15,13 +15,7 @@ class JurnalAdapter(val jurnalanak: List<jurnal>) : RecyclerView.Adapter<JurnalA
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): JurnalViewHolder {
     return JurnalViewHolder(
-        LayoutInflater.from(parent.context).inflate(
-            R.layout.jurnal_holder,
-            parent,
-            false
-        )
-
-    )
+        LayoutInflater.from(parent.context).inflate(R.layout.jurnal_holder, parent, false))
     }
 
     override fun getItemCount() = jurnalanak.size
