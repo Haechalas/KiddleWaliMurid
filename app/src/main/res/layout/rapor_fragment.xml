@@ -4,10 +4,11 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".fragments.Rapor">
-
-    <TextView
+    <View
+        android:id="@+id/view"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="Rapor" />
+        android:layout_height="160dp"
+        android:background="@drawable/top_blue_box" />
+
 
 </FrameLayout>

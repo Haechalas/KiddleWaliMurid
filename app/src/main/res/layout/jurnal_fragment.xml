@@ -1,42 +1,86 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".fragments.Jurnal">
 
+
     <View
         android:id="@+id/view"
         android:layout_width="match_parent"
         android:layout_height="160dp"
-        android:background="@drawable/top_blue_box"
+        android:background="@drawable/top_blue_box" />
+    <TextView
+        android:id="@+id/text_date"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/tanggalView"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="10dp"
+        android:textSize="12sp"
+        tools:text="@tools:sample/date/ddmmyy" />
 
-        />
+
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/RecyclerViewJurnal"
-        android:layout_marginTop="333dp"
-        android:layout_width="match_parent"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        tools:listitem="@layout/jurnal_holder"/>
+        android:layout_above="@+id/navigationBar"
+        android:layout_marginStart="0dp"
+        android:layout_marginLeft="0dp"
+        android:layout_marginTop="277dp"
 
+        tools:listitem="@layout/jurnal_holder" />
 
     <ImageView
-        android:layout_marginRight="67dp"
-        android:layout_marginLeft="67dp"
-        android:layout_marginTop="190dp"
         android:layout_width="243dp"
         android:layout_height="9dp"
+        android:layout_marginLeft="67dp"
+        android:layout_marginTop="190dp"
+        android:layout_marginRight="67dp"
         app:srcCompat="@drawable/shadow" />
 
     <ImageView
         android:id="@+id/imageView2"
-        android:layout_width="262dp"
+        android:layout_width="match_parent"
         android:layout_height="198dp"
-        android:layout_marginLeft="67dp"
+        android:layout_marginStart="16dp"
         android:layout_marginTop="10dp"
-        android:layout_marginRight="0dp"
+        android:layout_marginEnd="16dp"
         android:src="@drawable/jurnal_murid" />
 
+    <TextView
+        android:id="@+id/tanggalView"
+        android:layout_width="60dp"
+        android:layout_height="18dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="221dp"
+        android:fontFamily="@font/roboto_black"
+        android:text="Tanggal"
+        android:textSize="12dp" />
 
-</FrameLayout>
+
+
+    <TextView
+        android:id="@+id/aspekView"
+        android:layout_width="60dp"
+        android:layout_height="18dp"
+        android:layout_marginStart="245dp"
+        android:layout_marginTop="221dp"
+        android:fontFamily="@font/roboto_black"
+        android:text="Aspek"
+        android:textSize="12sp" />
+
+    <TextView
+        android:id="@+id/aspek_picker"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/aspekView"
+        android:layout_marginStart="245dp"
+        android:layout_marginTop="10dp"
+        android:hint="Masukan Aspek"
+        android:textSize="12sp" />
+
+</RelativeLayout>
