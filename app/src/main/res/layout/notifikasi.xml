@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".fragments.Guru">
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context=".fragments.Notifikasi">
 
     <View
         android:id="@+id/view"
@@ -12,23 +12,23 @@
         android:background="@drawable/top_blue_box" />
 
     <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/RecyclerViewGuru"
+        android:id="@+id/RecyclerViewNotif"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_above="@+id/navigationBar"
         android:layout_marginStart="0dp"
         android:layout_marginLeft="0dp"
-        android:layout_marginTop="220dp"
+        android:layout_marginTop="277dp"
         tools:listitem="@layout/jurnal_holder" />
+
     <ImageView
         android:id="@+id/imageView2"
         android:layout_width="match_parent"
-        android:layout_height="205dp"
+        android:layout_height="198dp"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="0dp"
+        android:layout_marginTop="5dp"
         android:layout_marginStart="16dp"
         android:layout_marginEnd="16dp"
-        android:src="@drawable/guru_ic" />
+        android:src="@drawable/notif_ic" />
 
 
 </RelativeLayout>

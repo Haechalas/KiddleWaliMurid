@@ -5,9 +5,13 @@
     android:layout_height="match_parent"
     tools:context=".fragments.Beranda">
 
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="Beranda" />
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/RecyclerViewPengumuman"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="0dp"
+        android:layout_marginLeft="0dp"
+        android:layout_marginTop="468dp"
+        tools:listitem="@layout/pengumuman_holder" />
 
 </FrameLayout>

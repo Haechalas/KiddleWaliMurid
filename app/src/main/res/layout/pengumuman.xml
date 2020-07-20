@@ -1,9 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".fragments.Guru">
+    xmlns:tools="http://schemas.android.com/tools">
 
     <View
         android:id="@+id/view"
@@ -11,24 +10,32 @@
         android:layout_height="160dp"
         android:background="@drawable/top_blue_box" />
 
+
+    <!-- Gak paham Search :( -->
+    <SearchView
+        android:layout_width="match_parent"
+        android:layout_height="36dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginTop="215dp"
+        />
     <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/RecyclerViewGuru"
+        android:id="@+id/RecyclerViewJurnal"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_above="@+id/navigationBar"
         android:layout_marginStart="0dp"
         android:layout_marginLeft="0dp"
-        android:layout_marginTop="220dp"
-        tools:listitem="@layout/jurnal_holder" />
+        android:layout_marginTop="274dp"
+        tools:listitem="@layout/" />
+
     <ImageView
         android:id="@+id/imageView2"
         android:layout_width="match_parent"
-        android:layout_height="205dp"
+        android:layout_height="178dp"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="0dp"
+        android:layout_marginTop="23dp"
         android:layout_marginStart="16dp"
         android:layout_marginEnd="16dp"
-        android:src="@drawable/guru_ic" />
-
-
+        android:src="@drawable/pengumuman_ic" />
 </RelativeLayout>

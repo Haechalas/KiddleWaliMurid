@@ -11,7 +11,7 @@
         android:background="@drawable/top_blue_box" />
 
     <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/RecyclerViewJurnal"
+        android:id="@+id/RecyclerViewMA"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="0dp"
