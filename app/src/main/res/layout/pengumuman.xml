@@ -20,14 +20,13 @@
         android:layout_marginTop="215dp"
         />
     <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/RecyclerViewJurnal"
+        android:id="@+id/RecyclerViewPG"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_above="@+id/navigationBar"
         android:layout_marginStart="0dp"
         android:layout_marginLeft="0dp"
         android:layout_marginTop="274dp"
-        tools:listitem="@layout/" />
+        tools:listitem="@layout/pengumuman_holder" />
 
     <ImageView
         android:id="@+id/imageView2"

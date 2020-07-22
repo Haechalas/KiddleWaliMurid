@@ -2,26 +2,69 @@
 <androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
-    android:layout_height="80dp"
-    android:orientation="vertical"
-    app:cardCornerRadius="5dp"
-    android:elevation="5dp"
+    android:layout_height="70dp"
     android:layout_marginStart="16dp"
-    android:layout_marginEnd="16dp"
     android:layout_marginTop="12dp"
+    android:layout_marginEnd="16dp"
     android:layout_marginBottom="5dp"
-    >
+    android:elevation="5dp"
+    android:orientation="vertical"
+    app:cardCornerRadius="5dp">
 
-    <LinearLayout
+
+    <RelativeLayout
+        android:id="@+id/wrapper_guru"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:background="#60A1FA"
-        android:orientation="vertical"
-        >
+        android:orientation="vertical">
 
+        <de.hdodenhof.circleimageview.CircleImageView
+            android:id="@+id/profile_image"
+            android:layout_marginStart="5dp"
+            android:layout_centerVertical="true"
+            android:layout_width="50dp"
+            android:layout_height="match_parent"
+            android:src="@drawable/avatar"
+            app:civ_border_width="2dp"
+            app:civ_border_color="#60A1FA"/>
+        <TextView
+            android:id="@+id/NamaGuru"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_toRightOf="@id/profile_image"
+            android:layout_marginTop="15dp"
+            android:layout_marginLeft="3dp"
+            android:fontFamily="@font/roboto_bold"
+            android:text="Nama"
+            android:textColor="#fff"
+            android:textSize="14sp" />
 
+        <TextView
+            android:id="@+id/Jabatan"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:paddingRight="5dp"
+            android:layout_centerVertical="true"
+            android:layout_marginTop="15dp"
+            android:fontFamily="@font/roboto_thin"
+            android:text="Jabatan"
+            android:textColor="#000"
+            android:textSize="14sp" />
+        <TextView
+            android:id="@+id/NomorGuru"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_toRightOf="@id/profile_image"
+            android:layout_below="@id/NamaGuru"
+            android:layout_marginLeft="3dp"
+            android:fontFamily="@font/roboto_light"
+            android:text="628577999888"
+            android:textColor="#000"
+            android:textSize="14sp" />
 
-    </LinearLayout>
+    </RelativeLayout>
 
 
     <!-- Lanjut Jurnal_model -->

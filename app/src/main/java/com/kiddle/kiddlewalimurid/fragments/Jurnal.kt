@@ -18,25 +18,11 @@ import java.util.*
 
 class Jurnal : Fragment()  {
 
-    //buat var
-    var day = 0
-    var month = 0
-    var year = 0
 
-    //buat di save di textview
-    var saveDay = 0
-    var saveMonth = 0
-    var saveYear = 0
-
-    //View
     private var jurnal = ArrayList<jurnal>()
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
         val view = inflater.inflate(R.layout.jurnal_fragment, container, false)
-
-        //DatePicker
-
-
 
         //List item dalam RV
         val jurnal = listOf(

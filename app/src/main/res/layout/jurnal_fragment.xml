@@ -6,7 +6,6 @@
     android:layout_height="match_parent"
     tools:context=".fragments.Jurnal">
 
-
     <View
         android:id="@+id/view"
         android:layout_width="match_parent"
@@ -21,6 +20,48 @@
         android:layout_marginTop="10dp"
         android:textSize="12sp"
         tools:text="@tools:sample/date/ddmmyy" />
+
+    <TextView
+        android:id="@+id/tanggalView"
+        android:layout_width="60dp"
+        android:layout_height="18dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="221dp"
+        android:fontFamily="@font/roboto_black"
+        android:text="Tanggal"
+        android:textSize="12dp" />
+
+    <TextView
+        android:id="@+id/aspekView"
+        android:layout_width="60dp"
+        android:layout_height="18dp"
+        android:layout_marginStart="245dp"
+        android:layout_marginTop="221dp"
+        android:fontFamily="@font/roboto_black"
+        android:text="Aspek"
+        android:textSize="12sp" />
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/dropdown_rapor_semester"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.ExposedDropdownMenu"
+        android:layout_width="150dp"
+        android:layout_height="40dp"
+        app:boxBackgroundMode="outline"
+        android:layout_alignParentEnd="true"
+        android:layout_marginEnd="16dp"
+        android:layout_below="@id/aspekView">
+
+        <AutoCompleteTextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="@string/Aspek"
+            android:inputType="text"
+            android:paddingTop="4dp"
+            android:paddingBottom="4dp"
+            android:textSize="14sp" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+
 
 
     <androidx.recyclerview.widget.RecyclerView
@@ -49,36 +90,7 @@
         android:layout_marginEnd="16dp"
         android:src="@drawable/jurnal_murid" />
 
-    <TextView
-        android:id="@+id/tanggalView"
-        android:layout_width="60dp"
-        android:layout_height="18dp"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="221dp"
-        android:fontFamily="@font/roboto_black"
-        android:text="Tanggal"
-        android:textSize="12dp" />
 
 
-
-    <TextView
-        android:id="@+id/aspekView"
-        android:layout_width="60dp"
-        android:layout_height="18dp"
-        android:layout_marginStart="245dp"
-        android:layout_marginTop="221dp"
-        android:fontFamily="@font/roboto_black"
-        android:text="Aspek"
-        android:textSize="12sp" />
-
-    <TextView
-        android:id="@+id/aspek_picker"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/aspekView"
-        android:layout_marginStart="245dp"
-        android:layout_marginTop="10dp"
-        android:hint="Masukan Aspek"
-        android:textSize="12sp" />
 
 </RelativeLayout>

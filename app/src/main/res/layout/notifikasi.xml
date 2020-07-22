@@ -3,7 +3,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     xmlns:tools="http://schemas.android.com/tools"
-    tools:context=".fragments.Notifikasi">
+    tools:context=".UI.Notifikasi">
 
     <View
         android:id="@+id/view"
@@ -13,19 +13,19 @@
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/RecyclerViewNotif"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginStart="0dp"
         android:layout_marginLeft="0dp"
-        android:layout_marginTop="277dp"
-        tools:listitem="@layout/jurnal_holder" />
+        android:layout_marginTop="242dp"
+        tools:listitem="@layout/notifikasi_holder" />
 
     <ImageView
         android:id="@+id/imageView2"
         android:layout_width="match_parent"
-        android:layout_height="198dp"
+        android:layout_height="200dp"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="5dp"
+        android:layout_marginTop="11dp"
         android:layout_marginStart="16dp"
         android:layout_marginEnd="16dp"
         android:src="@drawable/notif_ic" />

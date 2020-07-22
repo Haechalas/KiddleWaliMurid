@@ -22,7 +22,7 @@ class MainActivity : AppCompatActivity() {
 
         makeCurrentFragment(berandaFragment)
 
-    navigationBar.setOnNavigationItemSelectedListener {
+    NavBar.setOnNavigationItemSelectedListener {
         when(it.itemId){
         R.id.berandaNav -> makeCurrentFragment(berandaFragment)
         R.id.jurnalNav -> makeCurrentFragment(jurnalFragment)
