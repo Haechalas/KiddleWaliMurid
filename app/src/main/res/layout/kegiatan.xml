@@ -17,7 +17,7 @@
         android:layout_marginStart="0dp"
         android:layout_marginLeft="0dp"
         android:layout_marginTop="219dp"
-        tools:listitem="@layout/kegiatan_holder" />
+        tools:listitem="@layout/holder_kegiatan" />
 
     <ImageView
         android:id="@+id/imageView2"

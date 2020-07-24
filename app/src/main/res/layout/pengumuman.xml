@@ -26,7 +26,7 @@
         android:layout_marginStart="0dp"
         android:layout_marginLeft="0dp"
         android:layout_marginTop="274dp"
-        tools:listitem="@layout/pengumuman_holder" />
+        tools:listitem="@layout/holder_pengumuman" />
 
     <ImageView
         android:id="@+id/imageView2"

@@ -4,7 +4,7 @@ import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.kiddle.kiddlewalimurid.R
 import com.kiddle.kiddlewalimurid.model.kegiatan
-import kotlinx.android.synthetic.main.kegiatan_holder.view.*
+import kotlinx.android.synthetic.main.holder_kegiatan.view.*
 
 class KegiatanAdapter(val kegiatan: List<kegiatan>) : RecyclerView.Adapter<KegiatanAdapter.KegiatanViewHolder>()  {
 
@@ -13,7 +13,7 @@ class KegiatanAdapter(val kegiatan: List<kegiatan>) : RecyclerView.Adapter<Kegia
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): KegiatanViewHolder {
         return KegiatanViewHolder(
-            LayoutInflater.from(parent.context).inflate(R.layout.kegiatan_holder, parent, false))
+            LayoutInflater.from(parent.context).inflate(R.layout.holder_kegiatan, parent, false))
     }
 
     override fun getItemCount() = kegiatan.size

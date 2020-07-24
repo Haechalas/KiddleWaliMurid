@@ -18,7 +18,7 @@
         android:layout_marginStart="0dp"
         android:layout_marginLeft="0dp"
         android:layout_marginTop="242dp"
-        tools:listitem="@layout/parenting_holder" />
+        tools:listitem="@layout/holder_parenting" />
 
     <ImageView
         android:id="@+id/imageView2"

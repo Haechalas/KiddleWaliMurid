@@ -18,7 +18,7 @@
         android:layout_marginStart="0dp"
         android:layout_marginLeft="0dp"
         android:layout_marginTop="220dp"
-        tools:listitem="@layout/tugas_holder" />
+        tools:listitem="@layout/holder_tugas" />
 
     <ImageView
         android:id="@+id/imageView2"

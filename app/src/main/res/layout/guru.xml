@@ -18,7 +18,7 @@
         android:layout_marginStart="0dp"
         android:layout_marginLeft="0dp"
         android:layout_marginTop="220dp"
-        tools:listitem="@layout/guru_holder" />
+        tools:listitem="@layout/holder_guru" />
 
     <ImageView
         android:id="@+id/imageView2"

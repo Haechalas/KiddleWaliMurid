@@ -10,7 +10,8 @@
     android:layout_marginStart="16dp"
     android:layout_marginEnd="16dp"
     android:layout_marginTop="12dp"
-    android:layout_marginBottom="5dp">
+    android:layout_marginBottom="5dp"
+    android:paddingBottom="10dp">
 
     <LinearLayout
         android:id="@+id/bg_PG"

@@ -4,10 +4,9 @@ import android.os.Parcelable
 import kotlinx.android.parcel.Parcelize
 
 @Parcelize
-data class jurnal(
+data class pengumuman(
     val judul : String,
     val tanggal : String,
-    val bidang : String
+    val img : Int
 
 ): Parcelable
-

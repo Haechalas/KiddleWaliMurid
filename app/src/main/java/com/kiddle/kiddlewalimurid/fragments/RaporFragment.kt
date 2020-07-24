@@ -9,11 +9,11 @@ import android.widget.AutoCompleteTextView
 import android.widget.TextView
 import androidx.fragment.app.Fragment
 import com.kiddle.kiddlewalimurid.R
-import kotlinx.android.synthetic.main.rapor_fragment.*
-import kotlinx.android.synthetic.main.rapor_fragment.view.*
+import kotlinx.android.synthetic.main.fragment_rapor.*
+import kotlinx.android.synthetic.main.fragment_rapor.view.*
 import net.cachapa.expandablelayout.ExpandableLayout
 
-class Rapor : Fragment() , View.OnClickListener {
+class RaporFragment : Fragment() , View.OnClickListener {
 
     var kognitif:Boolean = false
     var berbahasa:Boolean = false
@@ -22,7 +22,7 @@ class Rapor : Fragment() , View.OnClickListener {
     var motorik:Boolean = false
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
-        val view = inflater.inflate(R.layout.rapor_fragment, container, false)
+        val view = inflater.inflate(R.layout.fragment_rapor, container, false)
 
         //untuk dropdown semester
 

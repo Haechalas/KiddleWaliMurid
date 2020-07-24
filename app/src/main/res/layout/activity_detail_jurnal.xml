@@ -4,10 +4,10 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".UI.DetailKegiatanActivity">
+    tools:context=".UI.DetailJurnalActivity">
 
     <View
-        android:id="@+id/app_bar_detail_kegiatan"
+        android:id="@+id/app_bar_detail_jurnal"
         android:layout_width="0dp"
         android:layout_height="60dp"
         android:background="@color/colorPrimary"
@@ -16,62 +16,74 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <ImageView
-        android:id="@+id/img_back_detail_kegiatan"
+        android:id="@+id/img_back_detail_jurnal"
         android:layout_width="25dp"
         android:layout_height="20dp"
         android:layout_marginStart="16dp"
-        app:layout_constraintBottom_toBottomOf="@+id/app_bar_detail_kegiatan"
-        app:layout_constraintStart_toStartOf="@+id/app_bar_detail_kegiatan"
+        app:layout_constraintBottom_toBottomOf="@+id/app_bar_detail_jurnal"
+        app:layout_constraintStart_toStartOf="@+id/app_bar_detail_jurnal"
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/ic_back" />
 
     <ImageView
-        android:id="@+id/image_kegiatan"
+        android:id="@+id/image_jurnal"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:adjustViewBounds="true"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/app_bar_detail_kegiatan"
+        app:layout_constraintTop_toBottomOf="@+id/app_bar_detail_jurnal"
         tools:srcCompat="@tools:sample/backgrounds/scenic" />
 
     <TextView
-        android:id="@+id/text_judul_kegiatan"
+        android:id="@+id/text_judul_jurnal"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
         android:layout_marginTop="20dp"
-        android:fontFamily="sans-serif-medium"
-        android:text="Hari Ibu"
+        android:fontFamily="@font/roboto_bold"
+        android:text="Belajar Menghitung"
         android:textColor="#2F80ED"
         android:textSize="36sp"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/image_kegiatan" />
+        app:layout_constraintTop_toBottomOf="@+id/image_jurnal" />
 
     <TextView
-        android:id="@+id/text_tanggal_kegiatan"
+        android:id="@+id/text_bidang_jurnal"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
-        android:fontFamily="@font/roboto"
+        android:fontFamily="@font/roboto_medium"
         android:textColor="@color/Black"
-        android:text="30 Maret 2020"
-        android:textSize="12sp"
+        android:text="Kognitif"
+        android:textSize="14sp"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/text_judul_kegiatan" />
+        app:layout_constraintTop_toBottomOf="@+id/text_judul_jurnal" />
 
     <TextView
-        android:id="@+id/text_deskripsi_kegiatan"
+        android:id="@+id/text_tanggal_jurnal"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:textColor="@color/Black"
+        android:fontFamily="@font/roboto_medium"
+        android:text="30 Maret 2020"
+        android:textSize="14sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/text_bidang_jurnal" />
+
+    <TextView
+        android:id="@+id/text_deskripsi_jurnal"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
         android:layout_marginTop="16dp"
         android:layout_marginEnd="16dp"
-        android:textSize="16dp"
-        android:fontFamily="@font/roboto"
         android:textColor="@color/Black"
-        android:text="Pada Hari Ibu, kami mengajak murid untuk membuat hadiah berupa kerajinan untuk ibunya. Kegiatan ini dilakukan untuk menumbuhkan rasa sayang kepada ibu. Seluruh murid mengikuti kegiatan ini dengan senang hati."
+        android:fontFamily="@font/roboto"
+        android:textSize="16sp"
+        android:text="Berhitung atau kemampuan logika matematika adalah kemampuan dasar yang penting dimiliki anak untuk masa depannya."
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/text_tanggal_kegiatan" />
+        app:layout_constraintTop_toBottomOf="@+id/text_tanggal_jurnal" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

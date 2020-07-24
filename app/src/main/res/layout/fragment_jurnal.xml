@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".fragments.Jurnal">
+    tools:context=".fragments.JurnalFragment">
 
     <View
         android:id="@+id/view"
@@ -62,16 +62,17 @@
     </com.google.android.material.textfield.TextInputLayout>
 
 
-
-
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/RecyclerViewJurnal"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:paddingTop="10dp"
+        android:paddingBottom="5dp"
         android:layout_marginStart="0dp"
         android:layout_marginLeft="0dp"
         android:layout_marginTop="277dp"
-        tools:listitem="@layout/jurnal_holder" />
+        android:layout_marginBottom="57dp"
+        tools:listitem="@layout/holder_jurnal" />
 
     <ImageView
         android:layout_width="243dp"

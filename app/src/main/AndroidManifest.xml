@@ -9,8 +9,15 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
+        <activity android:name=".UI.DetailGuruActivity"></activity>
+        <activity android:name=".UI.DetailParentingActivity" />
+        <activity android:name=".UI.DetailMateriActivity" />
+        <activity android:name=".UI.DetailPengumumanActivity" />
+        <activity android:name=".UI.DetailJurnalActivity" />
+        <activity android:name=".UI.DetailTugasActivity" />
+        <activity android:name=".UI.PresensiActivity" />
         <activity android:name=".UI.LoginActivity" />
-        <activity android:name=".UI.detail_kegiatan" />
+        <activity android:name=".UI.DetailKegiatanActivity" />
         <activity android:name=".UI.MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

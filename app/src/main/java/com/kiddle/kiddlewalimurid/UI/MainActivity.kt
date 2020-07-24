@@ -14,11 +14,11 @@ class MainActivity : AppCompatActivity() {
 
 
 
-        val berandaFragment = Beranda()
-        val jurnalFragment = Jurnal()
-        val raporFragment = Rapor()
-        val pembayaranFragment = Pembayaran()
-        val profilFragment = Profil()
+        val berandaFragment = BerandaFragment()
+        val jurnalFragment = JurnalFragment()
+        val raporFragment = RaporFragment()
+        val pembayaranFragment = PembayaranFragment()
+        val profilFragment = ProfilFragment()
 
         makeCurrentFragment(berandaFragment)
 

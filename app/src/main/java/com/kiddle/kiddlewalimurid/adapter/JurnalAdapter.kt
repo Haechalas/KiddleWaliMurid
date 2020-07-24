@@ -6,7 +6,7 @@ import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.kiddle.kiddlewalimurid.R
 import com.kiddle.kiddlewalimurid.model.jurnal
-import kotlinx.android.synthetic.main.jurnal_holder.view.*
+import kotlinx.android.synthetic.main.holder_jurnal.view.*
 
 class JurnalAdapter(val jurnalanak: List<jurnal>) : RecyclerView.Adapter<JurnalAdapter.JurnalViewHolder>()  {
 
@@ -15,7 +15,7 @@ class JurnalAdapter(val jurnalanak: List<jurnal>) : RecyclerView.Adapter<JurnalA
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): JurnalViewHolder {
     return JurnalViewHolder(
-        LayoutInflater.from(parent.context).inflate(R.layout.jurnal_holder, parent, false))
+        LayoutInflater.from(parent.context).inflate(R.layout.holder_jurnal, parent, false))
     }
 
     override fun getItemCount() = jurnalanak.size
