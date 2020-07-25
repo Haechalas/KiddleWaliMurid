@@ -2,9 +2,9 @@
 <selector xmlns:android="http://schemas.android.com/apk/res/android">
 
     <item
-        android:drawable="@drawable/rapor_100"
+        android:drawable="@drawable/ic_jurnal_100"
         android:state_checked="true" />
     <item
-        android:drawable="@drawable/rapor_burem"
+        android:drawable="@drawable/ic_jurnal_burem"
         android:state_checked="false" />
 </selector>

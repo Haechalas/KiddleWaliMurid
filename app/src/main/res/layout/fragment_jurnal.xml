@@ -89,7 +89,7 @@
         android:layout_marginStart="16dp"
         android:layout_marginTop="10dp"
         android:layout_marginEnd="16dp"
-        android:src="@drawable/jurnal_murid" />
+        android:src="@drawable/image_jurnal_murid" />
 
 
 

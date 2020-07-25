@@ -24,7 +24,7 @@
         android:id="@+id/img_PG"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        app:srcCompat="@drawable/pengumuman_img"
+        app:srcCompat="@drawable/image_detail_pengumuman"
         android:scaleType="centerCrop"/>
 
     <LinearLayout

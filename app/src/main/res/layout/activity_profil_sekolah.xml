@@ -1,0 +1,170 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".UI.ProfilSekolahActivity">
+
+    <View
+        android:id="@+id/view_ab_sekolah"
+        android:layout_width="0dp"
+        android:layout_height="60dp"
+        android:background="@color/colorPrimary"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:id="@+id/image_back_sekolah"
+        android:layout_width="25dp"
+        android:layout_height="20dp"
+        android:layout_marginStart="16dp"
+        app:layout_constraintBottom_toBottomOf="@+id/view_ab_sekolah"
+        app:layout_constraintStart_toStartOf="@+id/view_ab_sekolah"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/ic_back" />
+
+    <ImageView
+        android:id="@+id/image_sekolah"
+        android:layout_width="match_parent"
+        android:layout_height="350dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/view_ab_sekolah"
+        android:scaleType="centerCrop"
+        android:src="@drawable/profil_image_sekolah"/>
+
+    <TextView
+        android:id="@+id/text_nama_guru"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="20dp"
+        android:fontFamily="@font/roboto_bold"
+        android:text="TK Islam Aisyiah Jakarta"
+        android:textColor="@color/colorWhite"
+        android:textSize="24sp"
+        app:layout_constraintLeft_toLeftOf="0dp"
+        app:layout_constraintRight_toRightOf="0dp"
+        app:layout_constraintBottom_toBottomOf="@id/image_sekolah"
+        tools:layout_editor_absoluteX="71dp" />
+
+    <RelativeLayout
+        android:id="@+id/relative_layout2"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/image_sekolah">
+
+        <TextView
+            android:id="@+id/text_alamat_sekolah"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="14dp"
+            android:fontFamily="@font/roboto_bold"
+            android:text="Alamat"
+            android:textColor="@color/colorPrimary"
+            android:textSize="18sp" />
+
+        <TextView
+            android:id="@+id/text_isi_alamat_sekolah"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/text_alamat_sekolah"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="15dp"
+            android:fontFamily="@font/roboto_bold"
+            android:text="Jalan Wilis No. 30, Jakarta Selatan"
+            android:textColor="@color/Grey"
+            android:textSize="18sp" />
+
+        <TextView
+            android:id="@+id/text_kontak"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/text_isi_alamat_sekolah"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="31dp"
+            android:fontFamily="@font/roboto_bold"
+            android:text="Kontak"
+            android:textColor="@color/colorPrimary"
+            android:textSize="18sp" />
+
+        <TextView
+            android:id="@+id/text_isi_kontak_sekolah"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/text_kontak"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="15dp"
+            android:fontFamily="@font/roboto_bold"
+            android:text="(021)654778"
+            android:textColor="@color/Grey"
+            android:textSize="18sp" />
+
+        <ImageView
+            android:id="@+id/image_phone"
+            android:layout_width="25dp"
+            android:layout_height="25dp"
+            android:layout_alignParentEnd="true"
+            android:layout_marginTop="145dp"
+            android:layout_marginEnd="40dp"
+            android:src="@drawable/ic_phone" />
+
+        <TextView
+            android:id="@+id/text_deskripsi_sekolah"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/text_isi_kontak_sekolah"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="31dp"
+            android:fontFamily="@font/roboto_bold"
+            android:text="Deskripsi"
+            android:textColor="@color/colorPrimary"
+            android:textSize="18sp" />
+
+        <TextView
+            android:id="@+id/text_isi_deskripsi_sekolah"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/text_deskripsi_sekolah"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="15dp"
+            android:fontFamily="@font/roboto_bold"
+            android:text="Deskripsi sekolah"
+            android:textColor="@color/Grey"
+            android:textSize="18sp" />
+
+        <TextView
+            android:id="@+id/text_visi_sekolah"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/text_isi_deskripsi_sekolah"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="31dp"
+            android:fontFamily="@font/roboto_bold"
+            android:text="Visi"
+            android:textColor="@color/colorPrimary"
+            android:textSize="18sp" />
+
+        <TextView
+            android:id="@+id/text_isi_visi"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/text_visi_sekolah"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="15dp"
+            android:fontFamily="@font/roboto_bold"
+            android:text="Lembaga Pendidikan Islam yang mewujudkan pendidikan berkarakter dalam membentuk generasi Rabbani dan berakhlakqul karimah."
+            android:textColor="@color/Grey"
+            android:textSize="18sp" />
+
+    </RelativeLayout>
+
+
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

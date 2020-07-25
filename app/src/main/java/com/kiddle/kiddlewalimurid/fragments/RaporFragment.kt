@@ -28,12 +28,12 @@ class RaporFragment : Fragment() , View.OnClickListener {
 
         //untuk dropdown semester
         val semester = listOf("Ganjil", "Genap")
-        val adapter_semester = ArrayAdapter<String>(requireActivity().applicationContext, R.layout.dropdown_text, semester)
+        val adapter_semester = ArrayAdapter<String>(requireActivity().applicationContext, R.layout.item_dropdown_text, semester)
         (view.dropdown_rapor_semester.editText as? AutoCompleteTextView)?.setAdapter(adapter_semester)
 
         //untuk dropdown kelas
         val kelas = listOf("Bintang Kecil", "Bintang Besar", "Bulan Kecil", "Bulan Besar")
-        val adapter_kelas = ArrayAdapter<String>(requireActivity().applicationContext, R.layout.dropdown_text, kelas)
+        val adapter_kelas = ArrayAdapter<String>(requireActivity().applicationContext, R.layout.item_dropdown_text, kelas)
         (view.dropdown_rapor_nilai.editText as? AutoCompleteTextView)?.setAdapter(adapter_kelas)
 
         //set on-click listener

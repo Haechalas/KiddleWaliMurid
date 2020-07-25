@@ -21,7 +21,7 @@
             android:id="@+id/img_MA"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            app:srcCompat="@drawable/materi_img1"
+            app:srcCompat="@drawable/image_detail_materi"
             android:scaleType="centerCrop"/>
 
     </LinearLayout>

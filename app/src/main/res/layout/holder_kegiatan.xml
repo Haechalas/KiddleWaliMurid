@@ -21,7 +21,7 @@
         android:id="@+id/img_KG"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        app:srcCompat="@drawable/kegiatan_img"
+        app:srcCompat="@drawable/image_detail_kegiatan"
         android:scaleType="centerCrop"/>
 
     <LinearLayout

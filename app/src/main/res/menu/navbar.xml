@@ -4,25 +4,25 @@
     <item
         android:id="@+id/berandaNav"
         android:title="Beranda"
-        android:icon="@drawable/beranda_selector" />
+        android:icon="@drawable/ic_beranda_selector" />
     <item
         android:id="@+id/jurnalNav"
         android:title="Jurnal"
-        android:icon="@drawable/jurnal_selector"
+        android:icon="@drawable/ic_jurnal_selector"
         />
     <item
         android:id="@+id/raporNav"
         android:title="Rapor"
-        android:icon="@drawable/rapor_selector"
+        android:icon="@drawable/ic_rapor_selector"
         />
     <item
         android:id="@+id/pembayaranNav"
         android:title="SPP"
-        android:icon="@drawable/pembayaran_selector"
+        android:icon="@drawable/ic_pembayaran_selector"
         />
     <item
         android:id="@+id/profilNav"
         android:title="Profil"
-        android:icon="@drawable/profil_selector"
+        android:icon="@drawable/ic_profil_selector"
         />
 </menu>

@@ -6,4 +6,219 @@
     android:layout_height="match_parent"
     tools:context=".UI.PresensiActivity">
 
+    <View
+        android:id="@+id/view_ab_presensi"
+        android:layout_width="0dp"
+        android:layout_height="60dp"
+        android:background="@color/colorPrimary"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:id="@+id/img_back_presensi"
+        android:layout_width="25dp"
+        android:layout_height="20dp"
+        android:layout_marginStart="16dp"
+        app:layout_constraintBottom_toBottomOf="@+id/view_ab_presensi"
+        app:layout_constraintStart_toStartOf="@+id/view_ab_presensi"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/ic_back" />
+    <View
+        android:id="@+id/view"
+        android:layout_width="match_parent"
+        android:layout_height="160dp"
+        android:background="@drawable/top_blue_box"
+        app:layout_constraintTop_toBottomOf="@+id/view_ab_presensi"/>
+
+    <ImageView
+        android:id="@+id/image_presensi"
+        android:layout_width="match_parent"
+        android:layout_height="206dp"
+        android:layout_centerHorizontal="true"
+        android:src="@drawable/image_presensi"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/view_ab_presensi" />
+
+    <TextView
+        android:id="@+id/text_semester"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:fontFamily="@font/roboto_bold"
+        android:text="Bulan"
+        android:textColor="@color/Black"
+        android:textSize="14sp"
+        android:layout_marginStart="16dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/image_presensi" />
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/dropdown_presensi_semester"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.ExposedDropdownMenu"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        app:boxBackgroundMode="outline"
+        android:hint="Semester..."
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/text_semester">
+
+        <AutoCompleteTextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="none"
+            android:paddingTop="4dp"
+            android:paddingBottom="4dp"
+            android:textSize="14sp" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+
+
+    <RelativeLayout
+        android:id="@+id/relative1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:orientation="vertical"
+        android:layout_marginStart="55dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/dropdown_presensi_semester">
+    
+        <ImageView
+            android:id="@+id/image_hadir"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:layout_centerHorizontal="true"
+            android:src="@drawable/ic_hadir"/>
+
+        <TextView
+            android:id="@+id/text_hadir"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentStart="true"
+            android:layout_centerInParent="true"
+            android:layout_below="@+id/image_hadir"
+            android:textAlignment="center"
+            android:fontFamily="@font/roboto"
+            android:textColor="@color/Black"
+            android:textSize="18sp"
+            android:text="27"/>
+    </RelativeLayout>
+
+    <RelativeLayout
+    android:id="@+id/relative2"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_marginTop="20dp"
+    android:orientation="vertical"
+    android:layout_marginStart="18dp"
+    app:layout_constraintLeft_toRightOf="@id/relative1"
+    app:layout_constraintTop_toBottomOf="@id/dropdown_presensi_semester">
+
+    <ImageView
+        android:id="@+id/image_sakit"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        android:layout_centerHorizontal="true"
+        android:src="@drawable/ic_sakit"/>
+
+    <TextView
+        android:id="@+id/text_sakit"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_centerInParent="true"
+        android:layout_below="@+id/image_sakit"
+        android:textAlignment="center"
+        android:fontFamily="@font/roboto"
+        android:textColor="@color/Black"
+        android:textSize="18sp"
+        android:text="1"/>
+</RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/relative3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:orientation="vertical"
+        android:layout_marginEnd="18dp"
+        app:layout_constraintRight_toLeftOf="@id/relative4"
+        app:layout_constraintTop_toBottomOf="@id/dropdown_presensi_semester">
+
+        <ImageView
+            android:id="@+id/image_izin"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:layout_centerHorizontal="true"
+            android:src="@drawable/ic_izin"/>
+
+        <TextView
+            android:id="@+id/text_izin"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentStart="true"
+            android:layout_centerInParent="true"
+            android:layout_below="@+id/image_izin"
+            android:textAlignment="center"
+            android:fontFamily="@font/roboto"
+            android:textColor="@color/Black"
+            android:textSize="18sp"
+            android:text="2"/>
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/relative4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:orientation="vertical"
+        android:layout_marginEnd="55dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/dropdown_presensi_semester">
+
+        <ImageView
+            android:id="@+id/image_alpha"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:layout_centerHorizontal="true"
+            android:src="@drawable/ic_alpha"/>
+
+        <TextView
+            android:id="@+id/text_alpha"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentStart="true"
+            android:layout_centerInParent="true"
+            android:layout_below="@+id/image_alpha"
+            android:textAlignment="center"
+            android:fontFamily="@font/roboto"
+            android:textColor="@color/Black"
+            android:textSize="18sp"
+            android:text="0"/>
+    </RelativeLayout>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/roboto_medium"
+        android:textColor="@color/colorPrimary"
+        android:textSize="18sp"
+        android:text="Seminggu terakhir"
+        android:layout_marginTop="20dp"
+        android:layout_marginStart="16dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/relative1"/>
+
+
+
+
+
+
+
+
+
 </androidx.constraintlayout.widget.ConstraintLayout>

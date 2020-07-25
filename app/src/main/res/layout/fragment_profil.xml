@@ -8,11 +8,13 @@
     tools:context=".fragments.ProfilFragment">
 
     <RelativeLayout
+        android:id="@+id/relative_layout1"
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_weight="0.5"
         >
         <ImageView
+            android:id="@+id/image_murid"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:src="@drawable/profil_img"
@@ -20,6 +22,7 @@
             android:adjustViewBounds="true"
             />
         <TextView
+            android:id="@+id/text_nama_murid"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:fontFamily="@font/roboto_bold"
@@ -30,22 +33,24 @@
             android:textSize="24sp"
             android:textColor="@color/colorWhite"
             />
-
+        <ImageView
+            android:id="@+id/image_ic_settings"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginEnd="16dp"
+            android:layout_alignParentEnd="true"
+            android:src="@drawable/ic_settings"/>
     </RelativeLayout>
 
-    <LinearLayout
+    <RelativeLayout
+        android:id="@+id/relative_layout2"
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_weight="0.5"
-        android:orientation="vertical">
-
-    <LinearLayout
-        android:id="@+id/kelas_profil"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="vertical">
-
+        >
         <TextView
+            android:id="@+id/text_kelas"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="16dp"
@@ -56,107 +61,103 @@
             android:textSize="18sp" />
 
         <TextView
+            android:id="@+id/text_isi_kelas"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="16dp"
+            android:layout_below="@+id/text_kelas"
             android:fontFamily="@font/roboto_bold"
             android:text="Bintang Kecil"
-            android:textColor="@color/Black"
-            android:textSize="15sp" />
+            android:textColor="@color/Grey"
+            android:textSize="18sp" />
 
-    </LinearLayout>
-
-        <LinearLayout
-            android:id="@+id/ttl_profil"
-            android:layout_width="match_parent"
+        <TextView
+            android:id="@+id/text_ttl"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:orientation="vertical">
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="20dp"
+            android:layout_below="@+id/text_isi_kelas"
+            android:fontFamily="@font/roboto_bold"
+            android:text="Tempat Tanggal Lahir"
+            android:textColor="@color/colorPrimary"
+            android:textSize="18sp" />
 
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="16dp"
-                android:layout_marginTop="14dp"
-                android:fontFamily="@font/roboto_bold"
-                android:text="Tempat Tanggal Lahir"
-                android:textColor="@color/colorPrimary"
-                android:textSize="18sp" />
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="16dp"
-                android:fontFamily="@font/roboto_bold"
-                android:text="02 Juni 2009 | Bandung"
-                android:textColor="@color/Black"
-                android:textSize="15sp" />
-
-        </LinearLayout>
-
-        <LinearLayout
-            android:id="@+id/alamat_profil"
-            android:layout_width="match_parent"
+        <TextView
+            android:id="@+id/text_isi_ttl"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:orientation="vertical">
+            android:layout_marginStart="16dp"
 
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="16dp"
-                android:layout_marginTop="14dp"
-                android:fontFamily="@font/roboto_bold"
-                android:text="Alamat"
-                android:textColor="@color/colorPrimary"
-                android:textSize="18sp" />
+            android:layout_below="@+id/text_ttl"
+            android:fontFamily="@font/roboto_bold"
+            android:text="02 Juni 2009 | Bandung"
+            android:textColor="@color/Grey"
+            android:textSize="18sp"
+            />
 
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="16dp"
-                android:fontFamily="@font/roboto_bold"
-                android:text="Jl.Ikan pari blok i.5 no.14"
-                android:textColor="@color/Black"
-                android:textSize="15sp" />
 
-        </LinearLayout>
 
-        <LinearLayout
-            android:id="@+id/WaliMurid_profil"
-            android:layout_width="match_parent"
+        <TextView
+            android:id="@+id/text_alamat"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:orientation="vertical">
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="20dp"
+            android:layout_below="@+id/text_isi_ttl"
+            android:fontFamily="@font/roboto_bold"
+            android:text="Alamat"
+            android:textColor="@color/colorPrimary"
+            android:textSize="18sp" />
 
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="16dp"
-                android:layout_marginTop="14dp"
-                android:fontFamily="@font/roboto_bold"
-                android:text="Wali Murid"
-                android:textColor="@color/colorPrimary"
-                android:textSize="18sp" />
+        <TextView
+            android:id="@+id/text_isi_alamat"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_below="@+id/text_alamat"
+            android:fontFamily="@font/roboto_bold"
+            android:text="Jl.Ikan pari blok i.5 no.14"
+            android:textColor="@color/Grey"
+            android:textSize="18sp" />
 
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="16dp"
-                android:fontFamily="@font/roboto_bold"
-                android:text="Ayah "
-                android:textColor="@color/Black"
-                android:textSize="15sp" />
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="16dp"
-                android:layout_marginTop="14dp"
-                android:fontFamily="@font/roboto_bold"
-                android:text="Ibu"
-                android:textColor="@color/Black"
-                android:textSize="15sp" />
+        <TextView
+            android:id="@+id/text_wali"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="20dp"
+            android:layout_below="@+id/text_isi_alamat"
+            android:fontFamily="@font/roboto_bold"
+            android:text="Wali Murid"
+            android:textColor="@color/colorPrimary"
+            android:textSize="18sp" />
 
-        </LinearLayout>
+        <TextView
+            android:id="@+id/text_isi_wali"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/text_wali"
+            android:layout_marginStart="16dp"
+            android:fontFamily="@font/roboto_bold"
+            android:text="Budi Santoso"
+            android:textColor="@color/Grey"
+            android:textSize="18sp" />
 
-    </LinearLayout>
+        <ImageView
+            android:id="@+id/image_phone"
+            android:layout_width="25dp"
+            android:layout_height="25dp"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentBottom="true"
+            android:layout_marginEnd="40dp"
+            android:layout_marginBottom="100dp"
+            android:src="@drawable/ic_phone" />
+
+    </RelativeLayout>
+
+
+
 
 
 </LinearLayout>

@@ -10,22 +10,30 @@
         android:layout_height="160dp"
         android:background="@drawable/top_blue_box" />
 
+    <!-- Gak paham Search :( -->
+    <SearchView
+        android:layout_width="match_parent"
+        android:layout_height="36dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginTop="215dp"
+        />
     <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/RecyclerViewMA"
+        android:id="@+id/RecyclerViewPG"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="0dp"
         android:layout_marginLeft="0dp"
-        android:layout_marginTop="219dp"
-        tools:listitem="@layout/holder_materi" />
+        android:layout_marginTop="274dp"
+        tools:listitem="@layout/holder_pengumuman" />
 
     <ImageView
         android:id="@+id/imageView2"
         android:layout_width="match_parent"
-        android:layout_height="198dp"
+        android:layout_height="178dp"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="5dp"
+        android:layout_marginTop="23dp"
         android:layout_marginStart="16dp"
         android:layout_marginEnd="16dp"
-        android:src="@drawable/materi_ic" />
+        android:src="@drawable/image_pengumuman" />
 </RelativeLayout>

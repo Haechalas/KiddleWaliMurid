@@ -7,6 +7,6 @@ import com.kiddle.kiddlewalimurid.R
 class Kegiatan : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.kegiatan)
+        setContentView(R.layout.activity_kegiatan)
     }
 }

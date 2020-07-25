@@ -4,9 +4,9 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import com.kiddle.kiddlewalimurid.R
 
-class Tugas : AppCompatActivity() {
+class CaraPembayaranActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.tugas)
+        setContentView(R.layout.activity_cara_pembayaran)
     }
 }

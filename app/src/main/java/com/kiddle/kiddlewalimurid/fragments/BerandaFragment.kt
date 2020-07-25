@@ -22,9 +22,9 @@ class BerandaFragment : Fragment() {
         val view = inflater.inflate(R.layout.fragment_beranda, container, false)
 
         val  pengumuman = listOf(
-            pengumuman("Belajar jarak jauh", "30 maret", R.drawable.pengumuman_img),
-            pengumuman("Menghitung", "30 maret", R.drawable.kegiatan_img),
-            pengumuman("Menghitung", "30 maret", R.drawable.materi_img1)
+            pengumuman("Belajar jarak jauh", "30 maret", R.drawable.image_detail_pengumuman),
+            pengumuman("Menghitung", "30 maret", R.drawable.image_detail_kegiatan),
+            pengumuman("Menghitung", "30 maret", R.drawable.image_detail_materi)
 
         )
         //RV

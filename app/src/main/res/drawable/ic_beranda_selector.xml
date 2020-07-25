@@ -2,9 +2,9 @@
 <selector xmlns:android="http://schemas.android.com/apk/res/android">
 
 <item
-    android:drawable="@drawable/beranda_100"
+    android:drawable="@drawable/ic_beranda_100"
     android:state_checked="true" />
     <item
-    android:drawable="@drawable/beranda_burem"
+    android:drawable="@drawable/ic_beranda_burem"
     android:state_checked="false" />
 </selector>

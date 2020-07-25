@@ -1,0 +1,227 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".UI.CaraPembayaranActivity">
+
+    <View
+        android:id="@+id/view_ab_cara_bayar"
+        android:layout_width="0dp"
+        android:layout_height="60dp"
+        android:background="@color/colorPrimary"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:id="@+id/image_back_cara_bayar"
+        android:layout_width="25dp"
+        android:layout_height="20dp"
+        android:layout_marginStart="16dp"
+        app:layout_constraintBottom_toBottomOf="@+id/view_ab_cara_bayar"
+        app:layout_constraintStart_toStartOf="@+id/view_ab_cara_bayar"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/ic_back" />
+
+    <TextView
+        android:id="@+id/text_norek"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:layout_marginStart="16dp"
+        android:text="No. Rekening Bank"
+        android:textSize="18sp"
+        android:fontFamily="@font/roboto"
+        android:textColor="@color/Black"
+        app:layout_constraintTop_toBottomOf="@+id/view_ab_cara_bayar"
+        app:layout_constraintStart_toStartOf="parent"/>
+
+    <TextView
+    android:id="@+id/text_bank1"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_marginStart="16dp"
+    android:text="Bank 1"
+    android:textSize="18sp"
+    android:fontFamily="@font/roboto_medium"
+    android:textColor="@color/Black"
+    app:layout_constraintTop_toBottomOf="@+id/text_norek"
+    app:layout_constraintStart_toStartOf="parent"/>
+
+    <TextView
+        android:id="@+id/text_no_bank1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="60dp"
+        android:text="1234567XXX"
+        android:textSize="18sp"
+        android:fontFamily="@font/roboto_medium"
+        android:textColor="@color/Black"
+        app:layout_constraintTop_toBottomOf="@+id/text_norek"
+        app:layout_constraintLeft_toRightOf="@id/text_bank1"
+        app:layout_constraintEnd_toEndOf="parent"/>
+    <TextView
+        android:id="@+id/text_no_bank2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="60dp"
+        android:text="1234567XXX"
+        android:textSize="18sp"
+        android:fontFamily="@font/roboto_medium"
+        android:textColor="@color/Black"
+        app:layout_constraintTop_toBottomOf="@+id/text_no_bank1"
+        app:layout_constraintLeft_toRightOf="@id/text_bank2"
+        app:layout_constraintEnd_toEndOf="parent"/>
+    <TextView
+        android:id="@+id/text_bank2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:text="Bank 1"
+        android:textSize="18sp"
+        android:fontFamily="@font/roboto_medium"
+        android:textColor="@color/Black"
+        app:layout_constraintTop_toBottomOf="@+id/text_bank1"
+        app:layout_constraintStart_toStartOf="parent"/>
+
+    <TextView
+        android:id="@+id/text_nama_rek"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:text="a/n TK AISYIAH JAKARTA"
+        android:textSize="18sp"
+        android:fontFamily="@font/roboto_medium"
+        android:textColor="@color/Black"
+        app:layout_constraintTop_toBottomOf="@+id/text_bank2"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        />
+
+    <TextView
+        android:id="@+id/text_tata_cara"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="18dp"
+        android:text="Berikut tata cara pembayaran SPP :"
+        android:textSize="18sp"
+        android:fontFamily="@font/roboto"
+        android:textColor="@color/Black"
+        app:layout_constraintTop_toBottomOf="@+id/text_nama_rek"
+        app:layout_constraintStart_toStartOf="parent"
+        />
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/text_tata_cara" >
+
+    <ImageView
+        android:id="@+id/image_no1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="15dp"
+        android:layout_marginStart="16dp"
+        android:src="@drawable/ic_number_1"/>
+
+        <TextView
+            android:id="@+id/text_no1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="20dp"
+            android:layout_toRightOf="@id/image_no1"
+            android:text="Berikut tata cara pembayaran SPP :"
+            android:textSize="18sp"
+            android:fontFamily="@font/roboto"
+            android:textColor="@color/Black"/>
+        <ImageView
+            android:id="@+id/image_no2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="15dp"
+            android:layout_marginStart="16dp"
+            android:layout_below="@id/image_no1"
+            android:src="@drawable/ic_number_2"/>
+        <TextView
+            android:id="@+id/text_no2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="30dp"
+            android:layout_below="@+id/text_no1"
+            android:layout_toRightOf="@id/image_no2"
+            android:text="Berikut tata cara pembayaran SPP :"
+            android:textSize="18sp"
+            android:fontFamily="@font/roboto"
+            android:textColor="@color/Black"/>
+        <ImageView
+            android:id="@+id/image_no3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="15dp"
+            android:layout_below="@id/image_no2"
+            android:layout_marginStart="16dp"
+            android:src="@drawable/ic_number_3"/>
+        <TextView
+            android:id="@+id/text_no3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="30dp"
+            android:layout_below="@+id/text_no2"
+            android:layout_toRightOf="@id/image_no3"
+            android:text="Berikut tata cara pembayaran SPP :"
+            android:textSize="18sp"
+            android:fontFamily="@font/roboto"
+            android:textColor="@color/Black"/>
+        <ImageView
+            android:id="@+id/image_no4"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="15dp"
+            android:layout_below="@id/image_no3"
+            android:layout_marginStart="16dp"
+            android:src="@drawable/ic_number_4"/>
+        <TextView
+            android:id="@+id/text_no4"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="30dp"
+            android:layout_below="@+id/text_no3"
+            android:layout_toRightOf="@id/image_no4"
+            android:text="Berikut tata cara pembayaran SPP :"
+            android:textSize="18sp"
+            android:fontFamily="@font/roboto"
+            android:textColor="@color/Black"/>
+        <ImageView
+            android:id="@+id/image_no5"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="15dp"
+            android:layout_below="@id/image_no4"
+            android:layout_marginStart="16dp"
+            android:src="@drawable/ic_number_5"/>
+        <TextView
+            android:id="@+id/text_no5"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="33dp"
+            android:layout_below="@+id/text_no4"
+            android:layout_toRightOf="@id/image_no5"
+            android:text="Berikut tata cara pembayaran SPP :"
+            android:textSize="18sp"
+            android:fontFamily="@font/roboto"
+            android:textColor="@color/Black"/>
+
+    </RelativeLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
