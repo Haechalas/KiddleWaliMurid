@@ -7,7 +7,7 @@
     tools:context=".UI.DetailParentingActivity">
 
     <View
-        android:id="@+id/app_bar_detail_parenting"
+        android:id="@+id/view_ab_detail_parenting"
         android:layout_width="0dp"
         android:layout_height="60dp"
         android:background="@color/colorPrimary"
@@ -20,8 +20,8 @@
         android:layout_width="25dp"
         android:layout_height="20dp"
         android:layout_marginStart="16dp"
-        app:layout_constraintBottom_toBottomOf="@+id/app_bar_detail_parenting"
-        app:layout_constraintStart_toStartOf="@+id/app_bar_detail_parenting"
+        app:layout_constraintBottom_toBottomOf="@+id/view_ab_detail_parenting"
+        app:layout_constraintStart_toStartOf="@+id/view_ab_detail_parenting"
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/ic_back" />
 
@@ -31,7 +31,7 @@
         android:layout_height="218dp"
         android:adjustViewBounds="true"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/app_bar_detail_parenting"
+        app:layout_constraintTop_toBottomOf="@+id/view_ab_detail_parenting"
         />
 
     <TextView
