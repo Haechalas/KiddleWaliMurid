@@ -1,28 +1,47 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     tools:context=".fragments.RaporFragment">
 
+
     <View
-        android:id="@+id/viewbox"
+        android:id="@+id/view_ab_rapor"
+        android:layout_width="0dp"
+        android:layout_height="60dp"
+        android:background="@color/colorPrimary"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:id="@+id/image_back_rapor"
+        android:layout_width="25dp"
+        android:layout_height="20dp"
+        android:layout_marginStart="16dp"
+        app:layout_constraintBottom_toBottomOf="@+id/view_ab_rapor"
+        app:layout_constraintStart_toStartOf="@+id/view_ab_rapor"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/ic_back" />
+    <View
+        android:id="@+id/view_bg_box"
         android:layout_width="match_parent"
         android:layout_height="160dp"
         android:background="@drawable/top_blue_box"
-         />
-
-    <ImageView
-        android:id="@+id/img_rapor"
-        android:layout_width="match_parent"
-        android:layout_height="217dp"
-        android:layout_marginBottom="8dp"
-        android:src="@drawable/image_rapor"
-        app:layout_constraintBottom_toTopOf="@+id/textKelas"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/view_ab_rapor" />
+
+    <ImageView
+        android:id="@+id/image_rapor"
+        android:layout_width="match_parent"
+        android:layout_height="217dp"
+        android:src="@drawable/image_rapor"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/view_ab_rapor"
         />
 
     <TextView
@@ -30,38 +49,40 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
-        android:layout_marginTop="8dp"
+        android:layout_marginTop="20dp"
         android:fontFamily="@font/roboto_bold"
         android:text="@string/Kelas"
         android:textColor="@color/Black"
         android:textSize="14sp"
-        android:layout_below="@id/img_rapor"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/image_rapor"
          />
 
     <TextView
         android:id="@+id/textSemester"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="8dp"
+        android:layout_marginTop="20dp"
         android:fontFamily="@font/roboto_bold"
         android:text="@string/Semester"
         android:textColor="@color/Black"
         android:textSize="14sp"
-        android:layout_alignParentEnd="true"
+        app:layout_constraintEnd_toEndOf="parent"
         android:layout_marginEnd="108dp"
-        android:layout_below="@id/img_rapor"
+        app:layout_constraintTop_toBottomOf="@id/image_rapor"
          />
 
 
     <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/dropdown_rapor_nilai"
+        android:id="@+id/dropdown_rapor_kelas"
         style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.ExposedDropdownMenu"
         android:layout_width="150dp"
         android:layout_height="40dp"
         android:layout_marginStart="16dp"
         android:layout_marginEnd="16dp"
         app:boxBackgroundMode="outline"
-        android:layout_below="@id/textKelas">
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/textKelas">
 
         <AutoCompleteTextView
             android:layout_width="match_parent"
@@ -80,9 +101,9 @@
         android:layout_width="150dp"
         android:layout_height="40dp"
         app:boxBackgroundMode="outline"
-        android:layout_alignParentEnd="true"
+        app:layout_constraintEnd_toEndOf="parent"
         android:layout_marginEnd="16dp"
-        android:layout_below="@id/textSemester">
+        app:layout_constraintTop_toBottomOf="@id/textSemester">
 
         <AutoCompleteTextView
             android:layout_width="match_parent"
@@ -94,6 +115,7 @@
             android:textSize="14sp" />
 
     </com.google.android.material.textfield.TextInputLayout>
+
     <LinearLayout
         android:id="@+id/linearLayout4"
         android:layout_width="match_parent"
@@ -102,7 +124,7 @@
         android:layout_marginTop="16dp"
         android:layout_marginEnd="16dp"
         android:orientation="vertical"
-        android:layout_below="@id/dropdown_rapor_semester"
+        app:layout_constraintTop_toBottomOf="@id/dropdown_rapor_semester"
         >
 
         <TextView
@@ -172,7 +194,7 @@
         android:layout_marginTop="8dp"
         android:layout_marginEnd="16dp"
         android:orientation="vertical"
-        android:layout_below="@id/linearLayout4">
+        app:layout_constraintTop_toBottomOf="@id/linearLayout4">
 
         <TextView
             android:id="@+id/expand_button_1"
@@ -243,7 +265,7 @@
         android:layout_marginTop="8dp"
         android:layout_marginEnd="16dp"
         android:orientation="vertical"
-        android:layout_below="@id/linearLayout5">
+        app:layout_constraintTop_toBottomOf="@id/linearLayout5">
 
         <TextView
             android:id="@+id/expand_button_2"
@@ -313,7 +335,7 @@
         android:layout_marginTop="8dp"
         android:layout_marginEnd="16dp"
         android:orientation="vertical"
-        android:layout_below="@id/linearLayout6">
+        app:layout_constraintTop_toBottomOf="@id/linearLayout6">
 
         <TextView
             android:id="@+id/expand_button_3"
@@ -382,7 +404,7 @@
         android:layout_marginTop="8dp"
         android:layout_marginEnd="16dp"
         android:orientation="vertical"
-        android:layout_below="@id/linearLayout7">
+        app:layout_constraintTop_toBottomOf="@id/linearLayout7">
 
         <TextView
             android:id="@+id/expand_button_4"
@@ -443,4 +465,4 @@
     </LinearLayout>
 
 
-</RelativeLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>

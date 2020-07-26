@@ -19,7 +19,7 @@
             android:id="@+id/image_guru"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:src="@drawable/profil_guru_img"
+            android:src="@drawable/image_profil_guru"
             android:scaleType="centerCrop"
             android:adjustViewBounds="true" />
 
