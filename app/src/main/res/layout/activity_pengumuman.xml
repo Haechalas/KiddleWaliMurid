@@ -2,32 +2,79 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools">
 
+    <RelativeLayout
+        android:id="@+id/relative_pengumuman"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:background="@color/colorPrimary"
+        android:padding="16dp">
+
+        <ImageView
+            android:id="@+id/img_back_pengumuman"
+            android:layout_width="25dp"
+            android:layout_height="20dp"
+            android:layout_alignParentStart="true"
+            android:layout_centerVertical="true"
+            app:srcCompat="@drawable/ic_back" />
+
+        <TextView
+            android:id="@+id/textView16"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_centerVertical="true"
+            android:layout_marginStart="16dp"
+            android:layout_toEndOf="@id/img_back_pengumuman"
+            android:fontFamily="@font/roboto_medium"
+            android:text="Pengumuman"
+            android:textColor="@color/colorWhite"
+            android:textSize="24sp" />
+
+    </RelativeLayout>
+
     <View
+        android:layout_below="@id/relative_pengumuman"
         android:id="@+id/view"
         android:layout_width="match_parent"
         android:layout_height="160dp"
         android:background="@drawable/top_blue_box" />
 
-    <!-- Gak paham Search :( -->
-    <SearchView
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/input_pencarian_list_pengumuman"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
         android:layout_width="match_parent"
-        android:layout_height="36dp"
+        android:layout_height="40dp"
         android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
         android:layout_marginEnd="16dp"
-        android:layout_marginTop="215dp"
-        />
+        android:layout_below="@id/imageView2">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/tv_pencarian_list_pengumuman"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:drawableRight="@drawable/ic_pencarian"
+            android:gravity="start"
+            android:lines="4"
+            android:paddingTop="10dp"
+            android:paddingBottom="10dp"
+            android:textSize="12sp" />
+    </com.google.android.material.textfield.TextInputLayout>
+
     <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/RecyclerViewPG"
+        android:id="@+id/rv_pengumuman"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_below="@id/input_pencarian_list_pengumuman"
         android:layout_marginStart="0dp"
         android:layout_marginLeft="0dp"
-        android:layout_marginTop="274dp"
+        android:layout_marginTop="8dp"
         tools:listitem="@layout/holder_pengumuman" />
 
     <ImageView
+        android:layout_below="@id/relative_pengumuman"
         android:id="@+id/imageView2"
         android:layout_width="match_parent"
         android:layout_height="178dp"

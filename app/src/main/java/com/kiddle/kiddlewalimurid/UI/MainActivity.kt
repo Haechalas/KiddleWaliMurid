@@ -12,8 +12,6 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-
-
         val berandaFragment = BerandaFragment()
         val jurnalFragment = JurnalFragment()
         val raporFragment = RaporFragment()
@@ -22,17 +20,16 @@ class MainActivity : AppCompatActivity() {
 
         makeCurrentFragment(berandaFragment)
 
-    NavBar.setOnNavigationItemSelectedListener {
-        when(it.itemId){
-        R.id.berandaNav -> makeCurrentFragment(berandaFragment)
-        R.id.jurnalNav -> makeCurrentFragment(jurnalFragment)
-        R.id.raporNav -> makeCurrentFragment(raporFragment)
-        R.id.pembayaranNav -> makeCurrentFragment(pembayaranFragment)
-        R.id.profilNav -> makeCurrentFragment(profilFragment)
-    }
-    true
-
-}
+        bottom_navigation.setOnNavigationItemSelectedListener {
+            when(it.itemId){
+                R.id.menu_beranda -> makeCurrentFragment(berandaFragment)
+                R.id.menu_jurnal -> makeCurrentFragment(jurnalFragment)
+                R.id.menu_rapor -> makeCurrentFragment(raporFragment)
+                R.id.menu_pembayaran -> makeCurrentFragment(pembayaranFragment)
+                R.id.menu_profil -> makeCurrentFragment(profilFragment)
+            }
+            true
+        }
     }
     private fun makeCurrentFragment(fragment: Fragment) =
         supportFragmentManager.beginTransaction().apply {

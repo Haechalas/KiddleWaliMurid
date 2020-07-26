@@ -6,25 +6,21 @@
     android:layout_height="match_parent"
     tools:context=".UI.MainActivity">
 
-<FrameLayout
+    <FrameLayout
     android:id="@+id/frame_wrapper"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    />
-
+    android:layout_height="match_parent" />
 
     <com.google.android.material.bottomnavigation.BottomNavigationView
-        android:id="@+id/NavBar"
+        android:id="@+id/bottom_navigation"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
-        android:background="?android:attr/colorPrimary"
+        android:background="@color/colorPrimary"
         app:itemBackground="@color/colorPrimary"
-        app:itemIconTint="#fff"
-        app:itemTextColor="#fff"
-        app:menu="@menu/navbar"
-        />
-
-
+        app:itemIconTint="@color/bottom_navigation_foreground"
+        app:itemTextColor="@color/bottom_navigation_foreground"
+        app:labelVisibilityMode="labeled"
+        app:menu="@menu/menu_bottom_navigation" />
 
 </RelativeLayout>
