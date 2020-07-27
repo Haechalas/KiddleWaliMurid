@@ -3,24 +3,48 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     tools:context=".UI.TugasActivity">
+
+    <RelativeLayout
+        android:id="@+id/relative_tugas"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:background="@color/colorPrimary"
+        android:padding="16dp">
+
+        <ImageView
+            android:id="@+id/img_back_tugas"
+            android:layout_width="25dp"
+            android:layout_height="20dp"
+            android:layout_alignParentStart="true"
+            android:layout_centerVertical="true"
+            app:srcCompat="@drawable/ic_back" />
+
+        <TextView
+            android:id="@+id/textView16"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_centerVertical="true"
+            android:layout_marginStart="16dp"
+            android:layout_toEndOf="@id/img_back_tugas"
+            android:fontFamily="@font/roboto_medium"
+            android:text="Tugas"
+            android:textColor="@color/colorWhite"
+            android:textSize="24sp" />
+
+    </RelativeLayout>
 
     <View
         android:id="@+id/view"
         android:layout_width="match_parent"
         android:layout_height="160dp"
+        android:layout_below="@id/relative_tugas"
+        android:layout_marginTop="-2dp"
         android:background="@drawable/top_blue_box" />
 
-    <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/RecyclerViewTugas"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="0dp"
-        android:layout_marginLeft="0dp"
-        android:layout_marginTop="220dp"
-        tools:listitem="@layout/holder_tugas" />
-
     <ImageView
+        android:layout_below="@id/relative_tugas"
         android:id="@+id/imageView2"
         android:layout_width="match_parent"
         android:layout_height="205dp"
@@ -29,6 +53,20 @@
         android:layout_marginStart="16dp"
         android:layout_marginEnd="16dp"
         android:src="@drawable/image_tugas" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rv_tugas"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/imageView2"
+        android:layout_marginStart="0dp"
+        android:layout_marginLeft="0dp"
+        android:layout_marginTop="8dp"
+        android:paddingStart="16dp"
+        android:paddingEnd="16dp"
+        tools:listitem="@layout/holder_tugas" />
+
+
 
 
 </RelativeLayout>

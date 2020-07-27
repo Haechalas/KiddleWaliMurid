@@ -5,7 +5,7 @@ import kotlinx.android.parcel.Parcelize
 
 //menggunakan parcelable agar bisa mengambil data sekaligus dari firebase
 @Parcelize
-data class Model_Tugas (
+data class Tugas (
     val kelas :String,
     val judul:String,
     val isi : String,

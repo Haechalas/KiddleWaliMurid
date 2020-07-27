@@ -11,9 +11,12 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import com.kiddle.kiddlewalimurid.R
 import com.kiddle.kiddlewalimurid.UI.DetailPengumumanActivity
 import com.kiddle.kiddlewalimurid.UI.PengumumanActivity
+import com.kiddle.kiddlewalimurid.UI.PresensiActivity
+import com.kiddle.kiddlewalimurid.UI.TugasActivity
 import com.kiddle.kiddlewalimurid.adapter.PengumumanAdapter
 import com.kiddle.kiddlewalimurid.model.jurnal
 import com.kiddle.kiddlewalimurid.model.Pengumuman
+import kotlinx.android.synthetic.main.fragment_beranda.*
 import kotlinx.android.synthetic.main.fragment_beranda.view.*
 import java.util.ArrayList
 
@@ -40,6 +43,14 @@ class BerandaFragment : Fragment() {
 
         view.tv_lihat_semua.setOnClickListener {
             startActivity(Intent(activity, PengumumanActivity::class.java))
+        }
+
+        view.presensi_card.setOnClickListener {
+            startActivity(Intent(activity, PresensiActivity::class.java))
+        }
+
+        view.tugas_card.setOnClickListener {
+            startActivity(Intent(activity, TugasActivity::class.java))
         }
 
         return view
