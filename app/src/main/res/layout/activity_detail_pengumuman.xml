@@ -6,36 +6,60 @@
     android:layout_height="match_parent"
     tools:context=".UI.DetailPengumumanActivity">
 
+
+    <FrameLayout
+        android:id="@+id/frameLayout"
+        android:layout_width="match_parent"
+        android:layout_height="250dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@drawable/black_layer">
+
+            <VideoView
+                android:id="@+id/vv_detail_pengumuman"
+                android:layout_width="fill_parent"
+                android:layout_height="match_parent"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentTop="true"
+                android:layout_alignParentRight="true"
+                android:layout_alignParentBottom="true"
+                android:scaleType="fitXY"
+                android:visibility="gone" />
+        </RelativeLayout>
+
+        <ImageView
+            android:id="@+id/img_detail_pengumuman"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:scaleType="fitXY"
+            android:visibility="gone" />
+
+    </FrameLayout>
+
     <View
-        android:id="@+id/view_ab_detail_pengumuman"
-        android:layout_width="0dp"
-        android:layout_height="60dp"
-        android:background="@color/colorPrimary"
+        android:layout_width="match_parent"
+        android:layout_height="250dp"
+        android:background="@drawable/black_layer"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <ImageView
-        android:id="@+id/image_back_detail_pengumuman"
+        android:id="@+id/img_back_detail_pengumuman"
         android:layout_width="25dp"
         android:layout_height="20dp"
         android:layout_marginStart="16dp"
-        app:layout_constraintBottom_toBottomOf="@+id/view_ab_detail_pengumuman"
-        app:layout_constraintStart_toStartOf="@+id/view_ab_detail_pengumuman"
+        android:layout_marginTop="16dp"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/ic_back" />
 
-    <ImageView
-        android:id="@+id/image_jurnal"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:adjustViewBounds="true"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/view_ab_detail_pengumuman"
-        tools:srcCompat="@tools:sample/backgrounds/scenic" />
-
     <TextView
-        android:id="@+id/text_judul_jurnal"
+        android:id="@+id/tv_judul_detail_pengumuman"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
@@ -45,12 +69,12 @@
         android:textColor="#2F80ED"
         android:textSize="24dp"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/image_jurnal" />
+        app:layout_constraintTop_toBottomOf="@+id/frameLayout" />
 
 
 
     <TextView
-        android:id="@+id/text_tanggal_jurnal"
+        android:id="@+id/tv_tanggal_detail_pengumuman"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
@@ -59,10 +83,10 @@
         android:text="30 Maret 2020"
         android:textSize="14sp"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/text_judul_jurnal" />
+        app:layout_constraintTop_toBottomOf="@+id/tv_judul_detail_pengumuman" />
 
     <TextView
-        android:id="@+id/text_deskripsi_jurnal"
+        android:id="@+id/tv_deskripsi_detail_pengumuman"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
@@ -74,41 +98,64 @@
         android:text="Berhitung atau kemampuan logika matematika adalah kemampuan dasar yang penting dimiliki anak untuk masa depannya."
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/text_tanggal_jurnal" />
+        app:layout_constraintTop_toBottomOf="@+id/tv_tanggal_detail_pengumuman" />
 
     <TextView
         android:id="@+id/text_komentar"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
         android:fontFamily="@font/roboto_bold"
-        android:textColor="@color/Black"
-        android:layout_marginTop="30dp"
         android:text="Komentar"
+        android:textColor="@color/Black"
         android:textSize="14sp"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/text_deskripsi_jurnal" />
+        app:layout_constraintTop_toBottomOf="@+id/tv_deskripsi_detail_pengumuman" />
 
     <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/dropdown_rapor_semester"
-        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense"
-        android:hint="Tulis komentar..."
-        android:layout_width="match_parent"
-        android:layout_height="40dp"
+        android:id="@+id/input_komentar"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+        android:layout_width="337dp"
+        android:layout_height="41dp"
         android:layout_marginStart="16dp"
-        android:layout_marginEnd="16dp"
-        android:layout_marginBottom="32dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintBottom_toBottomOf="parent">
+        android:layout_marginBottom="16dp"
+        android:focusableInTouchMode="false"
+        app:boxBackgroundColor="@color/colorWhite"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent">
 
-        <AutoCompleteTextView
-            android:layout_width="match_parent"
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/tv_komentar"
+            android:layout_width="331dp"
             android:layout_height="wrap_content"
-            android:inputType="none"
-            android:paddingTop="4dp"
-            android:paddingBottom="4dp"
-            android:textSize="14sp" />
+            android:gravity="start"
+            android:lines="4"
+            android:paddingTop="10dp"
+            android:paddingBottom="10dp"
+            android:textSize="12sp" />
 
     </com.google.android.material.textfield.TextInputLayout>
+
+    <ImageView
+        android:id="@+id/btn_komentar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="16dp"
+        android:layout_marginBottom="16dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:srcCompat="@drawable/ic_komentar" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rv_komentar"
+        android:layout_width="match_parent"
+        android:layout_height="200dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="16dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/text_komentar"
+        tools:listitem="@layout/holder_komentar" />
 </androidx.constraintlayout.widget.ConstraintLayout>

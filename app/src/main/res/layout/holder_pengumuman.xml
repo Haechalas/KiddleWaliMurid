@@ -1,48 +1,46 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="match_parent"
-    android:layout_height="175dp"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:orientation="vertical"
-    app:cardCornerRadius="15dp"
-    android:elevation="5dp"
+    android:layout_width="match_parent"
+    android:layout_height="175dp"
     android:layout_marginStart="16dp"
-    android:layout_marginEnd="16dp"
     android:layout_marginTop="12dp"
-    android:layout_marginBottom="5dp"
-    android:paddingBottom="10dp">
+    android:layout_marginEnd="16dp"
+    android:layout_marginBottom="4dp"
+    android:elevation="5dp"
+    android:orientation="vertical"
+    android:paddingBottom="10dp"
+    app:cardCornerRadius="15dp">
 
     <LinearLayout
         android:id="@+id/bg_PG"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:orientation="vertical"
-        />
+        android:orientation="vertical" />
 
     <ImageView
-        android:id="@+id/img_PG"
+        android:id="@+id/img_pengumuman"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        app:srcCompat="@drawable/image_detail_pengumuman"
-        android:scaleType="centerCrop"/>
+        android:scaleType="centerCrop"
+        app:srcCompat="@drawable/image_detail_pengumuman" />
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="#000"
         android:alpha="0.4"
-        />
+        android:background="#000" />
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_marginStart="10dp"
-        android:orientation="vertical"
-        android:layout_marginTop="125dp">
+        android:layout_marginTop="125dp"
+        android:orientation="vertical">
 
         <TextView
-            android:id="@+id/judulPG"
+            android:id="@+id/tv_judul_pengumuman"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginBottom="10dp"
@@ -52,13 +50,13 @@
             android:textSize="18sp" />
 
         <TextView
-            android:id="@+id/tanggalPG"
+            android:id="@+id/tv_tanggal_pengumuman"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginTop="-10dp"
             android:fontFamily="@font/roboto"
             android:textColor="#fff"
             android:textSize="12sp"
-            android:layout_marginTop="-10dp"
             tools:text="@tools:sample/date/mmddyy" />
     </LinearLayout>
 

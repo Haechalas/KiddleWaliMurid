@@ -6,30 +6,43 @@
     android:layout_height="match_parent"
     tools:context=".UI.PresensiActivity">
 
-    <View
-        android:id="@+id/view_ab_presensi"
-        android:layout_width="0dp"
+    <RelativeLayout
+        android:id="@+id/relative_presensi"
+        android:layout_width="match_parent"
         android:layout_height="60dp"
         android:background="@color/colorPrimary"
+        android:padding="16dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent">
 
-    <ImageView
-        android:id="@+id/img_back_presensi"
-        android:layout_width="25dp"
-        android:layout_height="20dp"
-        android:layout_marginStart="16dp"
-        app:layout_constraintBottom_toBottomOf="@+id/view_ab_presensi"
-        app:layout_constraintStart_toStartOf="@+id/view_ab_presensi"
-        app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/ic_back" />
+        <ImageView
+            android:id="@+id/img_back_presensi"
+            android:layout_width="25dp"
+            android:layout_height="20dp"
+            android:layout_alignParentStart="true"
+            android:layout_centerVertical="true"
+            app:srcCompat="@drawable/ic_back" />
+
+        <TextView
+            android:id="@+id/textView16"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_centerVertical="true"
+            android:layout_marginStart="16dp"
+            android:layout_toEndOf="@id/img_back_presensi"
+            android:fontFamily="@font/roboto_medium"
+            android:text="Presensi"
+            android:textColor="@color/colorWhite"
+            android:textSize="24sp" />
+
+    </RelativeLayout>
     <View
         android:id="@+id/view"
         android:layout_width="match_parent"
         android:layout_height="160dp"
         android:background="@drawable/top_blue_box"
-        app:layout_constraintTop_toBottomOf="@+id/view_ab_presensi"/>
+        app:layout_constraintTop_toBottomOf="@id/relative_presensi"/>
 
     <ImageView
         android:id="@+id/image_presensi"
@@ -38,7 +51,7 @@
         android:layout_centerHorizontal="true"
         android:src="@drawable/image_presensi"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/view_ab_presensi" />
+        app:layout_constraintTop_toBottomOf="@id/relative_presensi" />
 
     <TextView
         android:id="@+id/text_semester"
@@ -59,7 +72,6 @@
         android:layout_width="match_parent"
         android:layout_height="40dp"
         app:boxBackgroundMode="outline"
-        android:hint="Semester..."
         android:layout_marginStart="16dp"
         android:layout_marginEnd="16dp"
         app:layout_constraintEnd_toEndOf="parent"
@@ -73,9 +85,8 @@
             android:paddingTop="4dp"
             android:paddingBottom="4dp"
             android:textSize="14sp" />
+
     </com.google.android.material.textfield.TextInputLayout>
-
-
 
     <RelativeLayout
         android:id="@+id/relative1"

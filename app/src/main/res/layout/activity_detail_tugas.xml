@@ -6,36 +6,58 @@
     android:layout_height="match_parent"
     tools:context=".UI.DetailTugasActivity">
 
+    <FrameLayout
+        android:id="@+id/frameLayout"
+        android:layout_width="match_parent"
+        android:layout_height="250dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@drawable/black_layer">
+
+            <VideoView
+                android:id="@+id/vv_detail_tugas"
+                android:layout_width="fill_parent"
+                android:layout_height="match_parent"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentTop="true"
+                android:layout_alignParentRight="true"
+                android:layout_alignParentBottom="true"
+                android:visibility="gone" />
+        </RelativeLayout>
+
+        <ImageView
+            android:id="@+id/img_detail_tugas"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:scaleType="fitXY"
+            android:visibility="gone" />
+
+    </FrameLayout>
+
     <View
-        android:id="@+id/view_ab_detail_tugas"
-        android:layout_width="0dp"
-        android:layout_height="60dp"
-        android:background="@color/colorPrimary"
+        android:layout_width="match_parent"
+        android:layout_height="250dp"
+        android:background="@drawable/black_layer"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <ImageView
-        android:id="@+id/image_back_detail_tugas"
+        android:id="@+id/img_back_detail_tugas"
         android:layout_width="25dp"
         android:layout_height="20dp"
         android:layout_marginStart="16dp"
-        app:layout_constraintBottom_toBottomOf="@+id/view_ab_detail_tugas"
-        app:layout_constraintStart_toStartOf="@+id/view_ab_detail_tugas"
+        android:layout_marginTop="16dp"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/ic_back" />
 
-    <VideoView
-        android:id="@+id/video_tugas"
-        android:layout_width="match_parent"
-        android:layout_height="218dp"
-        android:adjustViewBounds="true"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/view_ab_detail_tugas"
-        />
-
     <TextView
-        android:id="@+id/text_tanggal_tugas"
+        android:id="@+id/tv_tanggal_detail_tugas"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
@@ -45,10 +67,10 @@
         android:text="30 Maret 2020"
         android:textSize="12sp"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/video_tugas" />
+        app:layout_constraintTop_toBottomOf="@+id/frameLayout" />
 
     <TextView
-        android:id="@+id/text_judul_tugas"
+        android:id="@+id/tv_judul_detail_tugas"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
@@ -57,7 +79,7 @@
         android:textColor="#2F80ED"
         android:textSize="36sp"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/text_tanggal_tugas" />
+        app:layout_constraintTop_toBottomOf="@+id/tv_tanggal_detail_tugas" />
 
     <TextView
         android:id="@+id/text_due_tugas"
@@ -69,9 +91,9 @@
         android:text="Batas waktu pengumpulan"
         android:textSize="14sp"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/text_judul_tugas" />
+        app:layout_constraintTop_toBottomOf="@+id/tv_judul_detail_tugas" />
     <TextView
-        android:id="@+id/text_due_waktu_tugas"
+        android:id="@+id/tv_waktu_detail_tugas"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:fontFamily="@font/roboto"
@@ -80,10 +102,10 @@
         android:textSize="14sp"
         android:layout_marginEnd="16dp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/text_judul_tugas" />
+        app:layout_constraintTop_toBottomOf="@+id/tv_judul_detail_tugas" />
 
     <TextView
-        android:id="@+id/text_deskripsi_tugas"
+        android:id="@+id/tv_deskripsi_detail_tugas"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:fontFamily="@font/roboto"
@@ -97,8 +119,36 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/text_due_tugas" />
 
+
     <TextView
-        android:id="@+id/text_format_tugas"
+        android:id="@+id/tv_link_detail_tugas"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="16dp"
+        android:fontFamily="@font/roboto_light"
+        android:text="punten"
+        android:textAlignment="viewStart"
+        android:textColor="@color/colorPrimary"
+        android:textSize="12sp"
+        android:visibility="gone"
+        app:layout_constraintStart_toEndOf="@+id/img_link_detail_tugas"
+        app:layout_constraintTop_toBottomOf="@+id/tv_deskripsi_detail_tugas" />
+
+    <ImageView
+        android:id="@+id/img_link_detail_tugas"
+        android:layout_width="16dp"
+        android:layout_height="16dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
+        android:background="#FFFFFF"
+        android:visibility="gone"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tv_deskripsi_detail_tugas"
+        app:srcCompat="@drawable/ic_link_blue" />
+
+    <TextView
+        android:id="@+id/tv_hasil_tugas"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
@@ -107,10 +157,10 @@
         android:textColor="@color/Black"
         android:textSize="14sp"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintBottom_toTopOf="@+id/button_unggah" />
+        app:layout_constraintBottom_toTopOf="@+id/btn_unggah" />
 
     <Button
-        android:id="@+id/button_unggah"
+        android:id="@+id/btn_unggah"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:fontFamily="@font/roboto_medium"
@@ -118,18 +168,20 @@
         android:text="unggah tugas"
         android:layout_marginStart="16dp"
         android:layout_marginEnd="16dp"
-        app:layout_constraintBottom_toTopOf="@id/button_kumpulkan"/>
+        app:layout_constraintBottom_toTopOf="@id/btn_kumpulkan"/>
 
     <Button
-        android:id="@+id/button_kumpulkan"
+        android:id="@+id/btn_kumpulkan"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:fontFamily="@font/roboto_medium"
-        android:textSize="14sp"
-        android:text="kumpulkan"
-        android:layout_marginBottom="32dp"
         android:layout_marginStart="16dp"
         android:layout_marginEnd="16dp"
-        app:layout_constraintBottom_toBottomOf="parent"/>
+        android:layout_marginBottom="16dp"
+        android:fontFamily="@font/roboto_medium"
+        android:text="kumpulkan"
+        android:textSize="14sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

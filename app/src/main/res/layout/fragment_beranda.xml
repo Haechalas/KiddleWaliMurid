@@ -1,380 +1,410 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:orientation="vertical"
+    android:clipChildren="false"
+    android:fillViewport="true"
     tools:context=".fragments.BerandaFragment">
 
-    <View
-        android:id="@+id/app_bar_home"
+    <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="60dp"
-        android:background="@color/colorPrimary"
-        />
-
-    <ImageView
-        android:id="@+id/img_kiddle_home"
-        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="20dp"
-        android:layout_alignParentStart="true"
-        android:layout_marginStart="16dp"
-        app:srcCompat="@drawable/ic_kiddle_home" />
-    <ImageView
-        android:id="@+id/img_notification"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="20dp"
-        android:layout_alignParentEnd="true"
-        android:layout_marginEnd="16dp"
-        app:srcCompat="@drawable/ic_notification" />
-    <View
-        android:id="@+id/view"
-        android:layout_width="match_parent"
-        android:layout_height="160dp"
-        android:background="@drawable/top_blue_box"
-        android:layout_below="@id/app_bar_home"/>
+        android:paddingBottom="64dp">
 
-    <LinearLayout
-        android:id="@+id/linear1"
-        android:layout_width="match_parent"
-        android:layout_height="195dp"
-        android:layout_below="@id/app_bar_home"
-        android:orientation="vertical">
-
-        <androidx.cardview.widget.CardView
-            android:id="@+id/main_card_home"
+        <View
+            android:id="@+id/app_bar_home"
             android:layout_width="match_parent"
-            android:layout_height="159dp"
-            app:cardCornerRadius="20dp"
-            android:layout_marginTop="24dp"
-            android:layout_marginStart="16dp"
-            android:layout_marginEnd="16dp">
+            android:layout_height="60dp"
+            android:background="@color/colorPrimary" />
 
-            <RelativeLayout
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:orientation="vertical"
+        <ImageView
+            android:id="@+id/img_kiddle_home"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentStart="true"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="20dp"
+            app:srcCompat="@drawable/ic_logo_small" />
+
+        <ImageView
+            android:id="@+id/ic_notification"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_marginTop="20dp"
+            android:layout_marginEnd="16dp"
+            app:srcCompat="@drawable/ic_notification" />
+
+        <View
+            android:id="@+id/view"
+            android:layout_width="match_parent"
+            android:layout_height="160dp"
+            android:layout_below="@id/app_bar_home"
+            android:background="@drawable/top_blue_box" />
+
+        <LinearLayout
+            android:id="@+id/linear1"
+            android:layout_width="match_parent"
+            android:layout_height="200dp"
+            android:layout_below="@id/app_bar_home"
+            android:orientation="vertical">
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/main_card_home"
+                android:layout_width="match_parent"
+                android:layout_height="190dp"
                 android:layout_marginStart="16dp"
                 android:layout_marginEnd="16dp"
-                android:layout_marginTop="15dp"
-                >
+                android:padding="16dp"
+                app:cardCornerRadius="20dp">
 
-                <de.hdodenhof.circleimageview.CircleImageView
-                    android:id="@+id/user_home"
-                    android:layout_width="35dp"
-                    android:layout_alignParentEnd="true"
-                    android:layout_height="35dp"
-                    android:src="@drawable/image_user" />
-                <TextView
-                    android:id="@+id/textSD"
+                <RelativeLayout
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Selamat Datang"
-                    android:fontFamily="@font/roboto_black"
-                    android:textSize="16sp"
-                    android:textColor="@color/colorPrimary"/>
-                <TextView
-                    android:id="@+id/nama_murid"
-                    android:layout_width="wrap_content"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginTop="16dp"
+                    android:layout_marginEnd="16dp"
+                    android:orientation="vertical">
+
+                    <de.hdodenhof.circleimageview.CircleImageView
+                        android:id="@+id/img_avatar"
+                        android:layout_width="40dp"
+                        android:layout_height="40dp"
+                        android:layout_alignParentEnd="true"
+                        android:src="@drawable/image_user"
+                        app:civ_border_color="@color/colorPrimary"
+                        app:civ_border_width="2dp" />
+
+                    <TextView
+                        android:id="@+id/textSD"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/roboto_black"
+                        android:text="Selamat Datang"
+                        android:textColor="@color/colorPrimary"
+                        android:textSize="24sp" />
+
+                    <TextView
+                        android:id="@+id/nama_murid"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@id/textSD"
+                        android:fontFamily="@font/roboto"
+                        android:text="Rahadian Fernandika"
+                        android:textColor="@color/Black"
+                        android:textSize="14sp" />
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_below="@id/textSD"
-                    android:text="Rahadian Fernandika"
-                    android:fontFamily="@font/roboto_thin"
-                    android:textSize="12sp"
-                    android:textColor="@color/Black"/>
-            </RelativeLayout>
+                    android:layout_marginTop="16dp">
+
+                    <androidx.cardview.widget.CardView
+                        android:id="@+id/presensi_card"
+                        android:layout_width="69dp"
+                        android:layout_height="69dp"
+                        android:layout_alignParentStart="true"
+                        android:layout_marginStart="20dp"
+                        android:layout_marginTop="65dp"
+                        android:outlineSpotShadowColor="@color/Black"
+                        app:cardCornerRadius="20dp">
+
+                        <ImageView
+                            android:layout_width="50dp"
+                            android:layout_height="50dp"
+                            android:layout_gravity="center"
+                            android:src="@drawable/ic_presensi" />
+                    </androidx.cardview.widget.CardView>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@id/presensi_card"
+                        android:layout_alignParentStart="true"
+                        android:layout_marginStart="26dp"
+                        android:layout_marginTop="4dp"
+                        android:fontFamily="@font/roboto_medium"
+                        android:text="Presensi"
+                        android:textColor="@color/Black" />
+
+                    <androidx.cardview.widget.CardView
+                        android:id="@+id/tugas_card"
+                        android:layout_width="69dp"
+                        android:layout_height="69dp"
+                        android:layout_centerHorizontal="true"
+                        android:layout_marginTop="65dp"
+                        android:outlineSpotShadowColor="@color/Black"
+                        app:cardCornerRadius="20dp">
+
+                        <ImageView
+                            android:layout_width="50dp"
+                            android:layout_height="50dp"
+                            android:layout_gravity="center"
+                            android:src="@drawable/ic_tugas" />
+                    </androidx.cardview.widget.CardView>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@id/tugas_card"
+                        android:layout_centerHorizontal="true"
+                        android:layout_marginTop="4dp"
+                        android:fontFamily="@font/roboto_medium"
+                        android:text="Tugas"
+                        android:textColor="@color/Black" />
+
+                    <androidx.cardview.widget.CardView
+                        android:id="@+id/spp_card"
+                        android:layout_width="69dp"
+                        android:layout_height="69dp"
+                        android:layout_alignParentEnd="true"
+                        android:layout_marginTop="65dp"
+                        android:layout_marginEnd="20dp"
+                        android:outlineSpotShadowColor="@color/Black"
+                        app:cardCornerRadius="20dp">
+
+                        <ImageView
+                            android:layout_width="50dp"
+                            android:layout_height="50dp"
+                            android:layout_gravity="center"
+                            android:src="@drawable/ic_spp" />
+
+                    </androidx.cardview.widget.CardView>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@id/spp_card"
+                        android:layout_alignParentEnd="true"
+                        android:layout_marginTop="4dp"
+                        android:layout_marginEnd="20dp"
+                        android:fontFamily="@font/roboto_medium"
+                        android:text="Pembayaran"
+                        android:textColor="@color/Black" />
+
+                </RelativeLayout>
+            </androidx.cardview.widget.CardView>
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/linear2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/linear1"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:fontFamily="@font/roboto_bold"
+                android:text="Lihat juga"
+                android:textColor="@color/colorPrimary"
+                android:textSize="18sp" />
 
             <RelativeLayout
+                android:id="@+id/relative_lihat_juga"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content">
+
                 <androidx.cardview.widget.CardView
-                    android:id="@+id/presensi_card"
-                    android:outlineSpotShadowColor="@color/Black"
-                    app:cardCornerRadius="20dp"
-                    android:layout_width="69dp"
-                    android:layout_height="69dp"
-                    android:layout_marginTop="65dp"
+                    android:id="@+id/sekolah_profil_card"
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
                     android:layout_alignParentStart="true"
-                    android:layout_marginStart="20dp"
-                    >
+                    android:layout_marginStart="60dp"
+                    android:layout_marginTop="17dp"
+                    android:outlineSpotShadowColor="@color/Black"
+                    app:cardCornerRadius="10dp">
+
                     <ImageView
-                        android:layout_width="50dp"
-                        android:layout_height="50dp"
+                        android:layout_width="40dp"
+                        android:layout_height="40dp"
                         android:layout_gravity="center"
-                        android:src="@drawable/ic_presensi"
-                        />
+                        android:src="@drawable/ic_sekolah_ic" />
                 </androidx.cardview.widget.CardView>
 
                 <TextView
+                    android:id="@+id/textPS"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="4dp"
-                    android:text="Presensi"
+                    android:layout_below="@id/sekolah_profil_card"
+                    android:layout_marginStart="42dp"
+                    android:layout_marginTop="6dp"
                     android:fontFamily="@font/roboto_medium"
+                    android:text="Profil sekolah"
+                    android:textColor="@color/Black" />
+
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/guru_card"
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginTop="17dp"
+                    android:outlineSpotShadowColor="@color/Black"
+                    app:cardCornerRadius="10dp"
+
+                    >
+
+                    <ImageView
+                        android:layout_width="40dp"
+                        android:layout_height="40dp"
+                        android:layout_gravity="center"
+                        android:src="@drawable/ic_guru" />
+
+                </androidx.cardview.widget.CardView>
+
+                <TextView
+                    android:id="@+id/textGuru"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/guru_card"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginTop="6dp"
+                    android:fontFamily="@font/roboto_medium"
+                    android:text="Guru"
+                    android:textColor="@color/Black" />
+
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/kegiatan_card"
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
+                    android:layout_alignParentEnd="true"
+                    android:layout_marginTop="17dp"
+                    android:layout_marginEnd="60dp"
+                    android:outlineSpotShadowColor="@color/Black"
+                    app:cardCornerRadius="10dp">
+
+                    <ImageView
+                        android:layout_width="40dp"
+                        android:layout_height="40dp"
+                        android:layout_gravity="center"
+                        android:src="@drawable/ic_kegiatan" />
+
+                </androidx.cardview.widget.CardView>
+
+                <TextView
+                    android:id="@+id/textKegiatan"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/kegiatan_card"
+                    android:layout_alignParentEnd="true"
+                    android:layout_marginTop="6dp"
+                    android:layout_marginEnd="57dp"
+                    android:fontFamily="@font/roboto_medium"
+                    android:text="Kegiatan"
+                    android:textColor="@color/Black" />
+
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/materi_card"
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
+                    android:layout_below="@id/textPS"
                     android:layout_alignParentStart="true"
-                    android:layout_marginStart="26dp"
-                    android:layout_below="@id/presensi_card"
-                    />
-
-                <androidx.cardview.widget.CardView
-                    android:id="@+id/tugas_card"
+                    android:layout_marginStart="60dp"
+                    android:layout_marginTop="17dp"
                     android:outlineSpotShadowColor="@color/Black"
-                    app:cardCornerRadius="20dp"
-                    android:layout_width="69dp"
-                    android:layout_height="69dp"
-                    android:layout_marginTop="65dp"
-                    android:layout_centerHorizontal="true"
-                    >
+                    app:cardCornerRadius="10dp">
+
                     <ImageView
-                        android:layout_width="50dp"
-                        android:layout_height="50dp"
+                        android:layout_width="40dp"
+                        android:layout_height="40dp"
                         android:layout_gravity="center"
-                        android:src="@drawable/ic_tugas"
-                        />
+                        android:src="@drawable/ic_materi" />
                 </androidx.cardview.widget.CardView>
 
                 <TextView
+                    android:id="@+id/textMA"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="4dp"
-                    android:text="Tugas"
+                    android:layout_below="@id/materi_card"
+                    android:layout_marginStart="49dp"
+                    android:layout_marginTop="6dp"
                     android:fontFamily="@font/roboto_medium"
-                    android:layout_centerHorizontal="true"
-                    android:layout_below="@id/tugas_card"
-                    />
+                    android:text="Materi anak"
+                    android:textColor="@color/Black" />
 
                 <androidx.cardview.widget.CardView
-                    android:id="@+id/spp_card"
+                    android:id="@+id/parent_card"
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
+                    android:layout_below="@id/textGuru"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginTop="17dp"
                     android:outlineSpotShadowColor="@color/Black"
-                    app:cardCornerRadius="20dp"
-                    android:layout_width="69dp"
-                    android:layout_height="69dp"
-                    android:layout_marginTop="65dp"
-                    android:layout_alignParentEnd="true"
-                    android:layout_marginEnd="20dp"
+                    app:cardCornerRadius="10dp"
+
                     >
+
                     <ImageView
-                        android:layout_width="50dp"
-                        android:layout_height="50dp"
+                        android:layout_width="40dp"
+                        android:layout_height="40dp"
                         android:layout_gravity="center"
-                        android:src="@drawable/ic_spp"
-                        />
+                        android:src="@drawable/ic_parent" />
 
                 </androidx.cardview.widget.CardView>
 
                 <TextView
+                    android:id="@+id/textParenting"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="4dp"
-                    android:text="Pembayaran"
+                    android:layout_below="@id/parent_card"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginTop="6dp"
                     android:fontFamily="@font/roboto_medium"
-                    android:layout_alignParentEnd="true"
-                    android:layout_marginEnd="20dp"
-                    android:layout_below="@id/spp_card"
-                    />
+                    android:text="Parenting"
+                    android:textColor="@color/Black" />
 
             </RelativeLayout>
-        </androidx.cardview.widget.CardView>
-    </LinearLayout>
 
-<LinearLayout
-    android:id="@+id/linear2"
-    android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    android:layout_below="@id/linear1"
-    android:orientation="vertical">
+        </LinearLayout>
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
-        android:text="Lihat juga"
-        android:fontFamily="@font/roboto_bold"
-        android:textSize="18sp"
-        android:textColor="@color/colorPrimary"
-        />
 
-    <RelativeLayout
-        android:id="@+id/relative_lihat_juga"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/textPG"
+            android:layout_below="@id/linear2"
+            android:layout_marginTop="16dp">
 
-        <androidx.cardview.widget.CardView
-            android:id="@+id/sekolah_profil_card"
-            android:outlineSpotShadowColor="@color/Black"
-            app:cardCornerRadius="10dp"
-            android:layout_width="50dp"
-            android:layout_height="50dp"
-            android:layout_marginTop="17dp"
-            android:layout_alignParentStart="true"
-            android:layout_marginStart="60dp"
-            >
-            <ImageView
-                android:layout_width="40dp"
-                android:layout_height="40dp"
-                android:layout_gravity="center"
-                android:src="@drawable/ic_sekolah_ic" />
-        </androidx.cardview.widget.CardView>
+            <TextView
+                android:layout_alignParentStart="true"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:fontFamily="@font/roboto_bold"
+                android:text="Pengumuman"
+                android:textColor="@color/colorPrimary"
+                android:textSize="18sp" />
 
-        <TextView
-            android:id="@+id/textPS"
+            <TextView
+                android:id="@+id/tv_lihat_semua"
+                android:layout_alignParentBottom="true"
+                android:layout_alignParentEnd="true"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="16dp"
+                android:fontFamily="@font/roboto_bold"
+                android:text="Lihat Semua"
+                android:textColor="@color/Black"
+                android:textSize="12sp" />
+        </RelativeLayout>
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rv_pengumuman_beranda"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Profil sekolah"
-            android:layout_marginTop="6dp"
-            android:fontFamily="@font/roboto_medium"
-            android:layout_marginStart="42dp"
-            android:layout_below="@id/sekolah_profil_card"
-            />
-
-        <androidx.cardview.widget.CardView
-            android:id="@+id/guru_card"
-            android:outlineSpotShadowColor="@color/Black"
-            app:cardCornerRadius="10dp"
-            android:layout_width="50dp"
-            android:layout_height="50dp"
-            android:layout_marginTop="17dp"
-            android:layout_centerHorizontal="true"
-
-            >
-            <ImageView
-                android:layout_width="40dp"
-                android:layout_height="40dp"
-                android:layout_gravity="center"
-                android:src="@drawable/ic_guru" />
-
-        </androidx.cardview.widget.CardView>
-
-        <TextView
-            android:id="@+id/textGuru"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Guru"
-            android:layout_marginTop="6dp"
-            android:fontFamily="@font/roboto_medium"
-            android:layout_centerHorizontal="true"
-            android:layout_below="@id/guru_card"
-            />
-
-        <androidx.cardview.widget.CardView
-            android:id="@+id/kegiatan_card"
-            android:outlineSpotShadowColor="@color/Black"
-            app:cardCornerRadius="10dp"
-            android:layout_width="50dp"
-            android:layout_height="50dp"
-            android:layout_marginTop="17dp"
-            android:layout_alignParentEnd="true"
-            android:layout_marginEnd="60dp">
-
-            <ImageView
-                android:layout_width="40dp"
-                android:layout_height="40dp"
-                android:layout_gravity="center"
-                android:src="@drawable/ic_kegiatan" />
-
-        </androidx.cardview.widget.CardView>
-
-        <TextView
-            android:id="@+id/textKegiatan"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Kegiatan"
-            android:layout_marginTop="6dp"
-            android:fontFamily="@font/roboto_medium"
-            android:layout_alignParentEnd="true"
-            android:layout_marginEnd="57dp"
-            android:layout_below="@id/kegiatan_card"
-            />
-
-        <androidx.cardview.widget.CardView
-            android:id="@+id/materi_card"
-            android:outlineSpotShadowColor="@color/Black"
-            app:cardCornerRadius="10dp"
-            android:layout_width="50dp"
-            android:layout_height="50dp"
-            android:layout_marginTop="17dp"
-            android:layout_alignParentStart="true"
-            android:layout_below="@id/textPS"
-            android:layout_marginStart="60dp"
-            >
-            <ImageView
-                android:layout_width="40dp"
-                android:layout_height="40dp"
-                android:layout_gravity="center"
-                android:src="@drawable/ic_materi" />
-        </androidx.cardview.widget.CardView>
-
-        <TextView
-            android:id="@+id/textMA"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Materi anak"
-            android:layout_marginTop="6dp"
-            android:fontFamily="@font/roboto_medium"
-            android:layout_marginStart="49dp"
-            android:layout_below="@id/materi_card"
-            />
-        <androidx.cardview.widget.CardView
-            android:id="@+id/parent_card"
-            android:outlineSpotShadowColor="@color/Black"
-            app:cardCornerRadius="10dp"
-            android:layout_width="50dp"
-            android:layout_height="50dp"
-            android:layout_below="@id/textGuru"
-            android:layout_marginTop="17dp"
-            android:layout_centerHorizontal="true"
-
-            >
-            <ImageView
-                android:layout_width="40dp"
-                android:layout_height="40dp"
-                android:layout_gravity="center"
-                android:src="@drawable/ic_parent" />
-
-        </androidx.cardview.widget.CardView>
-
-        <TextView
-            android:id="@+id/textParenting"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Parenting"
-            android:layout_marginTop="6dp"
-            android:fontFamily="@font/roboto_medium"
-            android:layout_centerHorizontal="true"
-            android:layout_below="@id/parent_card"
-            />
+            android:layout_below="@id/textPG"
+            android:layout_marginStart="0dp"
+            android:layout_marginLeft="0dp"
+            tools:listitem="@layout/holder_pengumuman" />
 
     </RelativeLayout>
 
-</LinearLayout>
-
-
-    <TextView
-        android:id="@+id/textPG"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
-        android:layout_below="@id/linear2"
-        android:layout_marginTop="36dp"
-        android:text="Pengumuman"
-        android:fontFamily="@font/roboto_bold"
-        android:textSize="18sp"
-        android:textColor="@color/colorPrimary"
-        />
-
-            <androidx.recyclerview.widget.RecyclerView
-                android:id="@+id/RecyclerViewPG"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="0dp"
-                android:layout_marginLeft="0dp"
-                android:layout_below="@id/textPG"
-                tools:listitem="@layout/holder_pengumuman" />
-
-        </RelativeLayout>
+</ScrollView>
 
 
 
