@@ -2,12 +2,12 @@
 <resources>
     <color name="colorPrimary">#2F80ED</color>
     <color name="colorPrimaryDark">#0055BA</color>
-    <color name="colorAccent">#ffffff</color>
     <color name="Grey">#727072</color>
     <color name="ColorLight">#60A1FA</color>
     <!--Warna tambahan setelah refactor-->
     <color name="colorLilyWhite">#73E8E4E6</color>
     <color name="colorWhite">#FFFFFF</color>
     <color name="Black">#222831</color>
+    <color name="colorAccent">#D8345F</color>
 
 </resources>
