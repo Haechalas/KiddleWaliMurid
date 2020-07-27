@@ -1,189 +1,303 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:orientation="vertical"
-    tools:context=".fragments.ProfilFragment">
-
+    tools:context="fragments.ProfilFragment">
 
     <ImageView
-        android:id="@+id/image_murid"
-        android:layout_width="match_parent"
-        android:layout_height="410dp"
-        android:adjustViewBounds="true"
+        android:id="@+id/img_avatar_detail_murid"
+        android:layout_width="wrap_content"
+        android:layout_height="250dp"
         android:scaleType="centerCrop"
-        android:src="@drawable/profil_img"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/image_user" />
+
+    <View
+        android:id="@+id/view11"
+        android:layout_width="wrap_content"
+        android:layout_height="250dp"
+        android:background="@drawable/black_layer"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-        <TextView
-            android:id="@+id/text_nama_murid"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_centerInParent="true"
-            android:layout_marginBottom="40dp"
-            android:fontFamily="@font/roboto_bold"
-            android:text="Terrick Noah"
-            android:textColor="@color/colorWhite"
-            android:textSize="24sp"
-            app:layout_constraintBottom_toBottomOf="@id/image_murid"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"/>
-
     <ImageView
-        android:id="@+id/image_ic_settings"
+        android:id="@+id/menu_pengaturan"
         android:layout_width="30dp"
         android:layout_height="30dp"
-        android:layout_marginTop="20dp"
+        android:layout_marginTop="16dp"
         android:layout_marginEnd="16dp"
-        android:src="@drawable/ic_settings"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-
-    <!--<ListView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"/>
-        -->
-
-    <ImageView
-        android:id="@+id/image_ic_camera"
-        android:layout_width="66dp"
-        android:layout_height="66dp"
-        android:layout_marginTop="20dp"
-        android:layout_marginEnd="20dp"
-        android:src="@drawable/ic_camera"
-        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.54" />
+        app:srcCompat="@drawable/ic_pengaturan" />
 
     <TextView
-            android:id="@+id/text_kelas"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="16dp"
-            android:layout_marginTop="14dp"
-            android:fontFamily="@font/roboto_bold"
-            android:text="@string/Kelas"
-            android:textColor="@color/colorPrimary"
-            android:textSize="18sp"
-            app:layout_constraintTop_toBottomOf="@id/image_murid"
-            app:layout_constraintStart_toStartOf="parent"/>
+        android:id="@+id/tv_murid_nama"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/roboto_bold"
+        android:text="Rahadika Fernandian"
+        android:textColor="@color/colorWhite"
+        android:textSize="24sp"
+        app:layout_constraintBottom_toTopOf="@+id/tv_murid_nomor"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <TextView
+        android:id="@+id/tv_murid_nomor"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="16dp"
+        android:fontFamily="@font/roboto_medium"
+        android:text="19990305"
+        android:textColor="@color/colorWhite"
+        android:textSize="14sp"
+        app:layout_constraintBottom_toBottomOf="@+id/img_avatar_detail_murid"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <LinearLayout
+        android:id="@+id/linearLayout24"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="16dp"
+        android:orientation="vertical"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/img_avatar_detail_murid">
 
         <TextView
-            android:id="@+id/text_isi_kelas"
-            android:layout_width="wrap_content"
+            android:id="@+id/textView36"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_below="@+id/text_kelas"
-            android:layout_marginStart="16dp"
             android:fontFamily="@font/roboto_bold"
+            android:text="Kelas"
+            android:textColor="@color/colorPrimary"
+            android:textSize="18sp" />
+
+        <TextView
+            android:id="@+id/tv_murid_kelas"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/roboto"
             android:text="Bintang Kecil"
-            android:textColor="@color/Grey"
-            android:textSize="18sp"
-            app:layout_constraintTop_toBottomOf="@id/text_kelas"
-            app:layout_constraintStart_toStartOf="parent"/>
+            android:textColor="@color/Black"
+            android:textSize="16sp" />
+    </LinearLayout>
+
+    <View
+        android:id="@+id/divider14"
+        android:layout_width="match_parent"
+        android:layout_height="2dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="16dp"
+        android:background="?android:attr/listDivider"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/linearLayout24" />
+
+    <LinearLayout
+        android:id="@+id/linearLayout25"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="16dp"
+        android:orientation="vertical"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/divider14">
 
         <TextView
-            android:id="@+id/text_ttl"
-            android:layout_width="wrap_content"
+            android:id="@+id/textView37"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_below="@+id/text_isi_kelas"
-            android:layout_marginStart="16dp"
-            android:layout_marginTop="20dp"
             android:fontFamily="@font/roboto_bold"
-            android:text="Tempat Tanggal Lahir"
+            android:text="Tempat, Tanggal Lahir"
             android:textColor="@color/colorPrimary"
-            android:textSize="18sp"
-            app:layout_constraintTop_toBottomOf="@id/text_isi_kelas"
-            app:layout_constraintStart_toStartOf="parent"/>
+            android:textSize="18sp" />
 
         <TextView
-            android:id="@+id/text_isi_ttl"
-            android:layout_width="wrap_content"
+            android:id="@+id/tv_murid_ttl"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_below="@+id/text_ttl"
-            android:layout_marginStart="16dp"
-            android:fontFamily="@font/roboto_bold"
-            android:text="02 Juni 2009 | Bandung"
-            android:textColor="@color/Grey"
-            android:textSize="18sp"
-            app:layout_constraintTop_toBottomOf="@id/text_ttl"
-            app:layout_constraintStart_toStartOf="parent"/>
+            android:fontFamily="@font/roboto"
+            android:text="Kuningan, 3 Mei 1999"
+            android:textColor="@color/Black"
+            android:textSize="16sp" />
+    </LinearLayout>
 
+    <View
+        android:id="@+id/divider15"
+        android:layout_width="match_parent"
+        android:layout_height="2dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="16dp"
+        android:background="?android:attr/listDivider"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/linearLayout25" />
+
+    <LinearLayout
+        android:id="@+id/linearLayout26"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="16dp"
+        android:orientation="vertical"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/divider15">
 
         <TextView
-            android:id="@+id/text_alamat"
-            android:layout_width="wrap_content"
+            android:id="@+id/textView38"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_below="@+id/text_isi_ttl"
-            android:layout_marginStart="16dp"
-            android:layout_marginTop="20dp"
             android:fontFamily="@font/roboto_bold"
             android:text="Alamat"
             android:textColor="@color/colorPrimary"
-            android:textSize="18sp"
-            app:layout_constraintTop_toBottomOf="@id/text_isi_ttl"
-            app:layout_constraintStart_toStartOf="parent"/>
+            android:textSize="18sp" />
 
         <TextView
-            android:id="@+id/text_isi_alamat"
-            android:layout_width="wrap_content"
+            android:id="@+id/tv_murid_alamat"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_below="@+id/text_alamat"
-            android:layout_marginStart="16dp"
-            android:fontFamily="@font/roboto_bold"
-            android:text="Jl.Ikan pari blok i.5 no.14"
-            android:textColor="@color/Grey"
-            android:textSize="18sp"
-            app:layout_constraintTop_toBottomOf="@id/text_alamat"
-            app:layout_constraintStart_toStartOf="parent"/>
+            android:fontFamily="@font/roboto"
+            android:text="Jl. Kenangan No.17"
+            android:textColor="@color/Black"
+            android:textSize="16sp" />
+    </LinearLayout>
+
+    <View
+        android:id="@+id/divider16"
+        android:layout_width="match_parent"
+        android:layout_height="2dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="16dp"
+        android:background="?android:attr/listDivider"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/linearLayout26" />
+
+    <LinearLayout
+        android:id="@+id/linearLayout27"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="16dp"
+        android:orientation="vertical"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/divider16">
 
         <TextView
-            android:id="@+id/text_wali"
-            android:layout_width="wrap_content"
+            android:id="@+id/textView39"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_below="@+id/text_isi_alamat"
-            android:layout_marginStart="16dp"
-            android:layout_marginTop="20dp"
             android:fontFamily="@font/roboto_bold"
-            android:text="Wali Murid"
+            android:text="Orang Tua"
             android:textColor="@color/colorPrimary"
-            android:textSize="18sp"
-            app:layout_constraintTop_toBottomOf="@id/text_isi_alamat"
-            app:layout_constraintStart_toStartOf="parent"/>
+            android:textSize="18sp" />
 
-        <TextView
-            android:id="@+id/text_isi_wali"
-            android:layout_width="wrap_content"
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:id="@+id/textView61"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentStart="true"
+                android:fontFamily="@font/roboto"
+                android:text="Ayah:"
+                android:textColor="@color/Black"
+                android:textSize="14sp" />
+
+            <TextView
+                android:id="@+id/tv_murid_ayah"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:layout_toEndOf="@id/textView61"
+                android:fontFamily="@font/roboto"
+                android:text="Ji Chang Wook"
+                android:textColor="@color/Black" />
+
+            <TextView
+                android:id="@+id/tv_kontak_ayah"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/textView61"
+                android:fontFamily="@font/roboto"
+                android:text="085601143329"
+                android:textColor="@color/Black" />
+
+            <ImageView
+                android:id="@+id/btn_telepon_ayah"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentEnd="true"
+                android:layout_centerVertical="true"
+                app:srcCompat="@drawable/ic_telepon" />
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_below="@+id/text_wali"
-            android:layout_marginStart="16dp"
-            android:fontFamily="@font/roboto_bold"
-            android:text="Budi Santoso"
-            android:textColor="@color/Grey"
-            android:textSize="18sp"
-            app:layout_constraintTop_toBottomOf="@id/text_wali"
-            app:layout_constraintStart_toStartOf="parent"/>
-
-        <ImageView
-            android:id="@+id/image_phone"
-            android:layout_width="25dp"
-            android:layout_height="25dp"
-            android:layout_marginEnd="40dp"
-            android:layout_marginBottom="100dp"
-            android:src="@drawable/ic_phone"
-            app:layout_constraintLeft_toRightOf="@id/text_isi_wali"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/text_wali"/>
+            android:layout_marginTop="4dp">
 
 
+            <TextView
+                android:id="@+id/textView6"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentStart="true"
+                android:fontFamily="@font/roboto"
+                android:text="Ibu:"
+                android:textColor="@color/Black"
+                android:textSize="14sp" />
 
+            <TextView
+                android:id="@+id/tv_murid_ibu"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:layout_toEndOf="@id/textView6"
+                android:fontFamily="@font/roboto"
+                android:text="Lee Ji Eun"
+                android:textColor="@color/Black" />
 
+            <TextView
+                android:id="@+id/tv_kontak_ibu"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/textView6"
+                android:fontFamily="@font/roboto"
+                android:text="085601143329"
+                android:textColor="@color/Black" />
 
-
+            <ImageView
+                android:id="@+id/btn_telepon_ibu"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentEnd="true"
+                app:srcCompat="@drawable/ic_telepon" />
+        </RelativeLayout>
+    </LinearLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
