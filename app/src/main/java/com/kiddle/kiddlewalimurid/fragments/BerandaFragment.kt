@@ -7,7 +7,10 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
 import androidx.fragment.app.Fragment
+import androidx.navigation.NavController
+import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
+import com.google.android.material.bottomnavigation.BottomNavigationView
 import com.kiddle.kiddlewalimurid.R
 import com.kiddle.kiddlewalimurid.UI.DetailPengumumanActivity
 import com.kiddle.kiddlewalimurid.UI.PengumumanActivity
@@ -16,6 +19,8 @@ import com.kiddle.kiddlewalimurid.UI.TugasActivity
 import com.kiddle.kiddlewalimurid.adapter.PengumumanAdapter
 import com.kiddle.kiddlewalimurid.model.jurnal
 import com.kiddle.kiddlewalimurid.model.Pengumuman
+import kotlinx.android.synthetic.main.activity_main.*
+import kotlinx.android.synthetic.main.activity_main.view.*
 import kotlinx.android.synthetic.main.fragment_beranda.*
 import kotlinx.android.synthetic.main.fragment_beranda.view.*
 import java.util.ArrayList
@@ -51,6 +56,14 @@ class BerandaFragment : Fragment() {
 
         view.tugas_card.setOnClickListener {
             startActivity(Intent(activity, TugasActivity::class.java))
+        }
+
+        view.spp_card.setOnClickListener {
+            activity?.bottom_navigation?.selectedItemId = R.id.menu_pembayaran
+        }
+
+        view.img_avatar.setOnClickListener {
+            activity?.bottom_navigation?.selectedItemId = R.id.menu_profil
         }
 
         return view
