@@ -1,57 +1,59 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="80dp"
-    android:orientation="vertical"
-    app:cardCornerRadius="5dp"
-    android:elevation="5dp"
-    android:layout_marginStart="16dp"
-    android:layout_marginEnd="16dp"
-    android:layout_marginTop="12dp"
-    android:layout_marginBottom="5dp"
-    >
+    android:layout_marginBottom="8dp"
+    android:background="@drawable/blue_list">
 
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:background="#60A1FA"
-        android:orientation="vertical"
-        >
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:orientation="horizontal"
-            android:layout_marginLeft="10dp"
-            android:layout_marginRight="10dp"
-            android:layout_marginTop="15dp"
-            android:layout_marginBottom="15dp">
+    <ImageView
+        android:id="@+id/img_icon_notifikasi"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/notif" />
 
+    <TextView
+        android:id="@+id/tv_judul_notifikasi"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="24dp"
+        android:fontFamily="@font/roboto_medium"
+        android:text="Pembelajaran Jarak Jauh"
+        android:textColor="@color/colorWhite"
+        android:textSize="14sp"
+        app:layout_constraintStart_toEndOf="@+id/img_icon_notifikasi"
+        app:layout_constraintTop_toTopOf="parent" />
 
+    <TextView
+        android:id="@+id/tv_waktu_notifikasi"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="4dp"
+        android:fontFamily="@font/roboto_light"
+        android:text="7 Juli 2020, 10.00 WIB"
+        android:textColor="@color/colorWhite"
+        android:textSize="12sp"
+        app:layout_constraintStart_toEndOf="@+id/img_icon_notifikasi"
+        app:layout_constraintTop_toBottomOf="@+id/tv_judul_notifikasi" />
 
-            <RelativeLayout
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                >
+    <TextView
+        android:id="@+id/tv_jenis_notifikasi"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="4dp"
+        android:fontFamily="@font/roboto_light"
+        android:text="Pengumuman"
+        android:textColor="@color/colorWhite"
+        android:textSize="12sp"
+        app:layout_constraintStart_toEndOf="@+id/tv_waktu_notifikasi"
+        app:layout_constraintTop_toBottomOf="@+id/tv_judul_notifikasi" />
 
-                <TextView
-                    android:id="@+id/Notifjudul"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Judul"
-                    android:layout_centerVertical="true"
-                    android:textSize="18sp"
-                    android:textColor="#fff"
-                    android:fontFamily="@font/roboto_bold"
-
-                    />
-
-            </RelativeLayout>
-
-        </LinearLayout>
-
-    </LinearLayout>
-
-    <!-- Lanjut Jurnal_model -->
-
-</androidx.cardview.widget.CardView>
+</androidx.constraintlayout.widget.ConstraintLayout>

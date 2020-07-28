@@ -12,11 +12,9 @@ import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.google.android.material.bottomnavigation.BottomNavigationView
 import com.kiddle.kiddlewalimurid.R
-import com.kiddle.kiddlewalimurid.UI.DetailPengumumanActivity
-import com.kiddle.kiddlewalimurid.UI.PengumumanActivity
-import com.kiddle.kiddlewalimurid.UI.PresensiActivity
-import com.kiddle.kiddlewalimurid.UI.TugasActivity
+import com.kiddle.kiddlewalimurid.UI.*
 import com.kiddle.kiddlewalimurid.adapter.PengumumanAdapter
+import com.kiddle.kiddlewalimurid.model.Notifikasi
 import com.kiddle.kiddlewalimurid.model.jurnal
 import com.kiddle.kiddlewalimurid.model.Pengumuman
 import kotlinx.android.synthetic.main.activity_main.*
@@ -64,6 +62,10 @@ class BerandaFragment : Fragment() {
 
         view.img_avatar.setOnClickListener {
             activity?.bottom_navigation?.selectedItemId = R.id.menu_profil
+        }
+
+        view.ic_notification.setOnClickListener {
+            startActivity(Intent(activity, NotifikasiActivity::class.java))
         }
 
         return view
