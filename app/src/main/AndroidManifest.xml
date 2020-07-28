@@ -14,15 +14,10 @@
         <activity android:name=".UI.PengaturanActivity" />
         <activity android:name=".UI.CaraPembayaranActivity" />
         <activity android:name=".UI.ProfilSekolahActivity" />
-        <activity android:name=".UI.DetailGuruActivity" />
-        <activity android:name=".UI.DetailParentingActivity" />
-        <activity android:name=".UI.DetailMateriActivity" />
         <activity android:name=".UI.DetailPengumumanActivity" />
         <activity android:name=".UI.DetailJurnalActivity" />
         <activity android:name=".UI.DetailTugasActivity" />
         <activity android:name=".UI.PresensiActivity" />
-        <activity android:name=".UI.LoginActivity" />
-        <activity android:name=".UI.DetailKegiatanActivity" />
         <activity android:name=".UI.TugasActivity" />
         <activity android:name=".UI.GuruActivity" />
         <activity android:name=".UI.NotifikasiActivity" />

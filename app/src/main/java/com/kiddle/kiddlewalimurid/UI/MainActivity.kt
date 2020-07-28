@@ -4,7 +4,7 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import com.kiddle.kiddlewalimurid.R
-import com.kiddle.kiddlewalimurid.fragments.*
+import com.kiddle.kiddlewalimurid.fragment.*
 import kotlinx.android.synthetic.main.activity_main.*
 
 class MainActivity : AppCompatActivity() {

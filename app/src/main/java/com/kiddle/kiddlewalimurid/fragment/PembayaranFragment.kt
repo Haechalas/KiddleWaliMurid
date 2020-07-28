@@ -1,4 +1,4 @@
-package com.kiddle.kiddlewalimurid.fragments
+package com.kiddle.kiddlewalimurid.fragment
 
 import android.app.Activity
 import android.content.Intent
@@ -9,8 +9,6 @@ import android.provider.OpenableColumns
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.ArrayAdapter
-import android.widget.AutoCompleteTextView
 import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.LinearLayoutManager
@@ -18,8 +16,6 @@ import com.kiddle.kiddlewalimurid.R
 import com.kiddle.kiddlewalimurid.UI.CaraPembayaranActivity
 import com.kiddle.kiddlewalimurid.adapter.ItemBayarSppAdapter
 import com.kiddle.kiddlewalimurid.model.ItemBayarSpp
-import kotlinx.android.synthetic.main.activity_detail_tugas.*
-import kotlinx.android.synthetic.main.fragment_pembayaran.*
 import kotlinx.android.synthetic.main.fragment_pembayaran.view.*
 import java.io.File
 

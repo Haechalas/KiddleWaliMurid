@@ -1,4 +1,4 @@
-package com.kiddle.kiddlewalimurid.fragments
+package com.kiddle.kiddlewalimurid.fragment
 
 import android.os.Bundle
 import android.view.LayoutInflater

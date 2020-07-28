@@ -1,6 +1,7 @@
 package com.kiddle.kiddlewalimurid.UI
 
 import android.content.Intent
+import android.net.Uri
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Toast
@@ -9,6 +10,7 @@ import com.kiddle.kiddlewalimurid.R
 import com.kiddle.kiddlewalimurid.adapter.GuruAdapter
 import com.kiddle.kiddlewalimurid.model.Guru
 import kotlinx.android.synthetic.main.activity_guru.*
+import kotlinx.android.synthetic.main.holder_guru.*
 
 class GuruActivity : AppCompatActivity() {
 
@@ -31,7 +33,9 @@ class GuruActivity : AppCompatActivity() {
 
         //agar list guru dapat di-click sekaligus mengisi adapter dengan data di arraylist
         rv_guru.adapter = GuruAdapter(guru) {
-           Toast.makeText(this, "Clicked", Toast.LENGTH_SHORT).show()
+            val intent = Intent(Intent.ACTION_DIAL)
+            intent.data = Uri.parse("tel:" + tv_kontak_guru.text)
+            startActivity(intent)
         }
 
         //intent untuk kembali ke halaman sebelumnya
