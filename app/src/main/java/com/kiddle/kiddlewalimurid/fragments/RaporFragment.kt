@@ -15,27 +15,20 @@ import net.cachapa.expandablelayout.ExpandableLayout
 
 class RaporFragment : Fragment() , View.OnClickListener {
 
-    var kognitif:Boolean = false
-    var berbahasa:Boolean = false
-    var keterampilan:Boolean = false
-    var agama:Boolean = false
-    var motorik:Boolean = false
+    var kognitif: Boolean = false
+    var berbahasa: Boolean = false
+    var keterampilan: Boolean = false
+    var agama: Boolean = false
+    var motorik: Boolean = false
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
         val view = inflater.inflate(R.layout.fragment_rapor, container, false)
 
         //untuk dropdown semester
-
-        //untuk dropdown semester
         val semester = listOf("Ganjil", "Genap")
         val adapter_semester = ArrayAdapter<String>(requireActivity().applicationContext, R.layout.item_dropdown_text, semester)
         (view.dropdown_rapor_semester.editText as? AutoCompleteTextView)?.setAdapter(adapter_semester)
-
-        //untuk dropdown kelas
-        val kelas = listOf("Bintang Kecil", "Bintang Besar", "Bulan Kecil", "Bulan Besar")
-        val adapter_kelas = ArrayAdapter<String>(requireActivity().applicationContext, R.layout.item_dropdown_text, kelas)
-        (view.dropdown_rapor_kelas.editText as? AutoCompleteTextView)?.setAdapter(adapter_kelas)
-
+        
         //set on-click listener
         view.expand_button_0.setOnClickListener(this)
         view.expand_button_1.setOnClickListener(this)
