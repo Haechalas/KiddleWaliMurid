@@ -6,55 +6,70 @@
     android:layout_height="match_parent"
     tools:context=".UI.GuruActivity">
 
-    <View
-        android:id="@+id/view_ab_guru"
-        android:layout_width="0dp"
+    <RelativeLayout
+        android:id="@+id/relativeLayout5"
+        android:layout_width="match_parent"
         android:layout_height="60dp"
         android:background="@color/colorPrimary"
+        android:paddingStart="16dp"
+        android:paddingEnd="16dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent">
 
-    <ImageView
-        android:id="@+id/image_back_guru"
-        android:layout_width="25dp"
-        android:layout_height="20dp"
-        android:layout_marginStart="16dp"
-        app:layout_constraintBottom_toBottomOf="@+id/view_ab_guru"
-        app:layout_constraintStart_toStartOf="@+id/view_ab_guru"
-        app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/ic_back" />
+        <ImageView
+            android:id="@+id/img_back_guru"
+            android:layout_width="25dp"
+            android:layout_height="20dp"
+            android:layout_alignParentStart="true"
+            android:layout_centerVertical="true"
+            app:srcCompat="@drawable/ic_back" />
+
+        <TextView
+            android:id="@+id/textView35"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginStart="16dp"
+            android:layout_toEndOf="@id/img_back_guru"
+            android:fontFamily="@font/roboto_medium"
+            android:text="Guru"
+            android:textColor="@color/colorWhite"
+            android:textSize="24sp" />
+    </RelativeLayout>
+
     <View
-        android:id="@+id/view_bg_box"
-        android:layout_width="match_parent"
+        android:id="@+id/view9"
+        android:layout_width="0dp"
         android:layout_height="160dp"
         android:background="@drawable/top_blue_box"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/view_ab_guru" />
-
-    <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/RecyclerViewGuru"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="20dp"
-        app:layout_constraintTop_toBottomOf="@id/image_guru"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        tools:listitem="@layout/holder_guru" />
+        app:layout_constraintTop_toBottomOf="@+id/relativeLayout5" />
 
     <ImageView
-        android:id="@+id/image_guru"
-        android:layout_width="match_parent"
-        android:layout_height="205dp"
-        android:layout_centerHorizontal="true"
+        android:id="@+id/imageView10"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
-
         android:layout_marginEnd="16dp"
-        android:src="@drawable/image_guru"
+        android:adjustViewBounds="true"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/view"
-        app:layout_constraintTop_toBottomOf="@id/view_ab_guru" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/relativeLayout5"
+        app:srcCompat="@drawable/image_guru" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rv_guru"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="16dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imageView10" />
+
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -60,6 +60,14 @@ class BerandaFragment : Fragment() {
             startActivity(Intent(activity, NotifikasiActivity::class.java))
         }
 
+        view.sekolah_profil_card.setOnClickListener {
+            startActivity(Intent(activity, ProfilSekolahActivity::class.java))
+        }
+
+        view.guru_card.setOnClickListener {
+            startActivity(Intent(activity, GuruActivity::class.java))
+        }
+
         return view
 
     }

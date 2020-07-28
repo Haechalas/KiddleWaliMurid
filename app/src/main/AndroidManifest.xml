@@ -24,6 +24,7 @@
         <activity android:name=".UI.LoginActivity" />
         <activity android:name=".UI.DetailKegiatanActivity" />
         <activity android:name=".UI.TugasActivity" />
+        <activity android:name=".UI.GuruActivity" />
         <activity android:name=".UI.NotifikasiActivity" />
         <activity android:name=".UI.MainActivity">
             <intent-filter>

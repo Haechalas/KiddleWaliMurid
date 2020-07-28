@@ -3,10 +3,10 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.kiddle.kiddlewalimurid.R
-import com.kiddle.kiddlewalimurid.model.kegiatan
+import com.kiddle.kiddlewalimurid.model.Kegiatan
 import kotlinx.android.synthetic.main.holder_kegiatan.view.*
 
-class KegiatanAdapter(val kegiatan: List<kegiatan>) : RecyclerView.Adapter<KegiatanAdapter.KegiatanViewHolder>()  {
+class KegiatanAdapter(val Kegiatan: List<Kegiatan>) : RecyclerView.Adapter<KegiatanAdapter.KegiatanViewHolder>()  {
 
     class KegiatanViewHolder(val view: View) : RecyclerView.ViewHolder(view)
 
@@ -16,12 +16,10 @@ class KegiatanAdapter(val kegiatan: List<kegiatan>) : RecyclerView.Adapter<Kegia
             LayoutInflater.from(parent.context).inflate(R.layout.holder_kegiatan, parent, false))
     }
 
-    override fun getItemCount() = kegiatan.size
+    override fun getItemCount() = Kegiatan.size
 
     override fun onBindViewHolder(holder: KegiatanAdapter.KegiatanViewHolder, position: Int) {
-        val kegiatan = kegiatan[position]
-        holder.view.judulKG.text = kegiatan.judul
-        holder.view.img_KG.setImageResource(kegiatan.img)
+
 
     }
 
