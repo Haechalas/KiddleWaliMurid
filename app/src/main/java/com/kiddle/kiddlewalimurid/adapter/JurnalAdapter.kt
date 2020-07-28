@@ -1,31 +1,63 @@
 package com.kiddle.kiddlewalimurid.adapter
 
+import android.content.Context
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.ImageView
+import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.kiddle.kiddlewalimurid.R
-import com.kiddle.kiddlewalimurid.model.jurnal
-import kotlinx.android.synthetic.main.holder_jurnal.view.*
+import com.kiddle.kiddlewalimurid.model.Jurnal
 
-class JurnalAdapter(val jurnalanak: List<jurnal>) : RecyclerView.Adapter<JurnalAdapter.JurnalViewHolder>()  {
+class JurnalAdapter(private var data: List<Jurnal>, private val listener: (Jurnal) -> Unit) : RecyclerView.Adapter<JurnalAdapter.ViewHolder>() {
 
-    class JurnalViewHolder(val view:View) : RecyclerView.ViewHolder(view)
+    lateinit var contextAdapter: Context
 
+    //assign value dari model ke xml
+    class ViewHolder(view: View) : RecyclerView.ViewHolder(view) {
+        private val img_jenis: ImageView = view.findViewById(R.id.img_jenis_list_jurnal)
+        private val tv_jenis: TextView = view.findViewById(R.id.tv_jenis_list_jurnal)
+        private val tv_judul: TextView = view.findViewById(R.id.tv_judul_list_jurnal)
+        private val tv_tanggal: TextView = view.findViewById(R.id.tv_tanggal_list_jurnal)
 
-    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): JurnalViewHolder {
-    return JurnalViewHolder(
-        LayoutInflater.from(parent.context).inflate(R.layout.holder_jurnal, parent, false))
+        // kalau mau ditambah kelas apa atau deksripsi lain jangan lupa ubah layout dan model
+        fun bindItem(data: Jurnal, listener: (Jurnal) -> Unit, context: Context, position: Int) {
+            if (data.judul == "Motorik") {
+                img_jenis.setImageResource(R.drawable.ic_jurnal_motorik)
+            } else if (data.judul == "Keterampilan") {
+                img_jenis.setImageResource(R.drawable.ic_keterampilan)
+            } else if (data.judul == "Agama") {
+                img_jenis.setImageResource(R.drawable.ic_agama)
+            } else if (data.judul == "Berbahasa") {
+                img_jenis.setImageResource(R.drawable.ic_berbahasa)
+            } else if (data.judul == "Kognitif") {
+                img_jenis.setImageResource(R.drawable.ic_kognitif)
+            }
+            tv_jenis.text=data.jenis
+            tv_judul.text = data.judul
+            tv_tanggal.text=data.tanggal
+
+            itemView.setOnClickListener {
+                listener(data)
+            }
+        }
     }
 
-    override fun getItemCount() = jurnalanak.size
-
-    override fun onBindViewHolder(holder: JurnalViewHolder, position: Int) {
-    val jurnal = jurnalanak[position]
-        holder.view.Viewjudul.text = jurnal.judul
-        holder.view.Viewtanggal.text = jurnal.tanggal
-        holder.view.Viewbidang.text = jurnal.bidang
-
+    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
+        val layoutInflater = LayoutInflater.from(parent.context)
+        contextAdapter = parent.context
+        val inflatedView: View = layoutInflater.inflate(R.layout.holder_jurnal, parent, false)
+        return ViewHolder(
+            inflatedView
+        )
     }
 
+    override fun getItemCount(): Int {
+        return data.size
+    }
+
+    override fun onBindViewHolder(holder: ViewHolder, position: Int) {
+        holder.bindItem(data[position], listener, contextAdapter, position)
+    }
 }

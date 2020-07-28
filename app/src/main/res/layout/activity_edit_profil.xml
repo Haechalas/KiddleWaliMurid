@@ -70,7 +70,7 @@
                 android:layout_marginTop="8dp"
                 android:fontFamily="@font/roboto_bold"
                 android:text="Nama"
-                android:textColor="@color/colorPrimary"
+                android:textColor="@color/Black"
                 android:textSize="14sp" />
 
             <com.google.android.material.textfield.TextInputLayout
@@ -111,7 +111,7 @@
                 android:layout_marginTop="8dp"
                 android:fontFamily="@font/roboto_bold"
                 android:text="Password"
-                android:textColor="@color/colorPrimary"
+                android:textColor="@color/Black"
                 android:textSize="14sp" />
 
             <com.google.android.material.textfield.TextInputLayout
@@ -150,7 +150,7 @@
                 android:layout_marginTop="8dp"
                 android:fontFamily="@font/roboto_bold"
                 android:text="Alamat"
-                android:textColor="@color/colorPrimary"
+                android:textColor="@color/Black"
                 android:textSize="14sp" />
 
             <com.google.android.material.textfield.TextInputLayout
@@ -190,7 +190,7 @@
                 android:layout_marginTop="8dp"
                 android:fontFamily="@font/roboto_bold"
                 android:text="Tempat Tanggal Lahir"
-                android:textColor="@color/colorPrimary"
+                android:textColor="@color/Black"
                 android:textSize="14sp" />
 
             <com.google.android.material.textfield.TextInputLayout
@@ -236,7 +236,7 @@
                     android:layout_marginTop="8dp"
                     android:fontFamily="@font/roboto_bold"
                     android:text="Nama Ayah"
-                    android:textColor="@color/colorPrimary"
+                    android:textColor="@color/Black"
                     android:textSize="14sp" />
 
                 <com.google.android.material.textfield.TextInputLayout
@@ -270,7 +270,7 @@
                     android:layout_marginTop="8dp"
                     android:fontFamily="@font/roboto_bold"
                     android:text="Kontak Ayah"
-                    android:textColor="@color/colorPrimary"
+                    android:textColor="@color/Black"
                     android:textSize="14sp" />
 
                 <com.google.android.material.textfield.TextInputLayout
@@ -318,7 +318,7 @@
                     android:layout_marginTop="8dp"
                     android:fontFamily="@font/roboto_bold"
                     android:text="Nama Ibu"
-                    android:textColor="@color/colorPrimary"
+                    android:textColor="@color/Black"
                     android:textSize="14sp" />
 
                 <com.google.android.material.textfield.TextInputLayout
@@ -352,7 +352,7 @@
                     android:layout_marginTop="8dp"
                     android:fontFamily="@font/roboto_bold"
                     android:text="Kontak Ibu"
-                    android:textColor="@color/colorPrimary"
+                    android:textColor="@color/Black"
                     android:textSize="14sp" />
 
                 <com.google.android.material.textfield.TextInputLayout
