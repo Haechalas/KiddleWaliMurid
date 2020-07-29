@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    tools:context=".UI.EditProfil">
+    tools:context=".ui.EditProfil">
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
@@ -42,8 +42,8 @@
 
         <ImageButton
             android:id="@+id/btn_upload_murid"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
             android:layout_marginTop="220dp"
             android:layout_marginEnd="16dp"
             android:background="@drawable/blue_circle"

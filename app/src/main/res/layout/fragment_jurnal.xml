@@ -66,7 +66,7 @@
                 android:layout_marginTop="68dp"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="@+id/relativeLayout3"
-                app:srcCompat="@drawable/image_jurnal" />
+                app:srcCompat="@drawable/ilustrasi_jurnal" />
 
 
         </androidx.constraintlayout.widget.ConstraintLayout>

@@ -17,4 +17,7 @@
     <string name="kegiatan">Kegiatan</string>
     <string name="parenting">Parenting</string>
     <string name="materi">Materi</string>
+    <string name="message_dialog_bantuan_login">ID Murid dan Kata Sandi didapatkan dengan menghubungi staf Tata Usaha atau datang ke sekolah</string>
+    <string name="title_dialog_bantuan_login">Cara mendapatkan ID dan Password</string>
+    <string name="positive_button_dialog">OK</string>
 </resources>

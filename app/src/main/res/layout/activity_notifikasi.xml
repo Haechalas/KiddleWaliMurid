@@ -4,7 +4,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".UI.NotifikasiActivity">
+    tools:context=".ui.NotifikasiActivity">
 
     <RelativeLayout
         android:id="@+id/app_bar_notifikasi"
@@ -55,7 +55,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="@+id/view"
-        app:srcCompat="@drawable/image_notif" />
+        app:srcCompat="@drawable/ilustrasi_notif" />
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/rv_notifikasi"

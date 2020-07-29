@@ -24,7 +24,7 @@ class JurnalAdapter(private var data: List<Jurnal>, private val listener: (Jurna
         // kalau mau ditambah kelas apa atau deksripsi lain jangan lupa ubah layout dan model
         fun bindItem(data: Jurnal, listener: (Jurnal) -> Unit, context: Context, position: Int) {
             if (data.judul == "Motorik") {
-                img_jenis.setImageResource(R.drawable.ic_jurnal_motorik)
+                img_jenis.setImageResource(R.drawable.ic_motorik)
             } else if (data.judul == "Keterampilan") {
                 img_jenis.setImageResource(R.drawable.ic_keterampilan)
             } else if (data.judul == "Agama") {

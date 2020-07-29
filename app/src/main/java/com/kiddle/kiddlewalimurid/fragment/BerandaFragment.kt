@@ -9,7 +9,7 @@ import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.kiddle.kiddlewalimurid.R
-import com.kiddle.kiddlewalimurid.UI.*
+import com.kiddle.kiddlewalimurid.ui.*
 import com.kiddle.kiddlewalimurid.adapter.PengumumanAdapter
 import com.kiddle.kiddlewalimurid.model.Pengumuman
 import kotlinx.android.synthetic.main.activity_main.*

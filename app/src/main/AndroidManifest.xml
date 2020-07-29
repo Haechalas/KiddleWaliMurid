@@ -9,28 +9,34 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".UI.KonfirmasiPembayaranActivity"></activity>
-        <activity android:name=".UI.DetailKegiatanActivity" />
-        <activity android:name=".UI.KegiatanActivity" />
-        <activity android:name=".UI.EditProfil" />
-        <activity android:name=".UI.PengumumanActivity" />
-        <activity android:name=".UI.PengaturanActivity" />
-        <activity android:name=".UI.CaraPembayaranActivity" />
-        <activity android:name=".UI.ProfilSekolahActivity" />
-        <activity android:name=".UI.DetailPengumumanActivity" />
-        <activity android:name=".UI.DetailJurnalActivity" />
-        <activity android:name=".UI.DetailTugasActivity" />
-        <activity android:name=".UI.PresensiActivity" />
-        <activity android:name=".UI.TugasActivity" />
-        <activity android:name=".UI.GuruActivity" />
-        <activity android:name=".UI.NotifikasiActivity" />
-        <activity android:name=".UI.MainActivity">
+        <activity android:name=".ui.LoginActivity"></activity>
+        <activity android:name=".onboarding.OnboardingRapor" />
+        <activity android:name=".onboarding.OnboardingPembayaran" />
+        <activity android:name=".onboarding.OnboardingJurnal" />
+        <activity android:name=".onboarding.OnboardingPresensi" />
+        <activity android:name=".ui.SplashActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity android:name=".ui.KonfirmasiPembayaranActivity" />
+        <activity android:name=".ui.DetailKegiatanActivity" />
+        <activity android:name=".ui.KegiatanActivity" />
+        <activity android:name=".ui.EditProfil" />
+        <activity android:name=".ui.PengumumanActivity" />
+        <activity android:name=".ui.PengaturanActivity" />
+        <activity android:name=".ui.CaraPembayaranActivity" />
+        <activity android:name=".ui.ProfilSekolahActivity" />
+        <activity android:name=".ui.DetailPengumumanActivity" />
+        <activity android:name=".ui.DetailJurnalActivity" />
+        <activity android:name=".ui.DetailTugasActivity" />
+        <activity android:name=".ui.PresensiActivity" />
+        <activity android:name=".ui.TugasActivity" />
+        <activity android:name=".ui.GuruActivity" />
+        <activity android:name=".ui.NotifikasiActivity" />
+        <activity android:name=".ui.MainActivity" />
 
         <meta-data
             android:name="preloaded_fonts"

@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".UI.DetailJurnalActivity">
+    tools:context=".ui.DetailJurnalActivity">
 
     <FrameLayout
         android:id="@+id/frameLayout"
@@ -35,7 +35,7 @@
             android:layout_height="match_parent"
             android:scaleType="fitXY"
             android:visibility="gone"
-            app:srcCompat="@drawable/image_jurnal" />
+            app:srcCompat="@drawable/image_detail_kegiatan" />
 
     </FrameLayout>
 

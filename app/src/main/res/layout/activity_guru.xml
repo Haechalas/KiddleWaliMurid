@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".UI.GuruActivity">
+    tools:context=".ui.GuruActivity">
 
     <RelativeLayout
         android:id="@+id/relativeLayout5"
@@ -57,7 +57,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/relativeLayout5"
-        app:srcCompat="@drawable/image_guru" />
+        app:srcCompat="@drawable/ilustrasi_guru" />
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/rv_guru"

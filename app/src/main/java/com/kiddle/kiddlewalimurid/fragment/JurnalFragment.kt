@@ -9,7 +9,7 @@ import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.kiddle.kiddlewalimurid.R
-import com.kiddle.kiddlewalimurid.UI.DetailJurnalActivity
+import com.kiddle.kiddlewalimurid.ui.DetailJurnalActivity
 import com.kiddle.kiddlewalimurid.adapter.JurnalAdapter
 import com.kiddle.kiddlewalimurid.model.Jurnal
 import kotlinx.android.synthetic.main.fragment_jurnal.view.*

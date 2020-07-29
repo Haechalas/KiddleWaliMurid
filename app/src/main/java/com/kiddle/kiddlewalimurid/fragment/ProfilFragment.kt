@@ -9,8 +9,8 @@ import android.view.ViewGroup
 import android.widget.PopupMenu
 import androidx.fragment.app.Fragment
 import com.kiddle.kiddlewalimurid.R
-import com.kiddle.kiddlewalimurid.UI.EditProfil
-import com.kiddle.kiddlewalimurid.UI.PengaturanActivity
+import com.kiddle.kiddlewalimurid.ui.EditProfil
+import com.kiddle.kiddlewalimurid.ui.PengaturanActivity
 import kotlinx.android.synthetic.main.fragment_profil.view.*
 
 class ProfilFragment : Fragment() {
