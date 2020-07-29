@@ -68,6 +68,18 @@ class BerandaFragment : Fragment() {
             startActivity(Intent(activity, GuruActivity::class.java))
         }
 
+        view.kegiatan_card.setOnClickListener {
+            startActivity(Intent(activity, KegiatanActivity::class.java).putExtra("jenis", "KEGIATAN"))
+        }
+
+        view.materi_card.setOnClickListener {
+            startActivity(Intent(activity, KegiatanActivity::class.java).putExtra("jenis", "MATERI"))
+        }
+
+        view.parent_card.setOnClickListener {
+            startActivity(Intent(activity, KegiatanActivity::class.java).putExtra("jenis", "PARENTING"))
+        }
+
         return view
 
     }

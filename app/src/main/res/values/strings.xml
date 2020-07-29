@@ -2,10 +2,10 @@
     <string name="app_name">KiddleWaliMurid</string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
-    <string name="Semester">semester</string>
-    <string name="Kelas">Kelas</string>
+    <string name="semester">semester</string>
+    <string name="kelas">Kelas</string>
     <string name="kognitif">Kognitif</string>
-    <string name="Aspek">Aspek</string>
+    <string name="aspek">Aspek</string>
     <!--String tambahan setelah refactor-->
     <string name="beranda">Beranda</string>
     <string name="jurnal">Jurnal</string>
@@ -14,4 +14,7 @@
     <string name="profil">Profil</string>
     <string name="selamat_datang">Selamat Datang</string>
     <string name="lorem_ipsum">"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc vitae tellus feugiat, efficitur lacus nec, maximus felis. Maecenas ultrices tempor enim, et malesuada nisl lacinia eget. Integer arcu sapien, interdum nec neque sit amet, volutpat porta massa. Ut convallis purus lacus, ac tempor orci placerat vitae. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae; Nullam eu ipsum consequat, imperdiet nibh sit amet, imperdiet risus. Vestibulum a nunc sapien. Sed velit ipsum, fermentum non mi ac, scelerisque pharetra ligula."</string>
+    <string name="kegiatan">Kegiatan</string>
+    <string name="parenting">Parenting</string>
+    <string name="materi">Materi</string>
 </resources>

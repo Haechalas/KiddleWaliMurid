@@ -212,24 +212,4 @@
             android:text="0"/>
     </RelativeLayout>
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:fontFamily="@font/roboto_medium"
-        android:textColor="@color/colorPrimary"
-        android:textSize="18sp"
-        android:text="Seminggu terakhir"
-        android:layout_marginTop="20dp"
-        android:layout_marginStart="16dp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/relative1"/>
-
-
-
-
-
-
-
-
-
 </androidx.constraintlayout.widget.ConstraintLayout>
