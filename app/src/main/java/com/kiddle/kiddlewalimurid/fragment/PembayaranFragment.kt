@@ -14,6 +14,7 @@ import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.kiddle.kiddlewalimurid.R
 import com.kiddle.kiddlewalimurid.UI.CaraPembayaranActivity
+import com.kiddle.kiddlewalimurid.UI.KonfirmasiPembayaranActivity
 import com.kiddle.kiddlewalimurid.adapter.ItemBayarSppAdapter
 import com.kiddle.kiddlewalimurid.model.ItemBayarSpp
 import kotlinx.android.synthetic.main.fragment_pembayaran.view.*
@@ -36,52 +37,23 @@ class PembayaranFragment : Fragment() {
         val temp = ItemBayarSpp("19990305", "Juli 2020", "Lunas", R.drawable.image_detail_materi)
         spp.add(temp)
 
+        //dari database pembayaran terbaru dan masukin ke textView
+        val recent = ItemBayarSpp("19990305", "Juli 2020", "Lunas", 0)
+
         view.rv_pembayaran.adapter =
             ItemBayarSppAdapter(spp) {
-
+                startActivity(Intent(activity, KonfirmasiPembayaranActivity::class.java).putExtra("data", it))
             }
-
-        view.btn_pilih_bukti.setOnClickListener {
-            startActivityForResult(Intent(Intent.ACTION_GET_CONTENT).setType("*/*"), 1)
-        }
 
         view.btn_cara_bayar.setOnClickListener {
             startActivity(Intent(activity, CaraPembayaranActivity::class.java))
         }
 
         view.btn_simpan_bukti.setOnClickListener {
-            Toast.makeText(activity, "Simpan", Toast.LENGTH_SHORT).show()
+            startActivity(Intent(activity, KonfirmasiPembayaranActivity::class.java).putExtra("data", recent))
         }
 
         return view
     }
 
-    override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
-        if(requestCode == 1 && resultCode == Activity.RESULT_OK && data != null && data.data != null) {
-            var uri: Uri = data.data!!
-            var uriString = uri.toString()
-            var file: File = File(uriString)
-            var path = file.absolutePath
-            var displayName = ""
-
-            if(uriString.startsWith("content://")) {
-                var cursor: Cursor? = null
-                try {
-                    cursor = activity?.contentResolver?.query(uri, null, null, null, null)
-                    if (cursor != null && cursor.moveToFirst()) {
-                        displayName = cursor.getString(cursor.getColumnIndex(OpenableColumns.DISPLAY_NAME))
-                    }
-                } finally {
-                    cursor!!.close()
-                }
-            } else if(uriString.startsWith("file://")) {
-                displayName = file.name
-            }
-            view?.tv_nama_bukti?.visibility = View.VISIBLE
-            view?.tv_nama_bukti?.text = displayName
-        }
-
-        super.onActivityResult(requestCode, resultCode, data)
-
-    }
 }

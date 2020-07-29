@@ -59,13 +59,13 @@
         <androidx.cardview.widget.CardView
             android:id="@+id/card_spp"
             android:layout_width="match_parent"
-            android:layout_height="180dp"
-            app:cardCornerRadius="8dp"
-            android:layout_marginTop="5dp"
-            android:layout_marginBottom="13dp"
+            android:layout_height="160dp"
             android:layout_marginStart="16dp"
+            android:layout_marginTop="5dp"
             android:layout_marginEnd="16dp"
-            >
+            android:layout_marginBottom="13dp"
+            app:cardCornerRadius="8dp">
+
             <RelativeLayout
                 android:id="@+id/card_spp_wrapper"
                 android:layout_width="match_parent"
@@ -124,49 +124,29 @@
                     android:id="@+id/tv_jumlah_pembayaran"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginStart="40dp"
-                    android:layout_alignParentStart="true"
                     android:layout_below="@id/text_jumlah_bayar"
+                    android:layout_alignParentStart="true"
+                    android:layout_marginStart="40dp"
                     android:fontFamily="@font/roboto_bold"
                     android:text="330.000"
                     android:textColor="@color/Black"
                     android:textSize="36dp" />
 
-                <TextView
-                    android:id="@+id/tv_nama_bukti"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_below="@id/tv_jumlah_pembayaran"
-                    android:layout_marginStart="40dp"
-                    android:layout_marginTop="8dp"
-                    android:fontFamily="@font/roboto_light"
-                    android:text="Jumlah Pembayaran"
-                    android:textColor="@color/Black"
-                    android:textSize="14sp"
-                    android:visibility="invisible" />
-
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_below="@id/tv_nama_bukti"
+                    android:layout_below="@id/tv_jumlah_pembayaran"
                     android:layout_marginStart="33dp"
+                    android:layout_marginTop="8dp"
                     android:layout_marginEnd="33dp"
                     android:orientation="horizontal">
-
-                    <Button
-                        android:id="@+id/btn_pilih_bukti"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_marginRight="8dp"
-                        android:layout_weight="1"
-                        android:text="Unggah Bukti Pembayaran" />
 
                     <Button
                         android:id="@+id/btn_simpan_bukti"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
-                        android:text="Simpan Bukti Pembayaran" />
+                        android:text="Unggah Bukti Pembayaran" />
                 </LinearLayout>
             </RelativeLayout>
         </androidx.cardview.widget.CardView>
@@ -176,7 +156,7 @@
         android:id="@+id/text_riwayat"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@id/linear1"
+        android:layout_below="@id/view_top"
         android:layout_alignParentStart="true"
         android:layout_marginStart="16dp"
         android:layout_marginTop="10dp"

@@ -16,7 +16,7 @@ class DetailKegiatanActivity : AppCompatActivity() {
 
         //mengambil data dari halaman sebelumnya
         val data = intent.getParcelableExtra<Kegiatan>("data")
-        
+
         if (data != null) {
             tv_judul_detail_kegiatan.text = data.judul
             tv_tanggal_detail_kegiatan.text = data.tanggal
