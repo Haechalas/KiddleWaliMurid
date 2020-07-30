@@ -10,6 +10,7 @@ import android.widget.TextView
 import android.widget.VideoView
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
+import com.bumptech.glide.load.resource.bitmap.CenterCrop
 import com.bumptech.glide.load.resource.bitmap.RoundedCorners
 import com.bumptech.glide.request.RequestOptions
 import com.kiddle.kiddlewalimurid.R
@@ -64,11 +65,11 @@ class KegiatanAdapter(private var data: List<Kegiatan>, private val listener:(Ke
         // biar gambarnya ada radiusnya
         if(data[position].gambar!=0){
             val url: Int = data[position].gambar
-            Glide.with(contextAdapter).load(url).transform(RoundedCorners(32)).into(holder.img_kegiatan)
+            Glide.with(contextAdapter).load(url).transform(CenterCrop(),RoundedCorners(32)).into(holder.img_kegiatan)
 
         }else if(data[position].video!=0){
             val url2: Int = data[position].video
-            Glide.with(contextAdapter).load(Uri.parse("android.resource://" + contextAdapter.packageName + "/" + url2)).transform(RoundedCorners(32)).into(holder.img_kegiatan)
+            Glide.with(contextAdapter).load(Uri.parse("android.resource://" + contextAdapter.packageName + "/" + url2)).transform(CenterCrop(),RoundedCorners(32)).into(holder.img_kegiatan)
         }
     }
 }
