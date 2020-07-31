@@ -61,7 +61,7 @@
                 android:layout_height="243dp"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/relativeLayout3"
                 app:srcCompat="@drawable/ilustrasi_kegiatan" />
 
             <androidx.recyclerview.widget.RecyclerView
