@@ -101,6 +101,7 @@
                     android:layout_height="wrap_content"
                     android:layout_below="@id/text_batas_bayar"
                     android:layout_alignStart="@id/text_batas_bayar"
+                    android:layout_alignRight="@id/tv_jumlah_pembayaran"
                     android:layout_marginTop="8dp"
                     android:fontFamily="@font/roboto_bold"
                     android:text="10 Mei 2020"
