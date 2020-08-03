@@ -1,5 +1,6 @@
 package com.kiddle.kiddlewalimurid.ui
 
+import android.content.Context
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
@@ -17,10 +18,27 @@ class SplashActivity : AppCompatActivity() {
         val animation = AnimationUtils.loadAnimation(this, R.anim.splash)
         logo_splash.startAnimation(animation)
 
-        Handler().postDelayed({
-            startActivity(Intent(this, OnboardingPresensi::class.java))
-        }, 1000)
+        val sharedPreferences = getSharedPreferences("KIDDLE", Context.MODE_PRIVATE)
+        val jenis_akses = sharedPreferences.getBoolean("pernah_login", false)
 
-        finishAffinity()
+        if(jenis_akses) {
+            if(sharedPreferences.getString("id_murid","").isNullOrEmpty()) {
+                Handler().postDelayed({
+                    startActivity(Intent(this, LoginActivity::class.java))
+                    finish()
+                }, 1000)
+            } else {
+                Handler().postDelayed({
+                    startActivity(Intent(this, MainActivity::class.java))
+                    finish()
+                }, 1000)
+            }
+        } else {
+            Handler().postDelayed({
+                startActivity(Intent(this, OnboardingPresensi::class.java))
+                finish()
+            }, 1000)
+        }
+
     }
 }
