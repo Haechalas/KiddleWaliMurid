@@ -19,7 +19,7 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            app:srcCompat="@drawable/image_profil_sekolah" />
+            tools:srcCompat="@drawable/image_profil_sekolah" />
 
         <View
             android:id="@+id/view6"
@@ -56,12 +56,12 @@
             android:layout_height="wrap_content"
             android:layout_marginBottom="16dp"
             android:fontFamily="@font/roboto_bold"
-            android:text="TK Islam Aisyah Jakarta"
             android:textColor="@color/colorWhite"
             android:textSize="24sp"
             app:layout_constraintBottom_toBottomOf="@+id/img_profil_sekolah"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent" />
+            app:layout_constraintStart_toStartOf="parent"
+            tools:text="TK Islam Aisyah Jakarta" />
 
         <LinearLayout
             android:id="@+id/linearLayout9"
@@ -89,9 +89,9 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:fontFamily="@font/roboto"
-                android:text="Jalan Wilis No 30 Jakarta Selatan"
                 android:textColor="@color/Black"
-                android:textSize="16sp" />
+                android:textSize="16sp"
+                tools:text="Jalan Wilis No 30 Jakarta Selatan" />
         </LinearLayout>
 
         <View
@@ -133,9 +133,9 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:fontFamily="@font/roboto"
-                android:text="0230654778"
                 android:textColor="@color/Black"
-                android:textSize="16sp" />
+                android:textSize="16sp"
+                tools:text="0230654778" />
         </LinearLayout>
 
         <View
@@ -177,9 +177,9 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:fontFamily="@font/roboto"
-                android:text="@string/lorem_ipsum"
                 android:textColor="@color/Black"
-                android:textSize="16sp" />
+                android:textSize="16sp"
+                tools:text="@string/lorem_ipsum" />
         </LinearLayout>
 
         <View
@@ -221,9 +221,9 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:fontFamily="@font/roboto"
-                android:text="@string/lorem_ipsum"
                 android:textColor="@color/Black"
-                android:textSize="16sp" />
+                android:textSize="16sp"
+                tools:text="@string/lorem_ipsum" />
         </LinearLayout>
 
         <View
@@ -265,9 +265,9 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:fontFamily="@font/roboto"
-                android:text="@string/lorem_ipsum"
                 android:textColor="@color/Black"
-                android:textSize="16sp" />
+                android:textSize="16sp"
+                tools:text="@string/lorem_ipsum" />
         </LinearLayout>
 
         <View
@@ -309,9 +309,9 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:fontFamily="@font/roboto"
-                android:text="@string/lorem_ipsum"
                 android:textColor="@color/Black"
-                android:textSize="16sp" />
+                android:textSize="16sp"
+                tools:text="@string/lorem_ipsum" />
         </LinearLayout>
 
         <View
@@ -353,9 +353,9 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:fontFamily="@font/roboto"
-                android:text="@string/lorem_ipsum"
                 android:textColor="@color/Black"
-                android:textSize="16sp" />
+                android:textSize="16sp"
+                tools:text="@string/lorem_ipsum" />
         </LinearLayout>
 
     </androidx.constraintlayout.widget.ConstraintLayout>
