@@ -57,6 +57,7 @@
             app:layout_constraintTop_toBottomOf="@+id/textView17">
 
             <AutoCompleteTextView
+                android:id="@+id/auto_rapor"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:inputType="none"
@@ -121,11 +122,13 @@
                         style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.ExposedDropdownMenu"
                         android:layout_width="match_parent"
                         android:layout_height="40dp"
-                        android:enabled="false">
+                        android:focusableInTouchMode="false">
 
                         <AutoCompleteTextView
+                            android:id="@+id/auto_nilai_kognitif"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
+                            android:focusableInTouchMode="false"
                             android:inputType="none"
                             android:paddingTop="4dp"
                             android:paddingBottom="4dp"
@@ -148,13 +151,20 @@
                         style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:enabled="false">
+                        android:focusableInTouchMode="false"
+                        android:scrollbars="vertical">
 
                         <com.google.android.material.textfield.TextInputEditText
+                            android:id="@+id/edit_deskripsi_kognitif"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
+                            android:focusableInTouchMode="false"
                             android:gravity="start"
-                            android:lines="2"
+                            android:inputType="textMultiLine"
+                            android:lines="6"
+                            android:overScrollMode="always"
+                            android:scrollbarStyle="insideInset"
+                            android:scrollbars="vertical"
                             android:textSize="14sp" />
 
                     </com.google.android.material.textfield.TextInputLayout>
@@ -220,11 +230,13 @@
                         style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.ExposedDropdownMenu"
                         android:layout_width="match_parent"
                         android:layout_height="40dp"
-                        android:enabled="false">
+                        android:focusableInTouchMode="false">
 
                         <AutoCompleteTextView
+                            android:id="@+id/auto_nilai_berbahasa"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
+                            android:focusableInTouchMode="false"
                             android:inputType="none"
                             android:paddingTop="4dp"
                             android:paddingBottom="4dp"
@@ -247,13 +259,20 @@
                         style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:enabled="false">
+                        android:focusableInTouchMode="false"
+                        android:scrollbars="vertical">
 
                         <com.google.android.material.textfield.TextInputEditText
+                            android:id="@+id/edit_deskripsi_berbahasa"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
+                            android:focusableInTouchMode="false"
                             android:gravity="start"
-                            android:lines="2"
+                            android:inputType="textMultiLine"
+                            android:lines="6"
+                            android:overScrollMode="always"
+                            android:scrollbarStyle="insideInset"
+                            android:scrollbars="vertical"
                             android:textSize="14sp" />
 
                     </com.google.android.material.textfield.TextInputLayout>
@@ -319,11 +338,13 @@
                         style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.ExposedDropdownMenu"
                         android:layout_width="match_parent"
                         android:layout_height="40dp"
-                        android:enabled="false">
+                        android:focusableInTouchMode="false">
 
                         <AutoCompleteTextView
+                            android:id="@+id/auto_nilai_keterampilan"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
+                            android:focusableInTouchMode="false"
                             android:inputType="none"
                             android:paddingTop="4dp"
                             android:paddingBottom="4dp"
@@ -346,13 +367,20 @@
                         style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:enabled="false">
+                        android:focusableInTouchMode="false"
+                        android:scrollbars="vertical">
 
                         <com.google.android.material.textfield.TextInputEditText
+                            android:id="@+id/edit_deskripsi_keterampilan"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
+                            android:focusableInTouchMode="false"
                             android:gravity="start"
-                            android:lines="2"
+                            android:inputType="textMultiLine"
+                            android:lines="6"
+                            android:overScrollMode="always"
+                            android:scrollbarStyle="insideInset"
+                            android:scrollbars="vertical"
                             android:textSize="14sp" />
 
                     </com.google.android.material.textfield.TextInputLayout>
@@ -418,11 +446,13 @@
                         style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.ExposedDropdownMenu"
                         android:layout_width="match_parent"
                         android:layout_height="40dp"
-                        android:enabled="false">
+                        android:focusableInTouchMode="false">
 
                         <AutoCompleteTextView
+                            android:id="@+id/auto_nilai_agama"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
+                            android:focusableInTouchMode="false"
                             android:inputType="none"
                             android:paddingTop="4dp"
                             android:paddingBottom="4dp"
@@ -445,13 +475,20 @@
                         style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:enabled="false">
+                        android:focusableInTouchMode="false"
+                        android:scrollbars="vertical">
 
                         <com.google.android.material.textfield.TextInputEditText
+                            android:id="@+id/edit_deskripsi_agama"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
+                            android:focusableInTouchMode="false"
                             android:gravity="start"
-                            android:lines="2"
+                            android:inputType="textMultiLine"
+                            android:lines="6"
+                            android:overScrollMode="always"
+                            android:scrollbarStyle="insideInset"
+                            android:scrollbars="vertical"
                             android:textSize="14sp" />
 
                     </com.google.android.material.textfield.TextInputLayout>
@@ -517,11 +554,13 @@
                         style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.ExposedDropdownMenu"
                         android:layout_width="match_parent"
                         android:layout_height="40dp"
-                        android:enabled="false">
+                        android:focusableInTouchMode="false">
 
                         <AutoCompleteTextView
+                            android:id="@+id/auto_nilai_motorik"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
+                            android:focusableInTouchMode="false"
                             android:inputType="none"
                             android:paddingTop="4dp"
                             android:paddingBottom="4dp"
@@ -544,13 +583,20 @@
                         style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:enabled="false">
+                        android:focusableInTouchMode="false"
+                        android:scrollbars="vertical">
 
                         <com.google.android.material.textfield.TextInputEditText
+                            android:id="@+id/edit_deskripsi_motorik"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
+                            android:focusableInTouchMode="false"
                             android:gravity="start"
-                            android:lines="2"
+                            android:inputType="textMultiLine"
+                            android:lines="6"
+                            android:overScrollMode="always"
+                            android:scrollbarStyle="insideInset"
+                            android:scrollbars="vertical"
                             android:textSize="14sp" />
 
                     </com.google.android.material.textfield.TextInputLayout>
