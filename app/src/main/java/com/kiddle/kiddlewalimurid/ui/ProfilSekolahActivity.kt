@@ -17,16 +17,16 @@ class ProfilSekolahActivity : AppCompatActivity() {
         val db: FirebaseFirestore = FirebaseFirestore.getInstance()
 
         db.collection("Profil Sekolah").get().addOnSuccessListener {
-            for(snapShot in it.documents) {
-                Glide.with(this).load(snapShot.getString("banner")).centerCrop().into(img_profil_sekolah)
-                tv_nama_sekolah.text = snapShot.getString("nama")
-                tv_alamat_sekolah.text = snapShot.getString("alamat")
-                tv_kontak_sekolah.text = snapShot.getString("kontak")
-                tv_deskripsi_sekolah.text = snapShot.getString("isi")
-                tv_visi_sekolah.text = snapShot.getString("visi")
-                tv_misi_sekolah.text = snapShot.getString("misi")
-                tv_fasilitas_sekolah.text = snapShot.getString("fasilitas")
-                tv_prestasi_sekolah.text = snapShot.getString("prestasi")
+            for(snapshot in it.documents) {
+                Glide.with(this).load(snapshot.getString("banner")).centerCrop().into(img_profil_sekolah)
+                tv_nama_sekolah.text = snapshot.getString("nama")
+                tv_alamat_sekolah.text = snapshot.getString("alamat")
+                tv_kontak_sekolah.text = snapshot.getString("kontak")
+                tv_deskripsi_sekolah.text = snapshot.getString("isi")
+                tv_visi_sekolah.text = snapshot.getString("visi")
+                tv_misi_sekolah.text = snapshot.getString("misi")
+                tv_fasilitas_sekolah.text = snapshot.getString("fasilitas")
+                tv_prestasi_sekolah.text = snapshot.getString("prestasi")
             }
         }
 

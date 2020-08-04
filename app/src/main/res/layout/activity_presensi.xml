@@ -79,6 +79,7 @@
         app:layout_constraintTop_toBottomOf="@+id/text_semester">
 
         <AutoCompleteTextView
+            android:id="@+id/auto_semester"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:inputType="none"
@@ -109,14 +110,14 @@
             android:id="@+id/text_hadir"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_below="@+id/image_hadir"
             android:layout_alignParentStart="true"
             android:layout_centerInParent="true"
-            android:layout_below="@+id/image_hadir"
-            android:textAlignment="center"
             android:fontFamily="@font/roboto"
+            android:textAlignment="center"
             android:textColor="@color/Black"
             android:textSize="18sp"
-            android:text="27"/>
+            tools:text="27" />
     </RelativeLayout>
 
     <RelativeLayout
@@ -136,18 +137,18 @@
         android:layout_centerHorizontal="true"
         android:src="@drawable/ic_sakit"/>
 
-    <TextView
-        android:id="@+id/text_sakit"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentStart="true"
-        android:layout_centerInParent="true"
-        android:layout_below="@+id/image_sakit"
-        android:textAlignment="center"
-        android:fontFamily="@font/roboto"
-        android:textColor="@color/Black"
-        android:textSize="18sp"
-        android:text="1"/>
+        <TextView
+            android:id="@+id/text_sakit"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/image_sakit"
+            android:layout_alignParentStart="true"
+            android:layout_centerInParent="true"
+            android:fontFamily="@font/roboto"
+            android:textAlignment="center"
+            android:textColor="@color/Black"
+            android:textSize="18sp"
+            tools:text="1" />
 </RelativeLayout>
 
     <RelativeLayout
@@ -171,14 +172,14 @@
             android:id="@+id/text_izin"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_below="@+id/image_izin"
             android:layout_alignParentStart="true"
             android:layout_centerInParent="true"
-            android:layout_below="@+id/image_izin"
-            android:textAlignment="center"
             android:fontFamily="@font/roboto"
+            android:textAlignment="center"
             android:textColor="@color/Black"
             android:textSize="18sp"
-            android:text="2"/>
+            tools:text="2" />
     </RelativeLayout>
 
     <RelativeLayout
@@ -202,14 +203,14 @@
             android:id="@+id/text_alpha"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_below="@+id/image_alpha"
             android:layout_alignParentStart="true"
             android:layout_centerInParent="true"
-            android:layout_below="@+id/image_alpha"
-            android:textAlignment="center"
             android:fontFamily="@font/roboto"
+            android:textAlignment="center"
             android:textColor="@color/Black"
             android:textSize="18sp"
-            android:text="0"/>
+            tools:text="0" />
     </RelativeLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
