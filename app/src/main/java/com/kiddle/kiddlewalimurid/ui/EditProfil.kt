@@ -73,6 +73,7 @@ class EditProfil : AppCompatActivity() {
                                 "kontak_ayah" to edit_kontak_ayah.text.toString() , "kontak_ibu" to edit_kontak_ibu.text.toString() )
                         )
                     }.addOnCompleteListener {
+
                         onBackPressed()
                     }
                 }

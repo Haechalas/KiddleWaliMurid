@@ -1,6 +1,8 @@
 package com.kiddle.kiddlewalimurid.fragment
 
+import android.content.Context
 import android.content.Intent
+import android.content.SharedPreferences
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -8,28 +10,50 @@ import android.view.ViewGroup
 import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.LinearLayoutManager
+import com.bumptech.glide.Glide
+import com.google.firebase.firestore.FirebaseFirestore
 import com.kiddle.kiddlewalimurid.R
 import com.kiddle.kiddlewalimurid.ui.*
 import com.kiddle.kiddlewalimurid.adapter.PengumumanAdapter
 import com.kiddle.kiddlewalimurid.model.Pengumuman
 import kotlinx.android.synthetic.main.activity_main.*
+import kotlinx.android.synthetic.main.fragment_beranda.*
 import kotlinx.android.synthetic.main.fragment_beranda.view.*
 
 class BerandaFragment : Fragment() {
+    private val db:FirebaseFirestore = FirebaseFirestore.getInstance()
+    private lateinit var sharedPreferences: SharedPreferences
+    lateinit var data:Pengumuman
+
+    override fun onStart() {
+        super.onStart()
+
+        sharedPreferences = activity?.getSharedPreferences("KIDDLE", Context.MODE_PRIVATE)!!
+
+        nama_murid.text = sharedPreferences.getString("nama", "")
+        Glide.with(this).load(sharedPreferences.getString("avatar", "")).centerCrop().into(img_avatar)
+
+        db.collection("Pengumuman").orderBy("tanggal").limit(1).addSnapshotListener { value, error ->
+            if(error != null) return@addSnapshotListener
+            for(document in value!!) {
+                Glide.with(this).load(document.getString("gambar")).fitCenter().into(img_pengumuman_beranda)
+                tv_judul_pengumuman_beranda.text = document.getString("judul")
+                tv_tanggal_pengumuman_beranda.text = document.getString("tanggal")
+
+                data = Pengumuman(document.getString("judul"),
+                    document.getString("isi"),
+                    document.getString("tanggal"),
+                    document.getString("gambar"),
+                    document.getString("video"))
+            }
+        }
+    }
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
         val view = inflater.inflate(R.layout.fragment_beranda, container, false)
 
-        val  pengumuman = listOf(
-            Pengumuman("Belajar jarak jauh","Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc vitae tellus feugiat, efficitur lacus nec, maximus felis. Maecenas ultrices tempor enim, et malesuada nisl lacinia eget" ,"30 maret", R.drawable.image_detail_pengumuman, 0),
-            Pengumuman("Menghitung", "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc vitae tellus feugiat, efficitur lacus nec, maximus felis. Maecenas ultrices tempor enim, et malesuada nisl lacinia eget","30 maret", R.drawable.image_detail_kegiatan, 0)
-        )
-        //RV
-        view.rv_pengumuman_beranda.layoutManager = LinearLayoutManager(activity, LinearLayoutManager.VERTICAL, false)
-        //Adapter
-        view.rv_pengumuman_beranda.adapter = PengumumanAdapter(pengumuman){
-            val intent = Intent(activity, DetailPengumumanActivity::class.java).putExtra("data", it)
-            startActivity(intent)
+        view.card_pengumuman.setOnClickListener {
+            startActivity(Intent(activity, DetailPengumumanActivity::class.java).putExtra("data", data))
         }
 
         view.ic_notification.setOnClickListener {
@@ -81,6 +105,6 @@ class BerandaFragment : Fragment() {
         }
 
         return view
-
     }
+
 }

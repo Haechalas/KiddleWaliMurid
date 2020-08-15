@@ -8,6 +8,7 @@ import android.view.View
 import android.view.inputmethod.InputMethodManager
 import android.widget.MediaController
 import androidx.recyclerview.widget.LinearLayoutManager
+import com.bumptech.glide.Glide
 import com.example.kiddleapp.Komentar.KomentarAdapter
 import com.kiddle.kiddlewalimurid.R
 import com.kiddle.kiddlewalimurid.model.Komentar
@@ -33,11 +34,11 @@ class DetailPengumumanActivity : AppCompatActivity() {
             tv_judul_detail_pengumuman.text = data.judul
             tv_tanggal_detail_pengumuman.text = data.tanggal
             tv_deskripsi_detail_pengumuman.text = data.isi
-            if(data.gambar !=0) {
+            if(!data.gambar.isNullOrEmpty()) {
                 img_detail_pengumuman.visibility = View.VISIBLE
                 vv_detail_pengumuman.visibility = View.GONE
-                img_detail_pengumuman.setImageResource(data.gambar)
-            } else if(data.video != 0){
+                Glide.with(this).load(data.gambar).centerCrop().into(img_detail_pengumuman)
+            } else if(!data.video.isNullOrEmpty()){
                 vv_detail_pengumuman.visibility = View.VISIBLE
                 img_detail_pengumuman.visibility = View.GONE
                 vv_detail_pengumuman.setVideoURI(Uri.parse("android.resource://" + packageName + "/" + data.video))

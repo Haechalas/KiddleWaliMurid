@@ -40,6 +40,7 @@ class ProfilFragment : Fragment() {
             tv_kontak_ibu.text = it.getString("kontak_ibu")
 
             avatar = it.getString("avatar").toString()
+            sharedPreferences?.edit()?.putString("avatar", avatar)?.apply()
             password = it.getString("password").toString()
 
             Glide.with(this).load(it.getString("avatar")).centerCrop().into(img_avatar_detail_murid)

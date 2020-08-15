@@ -10,6 +10,7 @@ import android.view.View
 import android.widget.MediaController
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
+import com.bumptech.glide.Glide
 import com.kiddle.kiddlewalimurid.R
 import com.kiddle.kiddlewalimurid.model.Tugas
 import kotlinx.android.synthetic.main.activity_detail_tugas.*
@@ -30,12 +31,12 @@ class DetailTugasActivity : AppCompatActivity() {
             tv_waktu_detail_tugas.text = data.jam
             tv_link_detail_tugas.text=data.link
 
-            if(data.gambar!=0) {
+            if(!data.gambar.isNullOrEmpty()) {
                 img_detail_tugas.visibility = View.VISIBLE
                 vv_detail_tugas.visibility = View.GONE
-                img_detail_tugas.setImageResource(data.gambar)
+                Glide.with(this).load(data.gambar).into(img_detail_tugas)
             }
-            else if(data.video!=0) {
+            else if(!data.video.isNullOrEmpty()) {
 
                 vv_detail_tugas.visibility = View.VISIBLE
                 img_detail_tugas.visibility = View.GONE
