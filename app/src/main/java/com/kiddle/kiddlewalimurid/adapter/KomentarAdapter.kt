@@ -7,6 +7,7 @@ import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
+import com.bumptech.glide.Glide
 import com.kiddle.kiddlewalimurid.R
 import com.kiddle.kiddlewalimurid.model.Komentar
 
@@ -15,6 +16,7 @@ class KomentarAdapter(private var data: List<Komentar>, private val listener: (K
     RecyclerView.Adapter<KomentarAdapter.ViewHolder>() {
 
     lateinit var contextAdapter: Context
+    private val listKomentar = ArrayList<Komentar>()
 
     //assign value dari model ke xml
     class ViewHolder(view: View) : RecyclerView.ViewHolder(view) {
@@ -25,13 +27,8 @@ class KomentarAdapter(private var data: List<Komentar>, private val listener: (K
 
         // kalau mau ditambah kelas apa atau deksripsi lain jangan lupa ubah layout dan model
 
-        fun bindItem(
-            data: Komentar,
-            listener: (Komentar) -> Unit,
-            context: Context,
-            position: Int
-        ) {
-            img_avatar.setImageResource(data.avatar)
+        fun bindItem(data: Komentar, listener: (Komentar) -> Unit, context: Context, position: Int) {
+            Glide.with(context).load(data.avatar).centerCrop().into(img_avatar)
             tv_nama.text = data.nama
             tv_jabatan.text = data.jabatan
             tv_isi.text = data.isi
@@ -39,6 +36,8 @@ class KomentarAdapter(private var data: List<Komentar>, private val listener: (K
             itemView.setOnClickListener {
                 listener(data)
             }
+
+            listener.invoke(data)
         }
     }
 
@@ -48,9 +47,7 @@ class KomentarAdapter(private var data: List<Komentar>, private val listener: (K
         val layoutInflater = LayoutInflater.from(parent.context)
         contextAdapter = parent.context
         val inflatedView: View = layoutInflater.inflate(R.layout.holder_komentar, parent, false)
-        return ViewHolder(
-            inflatedView
-        )
+        return ViewHolder(inflatedView)
     }
 
     override fun getItemCount(): Int {
@@ -59,6 +56,11 @@ class KomentarAdapter(private var data: List<Komentar>, private val listener: (K
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
         holder.bindItem(data[position], listener, contextAdapter, position)
+    }
+
+    fun addItemToList(list: ArrayList<Komentar>) {
+        listKomentar.clear()
+        listKomentar.addAll(list)
     }
 
 }

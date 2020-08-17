@@ -39,7 +39,7 @@ class DetailTugasActivity : AppCompatActivity() {
         val sharedPreferences = getSharedPreferences("KIDDLE", Context.MODE_PRIVATE)
         var flag:Boolean = false
 
-        db.document("Hasil Tugas/${data?.id}/${sharedPreferences.getString("id_murid", "")}/${data?.id}").get().addOnSuccessListener {
+        db.document("Hasil Tugas/${data?.id}/Isi Tugas/${sharedPreferences.getString("id_murid", "")}").get().addOnSuccessListener {
             if(it.getString("nama") != null) {
                 tv_hasil_tugas.text = it.getString("tugas")
             }
@@ -94,7 +94,7 @@ class DetailTugasActivity : AppCompatActivity() {
                 storage = FirebaseStorage.getInstance().reference.child("Hasil Tugas").child("${data?.id}").child(tv_hasil_tugas.text.toString())
                 storage.putFile(file_location).addOnSuccessListener {
                     storage.downloadUrl.addOnSuccessListener {
-                        db.document("Hasil Tugas/${data?.id}/${sharedPreferences.getString("id_murid", "")}/${data?.id}").set(
+                        db.document("Hasil Tugas/${data?.id}/Isi Tugas/${sharedPreferences.getString("id_murid", "")}").set(
                             mapOf("avatar" to sharedPreferences.getString("avatar", ""), "nama" to sharedPreferences.getString("nama", ""), "waktu" to builder.toString(), "file" to it.toString(), "tugas" to tv_hasil_tugas.text.toString())
                         ).addOnCompleteListener {
                             onBackPressed()

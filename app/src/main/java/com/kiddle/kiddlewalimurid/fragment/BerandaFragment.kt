@@ -33,7 +33,7 @@ class BerandaFragment : Fragment() {
         nama_murid.text = sharedPreferences.getString("nama", "")
         Glide.with(this).load(sharedPreferences.getString("avatar", "")).centerCrop().into(img_avatar)
 
-        db.collection("Pengumuman").orderBy("tanggal").limit(1).addSnapshotListener { value, error ->
+        db.collection("Pengumuman").limit(1).addSnapshotListener { value, error ->
             if(error != null) return@addSnapshotListener
             for(document in value!!) {
                 Glide.with(this).load(document.getString("gambar")).fitCenter().into(img_pengumuman_beranda)

@@ -42,17 +42,18 @@
         android:background="@drawable/top_blue_box" />
 
     <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/input_pencarian_list_pengumuman"
+        android:id="@+id/search_pengumuman"
         style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
         android:layout_width="match_parent"
         android:layout_height="40dp"
+        android:layout_below="@id/imageView2"
         android:layout_marginStart="16dp"
         android:layout_marginTop="16dp"
         android:layout_marginEnd="16dp"
-        android:layout_below="@id/imageView2">
+        android:visibility="gone">
 
         <com.google.android.material.textfield.TextInputEditText
-            android:id="@+id/tv_pencarian_list_pengumuman"
+            android:id="@+id/search_value_pengumuman"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:drawableRight="@drawable/ic_pencarian"
@@ -67,7 +68,7 @@
         android:id="@+id/rv_pengumuman"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@id/input_pencarian_list_pengumuman"
+        android:layout_below="@id/search_pengumuman"
         android:layout_marginStart="0dp"
         android:layout_marginLeft="0dp"
         android:layout_marginTop="8dp"
