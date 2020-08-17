@@ -40,7 +40,9 @@ class BerandaFragment : Fragment() {
                 tv_judul_pengumuman_beranda.text = document.getString("judul")
                 tv_tanggal_pengumuman_beranda.text = document.getString("tanggal")
 
-                data = Pengumuman(document.getString("judul"),
+                data = Pengumuman(
+                    document.id,
+                    document.getString("judul"),
                     document.getString("isi"),
                     document.getString("tanggal"),
                     document.getString("gambar"),

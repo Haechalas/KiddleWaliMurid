@@ -26,7 +26,7 @@ class PengumumanAdapter(private var data: List<Pengumuman>, private val listener
         fun bindItem(data: Pengumuman, listener: (Pengumuman) -> Unit, context: Context, position: Int) {
             tv_judul_pengumuman.text = data.judul
             tv_tanggal_pengumuman.text = data.tanggal
-            Glide.with(context).load(data.gambar).into(img_pengumuman)
+            Glide.with(context).load(data.gambar).fitCenter().into(img_pengumuman)
 
             itemView.setOnClickListener {
                 listener(data)
