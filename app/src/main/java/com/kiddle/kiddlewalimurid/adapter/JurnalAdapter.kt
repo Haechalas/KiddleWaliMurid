@@ -1,6 +1,7 @@
 package com.kiddle.kiddlewalimurid.adapter
 
 import android.content.Context
+import android.content.Intent
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -9,10 +10,12 @@ import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.kiddle.kiddlewalimurid.R
 import com.kiddle.kiddlewalimurid.model.Jurnal
+import com.kiddle.kiddlewalimurid.ui.DetailJurnalActivity
 
 class JurnalAdapter(private var data: List<Jurnal>, private val listener: (Jurnal) -> Unit) : RecyclerView.Adapter<JurnalAdapter.ViewHolder>() {
 
     lateinit var contextAdapter: Context
+    private val listJurnal = ArrayList<Jurnal>()
 
     //assign value dari model ke xml
     class ViewHolder(view: View) : RecyclerView.ViewHolder(view) {
@@ -41,6 +44,8 @@ class JurnalAdapter(private var data: List<Jurnal>, private val listener: (Jurna
             itemView.setOnClickListener {
                 listener(data)
             }
+
+            listener.invoke(data)
         }
     }
 
@@ -59,5 +64,13 @@ class JurnalAdapter(private var data: List<Jurnal>, private val listener: (Jurna
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
         holder.bindItem(data[position], listener, contextAdapter, position)
+        holder.itemView.setOnClickListener {
+            it.context.startActivity(Intent(it.context, DetailJurnalActivity::class.java).putExtra("data", data[position]))
+        }
+    }
+
+    fun addItemToList(list: ArrayList<Jurnal>) {
+        listJurnal.clear()
+        listJurnal.addAll(list)
     }
 }

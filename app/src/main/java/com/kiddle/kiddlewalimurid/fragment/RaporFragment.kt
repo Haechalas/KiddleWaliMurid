@@ -1,5 +1,6 @@
 package com.kiddle.kiddlewalimurid.fragment
 
+import android.content.Context
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -7,7 +8,9 @@ import android.view.ViewGroup
 import android.widget.ArrayAdapter
 import android.widget.AutoCompleteTextView
 import android.widget.TextView
+import android.widget.Toast
 import androidx.fragment.app.Fragment
+import com.google.firebase.firestore.FirebaseFirestore
 import com.kiddle.kiddlewalimurid.R
 import kotlinx.android.synthetic.main.fragment_rapor.*
 import kotlinx.android.synthetic.main.fragment_rapor.view.*
@@ -24,10 +27,39 @@ class RaporFragment : Fragment() , View.OnClickListener {
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
         val view = inflater.inflate(R.layout.fragment_rapor, container, false)
 
-        //untuk dropdown semester
-        val semester = listOf("Ganjil", "Genap")
+        val db:FirebaseFirestore = FirebaseFirestore.getInstance()
+        val sharedPreferences = activity?.getSharedPreferences("KIDDLE", Context.MODE_PRIVATE)
+
+        val semester = mutableListOf<String>()
+
+        db.document("Rapor/${sharedPreferences?.getString("kelas", "")}").collection("${sharedPreferences?.getString("id_murid", "")}").get().addOnSuccessListener {
+            for(snapshot in it.documents) {
+                semester.add(snapshot.id)
+            }
+        }
+
         val adapter_semester = ArrayAdapter<String>(requireActivity().applicationContext, R.layout.item_dropdown_text, semester)
         (view.dropdown_rapor_semester.editText as? AutoCompleteTextView)?.setAdapter(adapter_semester)
+
+        view.auto_rapor.setOnClickListener {
+            Toast.makeText(activity, "Mengambil data dari database, mohon tunggu!", Toast.LENGTH_SHORT).show()
+        }
+
+        view.auto_rapor.setOnItemClickListener { parent, view2, position, id ->
+            var item = parent.getItemAtPosition(position).toString()
+            db.document("Rapor/${sharedPreferences?.getString("kelas", "")}/${sharedPreferences?.getString("id_murid", "")}/$item").get().addOnSuccessListener {
+                view.auto_nilai_kognitif.setText(it.getString("nilai_kognitif"))
+                view.edit_deskripsi_kognitif.setText(it.getString("des_kognitif"))
+                view.auto_nilai_berbahasa.setText(it.getString("nilai_berbahasa"))
+                view.edit_deskripsi_berbahasa.setText(it.getString("des_berbahasa"))
+                view.auto_nilai_keterampilan.setText(it.getString("nilai_keterampilan"))
+                view.edit_deskripsi_keterampilan.setText(it.getString("des_keterampilan"))
+                view.auto_nilai_agama.setText(it.getString("nilai_agama"))
+                view.edit_deskripsi_agama.setText(it.getString("des_agama"))
+                view.auto_nilai_motorik.setText(it.getString("nilai_motorik"))
+                view.edit_deskripsi_motorik.setText(it.getString("des_motorik"))
+            }
+        }
         
         //set on-click listener
         view.expand_button_0.setOnClickListener(this)

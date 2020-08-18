@@ -14,7 +14,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/image_user" />
+        tools:srcCompat="@drawable/image_user" />
 
     <View
         android:id="@+id/view11"
@@ -40,12 +40,12 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:fontFamily="@font/roboto_bold"
-        android:text="Rahadika Fernandian"
         android:textColor="@color/colorWhite"
         android:textSize="24sp"
         app:layout_constraintBottom_toTopOf="@+id/tv_murid_nomor"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintStart_toStartOf="parent"
+        tools:text="Rahadika Fernandian" />
 
     <TextView
         android:id="@+id/tv_murid_nomor"
@@ -53,12 +53,12 @@
         android:layout_height="wrap_content"
         android:layout_marginBottom="16dp"
         android:fontFamily="@font/roboto_medium"
-        android:text="19990305"
         android:textColor="@color/colorWhite"
         android:textSize="14sp"
         app:layout_constraintBottom_toBottomOf="@+id/img_avatar_detail_murid"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintStart_toStartOf="parent"
+        tools:text="19990305" />
 
     <LinearLayout
         android:id="@+id/linearLayout24"
@@ -86,9 +86,9 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:fontFamily="@font/roboto"
-            android:text="Bintang Kecil"
             android:textColor="@color/Black"
-            android:textSize="16sp" />
+            android:textSize="16sp"
+            tools:text="Bintang Kecil" />
     </LinearLayout>
 
     <View
@@ -130,9 +130,9 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:fontFamily="@font/roboto"
-            android:text="Kuningan, 3 Mei 1999"
             android:textColor="@color/Black"
-            android:textSize="16sp" />
+            android:textSize="16sp"
+            tools:text="Kuningan, 3 Mei 1999" />
     </LinearLayout>
 
     <View
@@ -174,9 +174,9 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:fontFamily="@font/roboto"
-            android:text="Jl. Kenangan No.17"
             android:textColor="@color/Black"
-            android:textSize="16sp" />
+            android:textSize="16sp"
+            tools:text="Jl. Kenangan No.17" />
     </LinearLayout>
 
     <View
@@ -234,8 +234,8 @@
                 android:layout_marginStart="8dp"
                 android:layout_toEndOf="@id/textView61"
                 android:fontFamily="@font/roboto"
-                android:text="Ji Chang Wook"
-                android:textColor="@color/Black" />
+                android:textColor="@color/Black"
+                tools:text="Ji Chang Wook" />
 
             <TextView
                 android:id="@+id/tv_kontak_ayah"
@@ -243,7 +243,6 @@
                 android:layout_height="wrap_content"
                 android:layout_below="@id/textView61"
                 android:fontFamily="@font/roboto"
-                android:text="085601143329"
                 android:textColor="@color/Black" />
 
             <ImageView
@@ -279,8 +278,8 @@
                 android:layout_marginStart="8dp"
                 android:layout_toEndOf="@id/textView6"
                 android:fontFamily="@font/roboto"
-                android:text="Lee Ji Eun"
-                android:textColor="@color/Black" />
+                android:textColor="@color/Black"
+                tools:text="Lee Ji Eun" />
 
             <TextView
                 android:id="@+id/tv_kontak_ibu"
@@ -288,8 +287,8 @@
                 android:layout_height="wrap_content"
                 android:layout_below="@id/textView6"
                 android:fontFamily="@font/roboto"
-                android:text="085601143329"
-                android:textColor="@color/Black" />
+                android:textColor="@color/Black"
+                tools:text="085601143329" />
 
             <ImageView
                 android:id="@+id/btn_telepon_ibu"

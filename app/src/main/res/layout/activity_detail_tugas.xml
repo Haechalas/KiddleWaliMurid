@@ -15,7 +15,7 @@
 
         <RelativeLayout
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
+            android:layout_height="250dp"
             android:background="@drawable/black_layer">
 
             <VideoView
@@ -126,12 +126,16 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
         android:layout_marginTop="16dp"
+        android:layout_marginEnd="8dp"
+        android:ellipsize="end"
         android:fontFamily="@font/roboto_light"
+        android:singleLine="true"
         android:text="punten"
         android:textAlignment="viewStart"
         android:textColor="@color/colorPrimary"
         android:textSize="12sp"
         android:visibility="gone"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/img_link_detail_tugas"
         app:layout_constraintTop_toBottomOf="@+id/tv_deskripsi_detail_tugas" />
 
@@ -153,13 +157,14 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
         android:fontFamily="@font/roboto"
-        android:text="Tugas.pdf"
         android:textColor="@color/Black"
         android:textSize="14sp"
+        app:layout_constraintBottom_toTopOf="@+id/btn_unggah"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintBottom_toTopOf="@+id/btn_unggah" />
+        tools:text="Tugas.pdf" />
 
-    <Button
+    <com.google.android.material.button.MaterialButton
+        style="@style/Widget.MaterialComponents.Button.OutlinedButton"
         android:id="@+id/btn_unggah"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"

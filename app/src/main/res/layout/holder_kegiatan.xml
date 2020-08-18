@@ -35,8 +35,9 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:alpha="0.4"
-            android:background="#000" />
+            android:alpha="0.4">
+
+        </LinearLayout>
 
     </FrameLayout>
 
@@ -48,12 +49,12 @@
         android:layout_marginStart="8dp"
         android:layout_marginBottom="16dp"
         android:fontFamily="@font/roboto_bold"
-        android:text="Memperingati Hari Ibu"
         android:textColor="@color/colorWhite"
         android:textSize="18sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.045"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintStart_toStartOf="parent"
+        tools:text="Memperingati Hari Ibu" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

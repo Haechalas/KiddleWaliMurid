@@ -1,6 +1,7 @@
 package com.kiddle.kiddlewalimurid.adapter
 
 import android.content.Context
+import android.content.Intent
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -9,11 +10,13 @@ import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.kiddle.kiddlewalimurid.R
 import com.kiddle.kiddlewalimurid.model.Tugas
+import com.kiddle.kiddlewalimurid.ui.DetailTugasActivity
 
 class TugasAdapter(private var data: List<Tugas>, private val listener: (Tugas) -> Unit) :
     RecyclerView.Adapter<TugasAdapter.ViewHolder>() {
 
     lateinit var contextAdapter: Context
+    private val listTugas = ArrayList<Tugas>()
 
     //assign value dari model ke xml
     class ViewHolder(view: View) : RecyclerView.ViewHolder(view) {
@@ -39,11 +42,13 @@ class TugasAdapter(private var data: List<Tugas>, private val listener: (Tugas) 
 
             tv_judul.text = data.judul
             tv_tanggal.text=data.tanggal
-            tv_jumlah.text=data.jumlah
+            tv_jumlah.text=data.jam
 
             itemView.setOnClickListener {
                 listener(data)
             }
+
+            listener.invoke(data)
         }
     }
 
@@ -60,5 +65,13 @@ class TugasAdapter(private var data: List<Tugas>, private val listener: (Tugas) 
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
         holder.bindItem(data[position], listener, contextAdapter, position)
+        holder.itemView.setOnClickListener {
+            it.context.startActivity(Intent(it.context, DetailTugasActivity::class.java).putExtra("data", data[position]))
+        }
+    }
+
+    fun addItemToList(list : ArrayList<Tugas>) {
+        listTugas.clear()
+        listTugas.addAll(list)
     }
 }

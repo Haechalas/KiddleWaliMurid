@@ -73,9 +73,9 @@
                         android:layout_width="40dp"
                         android:layout_height="40dp"
                         android:layout_alignParentEnd="true"
-                        android:src="@drawable/image_user"
                         app:civ_border_color="@color/colorPrimary"
-                        app:civ_border_width="2dp" />
+                        app:civ_border_width="2dp"
+                        tools:src="@drawable/image_user" />
 
                     <TextView
                         android:id="@+id/textSD"
@@ -92,9 +92,9 @@
                         android:layout_height="wrap_content"
                         android:layout_below="@id/textSD"
                         android:fontFamily="@font/roboto"
-                        android:text="Rahadian Fernandika"
                         android:textColor="@color/Black"
-                        android:textSize="14sp" />
+                        android:textSize="14sp"
+                        tools:text="Rahadian Fernandika" />
                 </RelativeLayout>
 
                 <RelativeLayout
@@ -371,9 +371,9 @@
             android:layout_marginTop="16dp">
 
             <TextView
-                android:layout_alignParentStart="true"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_alignParentStart="true"
                 android:layout_marginStart="16dp"
                 android:fontFamily="@font/roboto_bold"
                 android:text="Pengumuman"
@@ -381,11 +381,12 @@
                 android:textSize="18sp" />
 
             <TextView
+                android:layout_marginTop="8dp"
                 android:id="@+id/tv_lihat_semua"
-                android:layout_alignParentBottom="true"
-                android:layout_alignParentEnd="true"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_alignParentEnd="true"
+                android:layout_marginStart="199dp"
                 android:layout_marginEnd="16dp"
                 android:fontFamily="@font/roboto_bold"
                 android:text="Lihat Semua"
@@ -393,14 +394,65 @@
                 android:textSize="12sp" />
         </RelativeLayout>
 
-        <androidx.recyclerview.widget.RecyclerView
-            android:id="@+id/rv_pengumuman_beranda"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+        <androidx.cardview.widget.CardView
+            android:id="@+id/card_pengumuman"
+            android:layout_marginTop="8dp"
+            android:layout_marginHorizontal="16dp"
+            android:layout_width="match_parent"
+            android:layout_height="175dp"
             android:layout_below="@id/textPG"
-            android:layout_marginStart="0dp"
-            android:layout_marginLeft="0dp"
-            tools:listitem="@layout/holder_pengumuman" />
+            android:orientation="vertical"
+            android:paddingBottom="10dp"
+            app:cardCornerRadius="15dp">
+
+            <LinearLayout
+                android:id="@+id/bg_PG"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical" />
+
+            <ImageView
+                android:id="@+id/img_pengumuman_beranda"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:scaleType="centerCrop"
+                tools:srcCompat="@drawable/image_detail_pengumuman" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:alpha="0.4"
+                android:background="#000" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginStart="10dp"
+                android:layout_marginTop="125dp"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/tv_judul_pengumuman_beranda"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="10dp"
+                    android:fontFamily="@font/roboto_bold"
+                    android:text="Pembelajaran Jarak Jauh"
+                    android:textColor="#fff"
+                    android:textSize="18sp" />
+
+                <TextView
+                    android:id="@+id/tv_tanggal_pengumuman_beranda"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="-10dp"
+                    android:fontFamily="@font/roboto"
+                    android:textColor="#fff"
+                    android:textSize="12sp"
+                    tools:text="@tools:sample/date/mmddyy" />
+            </LinearLayout>
+
+        </androidx.cardview.widget.CardView>
 
     </RelativeLayout>
 

@@ -1,10 +1,12 @@
 package com.kiddle.kiddlewalimurid.ui
 
 import android.content.Intent
+import android.content.SharedPreferences
 import android.net.Uri
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import androidx.recyclerview.widget.LinearLayoutManager
+import com.google.firebase.firestore.FirebaseFirestore
 import com.kiddle.kiddlewalimurid.R
 import com.kiddle.kiddlewalimurid.adapter.GuruAdapter
 import com.kiddle.kiddlewalimurid.model.Guru
@@ -14,33 +16,52 @@ import kotlinx.android.synthetic.main.holder_guru.*
 class GuruActivity : AppCompatActivity() {
 
     //untuk menyimpan guru
-    private var guru = ArrayList<Guru>()
+    private var guru: ArrayList<Guru> = arrayListOf()
+    private val db: FirebaseFirestore = FirebaseFirestore.getInstance()
+    private lateinit var sharedPreferences: SharedPreferences
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_guru)
 
-        //recyclerView dengan linear layout
-        rv_guru.layoutManager = LinearLayoutManager(this, LinearLayoutManager.VERTICAL, false)
-
-        //mengkosongkan arraylist
-        guru.clear()
-
-        //bisa diganti dengan data dari firebase
-        val item = Guru(R.drawable.image_user,"Lee Ji Eun","175150201","085779993333","Bintang Kecil","punten123")
-        guru.add(item)
-
-        //agar list guru dapat di-click sekaligus mengisi adapter dengan data di arraylist
-        rv_guru.adapter = GuruAdapter(guru) {
-            val intent = Intent(Intent.ACTION_DIAL)
-            intent.data = Uri.parse("tel:" + tv_kontak_guru.text)
-            startActivity(intent)
-        }
+        showRecyclerList(guru)
 
         //intent untuk kembali ke halaman sebelumnya
         img_back_guru.setOnClickListener {
             onBackPressed()
         }
 
+    }
+
+    private fun showRecyclerList(list: ArrayList<Guru>): GuruAdapter {
+        val adapter = GuruAdapter(list) {
+
+        }
+
+        getPageGuruList{item: ArrayList<Guru> ->
+            guru.addAll(item)
+            adapter.notifyDataSetChanged()
+            adapter.addItemToList(list)
+            rv_guru.layoutManager = LinearLayoutManager(this)
+            rv_guru.adapter = adapter
+        }
+
+        return adapter
+    }
+
+    private fun getPageGuruList(callback: (item:ArrayList<Guru>) -> Unit) {
+        val listGuru: ArrayList<Guru> = arrayListOf()
+        db.collection("Guru").addSnapshotListener { value, error ->
+            if(error != null) return@addSnapshotListener
+            for(document in value!!) {
+                listGuru.add(Guru(
+                    document.getString("avatar"),
+                    document.getString("nama"),
+                    document.getString("kontak"),
+                    document.getString("jabatan")
+                ))
+            }
+            callback.invoke(listGuru)
+        }
     }
 }
