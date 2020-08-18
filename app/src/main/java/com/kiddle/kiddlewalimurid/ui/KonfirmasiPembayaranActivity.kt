@@ -50,8 +50,16 @@ class KonfirmasiPembayaranActivity : AppCompatActivity() {
             tv_nama_murid_konfirm.text = sharedPreferences.getString("nama", "")
             tv_value_bulankonfirm.text = intent.getStringExtra("bulan")
             tv_value_jumlahkonfirm.text = "Rp. " + intent.getStringExtra("jumlah")
-            tv_value_statuskonfirm.text = "Belum Dibayar"
             img_konfrim.visibility = View.INVISIBLE
+
+            db.document("Pembayaran Murid/${sharedPreferences.getString("kelas", "")}/${sharedPreferences.getString("id_murid", "")}/${tv_value_bulankonfirm.text.toString().substring(3)}").get().addOnSuccessListener {
+                if(it.exists()) {
+                    tv_value_statuskonfirm.text = it.getString("status")
+                    Glide.with(this).load(it.getString("bukti")).into(img_konfrim)
+                } else {
+                    tv_value_statuskonfirm.text = "Belum Dibayar"
+                }
+            }
         }
 
         img_back_konfirm_spp.setOnClickListener {

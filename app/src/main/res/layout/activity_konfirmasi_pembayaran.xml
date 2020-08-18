@@ -79,7 +79,7 @@
                 android:layout_below="@id/civ_profil_konfirmspp"
                 android:layout_marginTop="4dp"
                 android:fontFamily="@font/roboto"
-                android:text="Bulan:"
+                android:text="Waktu:"
                 android:textColor="@color/Black"
                 android:textSize="12sp"
                 app:layout_constraintStart_toStartOf="parent"
@@ -206,11 +206,7 @@
             android:layout_height="wrap_content"
             android:layout_above="@+id/btn_simpan_bayar"
             android:layout_marginHorizontal="16dp"
-            android:text="Unggah Bukti"
-            android:textColor="@color/colorPrimary"
-            app:cornerRadius="4dp"
-            app:strokeColor="@color/colorPrimary"
-            app:strokeWidth="2dp" />
+            android:text="Unggah Bukti"/>
 
         <com.google.android.material.button.MaterialButton
             android:id="@+id/btn_simpan_bayar"
