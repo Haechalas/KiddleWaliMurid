@@ -1,6 +1,7 @@
 package com.kiddle.kiddlewalimurid.adapter
 
 import android.content.Context
+import android.content.Intent
 import android.net.Uri
 import android.view.LayoutInflater
 import android.view.View
@@ -15,10 +16,12 @@ import com.bumptech.glide.load.resource.bitmap.RoundedCorners
 import com.bumptech.glide.request.RequestOptions
 import com.kiddle.kiddlewalimurid.R
 import com.kiddle.kiddlewalimurid.model.Kegiatan
+import com.kiddle.kiddlewalimurid.ui.DetailKegiatanActivity
 
 class KegiatanAdapter(private var data: List<Kegiatan>, private val listener:(Kegiatan)-> Unit):RecyclerView.Adapter<KegiatanAdapter.ViewHolder>() {
 
     lateinit var contextAdapter: Context
+    private val listKegiatan = ArrayList<Kegiatan>()
 
     class ViewHolder(view: View) : RecyclerView.ViewHolder(view) {
         private val tv_judul: TextView = view.findViewById(R.id.tv_judul_list_kegiatan)
@@ -28,20 +31,22 @@ class KegiatanAdapter(private var data: List<Kegiatan>, private val listener:(Ke
         fun bindItem(data: Kegiatan,listener: (Kegiatan) -> Unit, context: Context,position: Int) {
             tv_judul.text = data.judul
 
-            if (data.gambar != 0) {
+            if (!data.gambar.isNullOrEmpty()) {
                 img_kegiatan.visibility = View.VISIBLE
                 vv_kegiatan.visibility = View.GONE
-                img_kegiatan.setImageResource(data.gambar)
-            } else if (data.video != 0) {
+                Glide.with(context).load(data.gambar).fitCenter().into(img_kegiatan)
+            } else if (!data.video.isNullOrEmpty()) {
                 img_kegiatan.visibility = View.VISIBLE
                 vv_kegiatan.visibility = View.GONE
-                vv_kegiatan.setVideoURI(Uri.parse("android.resource://" + context.packageName + "/" + data.video))
+                vv_kegiatan.setVideoURI(Uri.parse(data.video))
                 vv_kegiatan.seekTo(10)
             }
 
             itemView.setOnClickListener {
                 listener(data)
             }
+
+            listener.invoke(data)
 
         }
     }
@@ -62,14 +67,20 @@ class KegiatanAdapter(private var data: List<Kegiatan>, private val listener:(Ke
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
         holder.bindItem(data[position], listener, contextAdapter, position)
-        // biar gambarnya ada radiusnya
-        if(data[position].gambar!=0){
-            val url: Int = data[position].gambar
-            Glide.with(contextAdapter).load(url).transform(CenterCrop(),RoundedCorners(32)).into(holder.img_kegiatan)
+        if(!data[position].gambar.isNullOrEmpty()){
+            Glide.with(contextAdapter).load(data[position].gambar).transform(CenterCrop(),RoundedCorners(32)).into(holder.img_kegiatan)
 
-        }else if(data[position].video!=0){
-            val url2: Int = data[position].video
-            Glide.with(contextAdapter).load(Uri.parse("android.resource://" + contextAdapter.packageName + "/" + url2)).transform(CenterCrop(),RoundedCorners(32)).into(holder.img_kegiatan)
+        }else if(!data[position].video.isNullOrEmpty()){
+            Glide.with(contextAdapter).load(Uri.parse(data[position].video)).transform(CenterCrop(),RoundedCorners(32)).into(holder.img_kegiatan)
         }
+
+        holder.itemView.setOnClickListener {
+            it.context.startActivity(Intent(it.context, DetailKegiatanActivity::class.java).putExtra("data", data[position]))
+        }
+    }
+
+    fun addItemToList(list: ArrayList<Kegiatan>) {
+        listKegiatan.clear()
+        listKegiatan.addAll(list)
     }
 }

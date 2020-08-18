@@ -75,9 +75,10 @@
 
     <TextView
         android:id="@+id/tv_judul_detail_kegiatan"
-        android:layout_width="wrap_content"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp"
         android:fontFamily="@font/roboto_medium"
         android:text="Keterampilan"
         android:textColor="@color/colorPrimary"

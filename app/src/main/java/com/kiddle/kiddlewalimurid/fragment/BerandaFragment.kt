@@ -95,15 +95,15 @@ class BerandaFragment : Fragment() {
         }
 
         view.kegiatan_card.setOnClickListener {
-            startActivity(Intent(activity, KegiatanActivity::class.java).putExtra("jenis", "KEGIATAN"))
+            startActivity(Intent(activity, KegiatanActivity::class.java).putExtra("jenis", "Kegiatan"))
         }
 
         view.materi_card.setOnClickListener {
-            startActivity(Intent(activity, KegiatanActivity::class.java).putExtra("jenis", "MATERI"))
+            startActivity(Intent(activity, KegiatanActivity::class.java).putExtra("jenis", "Materi"))
         }
 
         view.parent_card.setOnClickListener {
-            startActivity(Intent(activity, KegiatanActivity::class.java).putExtra("jenis", "PARENTING"))
+            startActivity(Intent(activity, KegiatanActivity::class.java).putExtra("jenis", "Parenting"))
         }
 
         return view
