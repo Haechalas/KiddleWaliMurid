@@ -163,7 +163,8 @@
         app:layout_constraintStart_toStartOf="parent"
         tools:text="Tugas.pdf" />
 
-    <Button
+    <com.google.android.material.button.MaterialButton
+        style="@style/Widget.MaterialComponents.Button.OutlinedButton"
         android:id="@+id/btn_unggah"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"

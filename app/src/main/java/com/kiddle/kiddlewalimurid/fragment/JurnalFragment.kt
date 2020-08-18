@@ -31,6 +31,8 @@ class JurnalFragment : Fragment()  {
         val view = inflater.inflate(R.layout.fragment_jurnal, container, false)
 
         sharedPreferences = activity?.getSharedPreferences("KIDDLE", Context.MODE_PRIVATE)!!
+
+        jurnal.clear()
         showRecylerList(jurnal)
 
         return view

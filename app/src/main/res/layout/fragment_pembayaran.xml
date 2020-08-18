@@ -105,9 +105,9 @@
                     android:layout_alignRight="@id/tv_jumlah_pembayaran"
                     android:layout_marginTop="8dp"
                     android:fontFamily="@font/roboto_bold"
-                    android:text="10 Mei 2020"
                     android:textColor="@color/Black"
-                    android:textSize="18sp" />
+                    android:textSize="14sp"
+                    tools:text="10 Mei 2020" />
 
                 <TextView
                     android:id="@+id/text_sisa_hari"
@@ -130,9 +130,9 @@
                     android:layout_alignParentStart="true"
                     android:layout_marginStart="30dp"
                     android:fontFamily="@font/roboto_bold"
-                    android:text="330.000"
                     android:textColor="@color/Black"
-                    android:textSize="36dp" />
+                    android:textSize="36dp"
+                    tools:text="330.000" />
 
                 <LinearLayout
                     android:layout_width="match_parent"

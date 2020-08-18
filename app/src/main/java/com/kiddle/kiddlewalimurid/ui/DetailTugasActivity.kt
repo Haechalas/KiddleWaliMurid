@@ -91,7 +91,7 @@ class DetailTugasActivity : AppCompatActivity() {
                 var builder = StringBuilder()
                 builder.append(SimpleDateFormat("dd MMMM", Locale.getDefault()).format(Date())).append(", ").append(SimpleDateFormat("HH.mm", Locale.getDefault()).format(Date())).append(" WIB")
 
-                storage = FirebaseStorage.getInstance().reference.child("Hasil Tugas").child("${data?.id}").child(tv_hasil_tugas.text.toString())
+                storage = FirebaseStorage.getInstance().reference.child("Hasil Tugas").child("${data?.id}").child("${sharedPreferences.getString("id_murid", "")}")
                 storage.putFile(file_location).addOnSuccessListener {
                     storage.downloadUrl.addOnSuccessListener {
                         db.document("Hasil Tugas/${data?.id}/Isi Tugas/${sharedPreferences.getString("id_murid", "")}").set(

@@ -61,7 +61,7 @@ class EditProfil : AppCompatActivity() {
                 btn_simpan_murid.text = "Simpan"
             } else {
                 val builder = StringBuilder()
-                builder.append(System.currentTimeMillis()).append(".").append(getFileExtension(img_location))
+                builder.append(sharedPreferences.getString("id_murid", "")).append(".").append(getFileExtension(img_location))
 
                 storage = FirebaseStorage.getInstance().reference.child("Murid").child(sharedPreferences.getString("id_murid", "").toString()).child(builder.toString())
                 storage.putFile(img_location).addOnSuccessListener{
