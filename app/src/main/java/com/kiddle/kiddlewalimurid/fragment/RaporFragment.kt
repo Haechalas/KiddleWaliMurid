@@ -30,13 +30,7 @@ class RaporFragment : Fragment() , View.OnClickListener {
         val db:FirebaseFirestore = FirebaseFirestore.getInstance()
         val sharedPreferences = activity?.getSharedPreferences("KIDDLE", Context.MODE_PRIVATE)
 
-        val semester = mutableListOf<String>()
-
-        db.document("Rapor/${sharedPreferences?.getString("kelas", "")}").collection("${sharedPreferences?.getString("id_murid", "")}").get().addOnSuccessListener {
-            for(snapshot in it.documents) {
-                semester.add(snapshot.id)
-            }
-        }
+        val semester = listOf("Ganjil", "Genap")
 
         val adapter_semester = ArrayAdapter<String>(requireActivity().applicationContext, R.layout.item_dropdown_text, semester)
         (view.dropdown_rapor_semester.editText as? AutoCompleteTextView)?.setAdapter(adapter_semester)
@@ -47,17 +41,21 @@ class RaporFragment : Fragment() , View.OnClickListener {
 
         view.auto_rapor.setOnItemClickListener { parent, view2, position, id ->
             var item = parent.getItemAtPosition(position).toString()
-            db.document("Rapor/${sharedPreferences?.getString("kelas", "")}/${sharedPreferences?.getString("id_murid", "")}/$item").get().addOnSuccessListener {
-                view.auto_nilai_kognitif.setText(it.getString("nilai_kognitif"))
-                view.edit_deskripsi_kognitif.setText(it.getString("des_kognitif"))
-                view.auto_nilai_berbahasa.setText(it.getString("nilai_berbahasa"))
-                view.edit_deskripsi_berbahasa.setText(it.getString("des_berbahasa"))
-                view.auto_nilai_keterampilan.setText(it.getString("nilai_keterampilan"))
-                view.edit_deskripsi_keterampilan.setText(it.getString("des_keterampilan"))
-                view.auto_nilai_agama.setText(it.getString("nilai_agama"))
-                view.edit_deskripsi_agama.setText(it.getString("des_agama"))
-                view.auto_nilai_motorik.setText(it.getString("nilai_motorik"))
-                view.edit_deskripsi_motorik.setText(it.getString("des_motorik"))
+            db.document("Rapor/${sharedPreferences?.getString("angkatan", "")}/${sharedPreferences?.getString("kelas", "")} $item/${sharedPreferences?.getString("id_murid", "")}").get().addOnSuccessListener {
+                if(it.exists()) {
+                    view.auto_nilai_kognitif.setText(it.getString("nilai_kognitif"))
+                    view.edit_deskripsi_kognitif.setText(it.getString("des_kognitif"))
+                    view.auto_nilai_berbahasa.setText(it.getString("nilai_berbahasa"))
+                    view.edit_deskripsi_berbahasa.setText(it.getString("des_berbahasa"))
+                    view.auto_nilai_keterampilan.setText(it.getString("nilai_keterampilan"))
+                    view.edit_deskripsi_keterampilan.setText(it.getString("des_keterampilan"))
+                    view.auto_nilai_agama.setText(it.getString("nilai_agama"))
+                    view.edit_deskripsi_agama.setText(it.getString("des_agama"))
+                    view.auto_nilai_motorik.setText(it.getString("nilai_motorik"))
+                    view.edit_deskripsi_motorik.setText(it.getString("des_motorik"))
+                } else {
+                    Toast.makeText(activity, "Data belum ada!", Toast.LENGTH_SHORT).show()
+                }
             }
         }
         
