@@ -40,7 +40,7 @@ class DetailTugasActivity : AppCompatActivity() {
         var flag:Boolean = false
 
         db.document("Hasil Tugas/${data?.id}/Isi Tugas/${sharedPreferences.getString("id_murid", "")}").get().addOnSuccessListener {
-            if(it.getString("nama") != null) {
+            if(it.getString("id_hasil_tugas") != null) {
                 tv_hasil_tugas.text = it.getString("tugas")
             }
         }
@@ -95,7 +95,7 @@ class DetailTugasActivity : AppCompatActivity() {
                 storage.putFile(file_location).addOnSuccessListener {
                     storage.downloadUrl.addOnSuccessListener {
                         db.document("Hasil Tugas/${data?.id}/Isi Tugas/${sharedPreferences.getString("id_murid", "")}").set(
-                            mapOf("avatar" to sharedPreferences.getString("avatar", ""), "nama" to sharedPreferences.getString("nama", ""), "waktu" to builder.toString(), "file" to it.toString(), "tugas" to tv_hasil_tugas.text.toString())
+                            mapOf("id_hasil_tugas" to sharedPreferences.getString("id_murid", ""), "id_tugas" to data?.id, "waktu" to builder.toString(), "file" to it.toString(), "tugas" to tv_hasil_tugas.text.toString())
                         ).addOnCompleteListener {
                             onBackPressed()
                         }
