@@ -8,6 +8,7 @@ import android.widget.ImageView
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
+import com.google.firebase.firestore.FirebaseFirestore
 import com.kiddle.kiddlewalimurid.R
 import com.kiddle.kiddlewalimurid.model.Komentar
 
@@ -25,18 +26,26 @@ class KomentarAdapter(private var data: List<Komentar>, private val listener: (K
         private val tv_jabatan: TextView = view.findViewById(R.id.tv_jabatan_komentar)
         private val tv_isi: TextView = view.findViewById(R.id.tv_isi_komentar)
 
-        // kalau mau ditambah kelas apa atau deksripsi lain jangan lupa ubah layout dan model
-
         fun bindItem(data: Komentar, listener: (Komentar) -> Unit, context: Context, position: Int) {
-            Glide.with(context).load(data.avatar).centerCrop().into(img_avatar)
-            tv_nama.text = data.nama
-            tv_jabatan.text = data.jabatan
-            tv_isi.text = data.isi
+            FirebaseFirestore.getInstance().collection("${data.koleksi}").whereEqualTo("nomor",data.id_guru).addSnapshotListener { result, e ->
+                if (e != null) {
+                    return@addSnapshotListener
+                }
+                for (document in result!!) {
+                    Glide.with(context).load(document.getString("avatar")).centerCrop().into(img_avatar)
+                    tv_nama.text = document.getString("nama")
+                    if(data.koleksi == "Guru"){
+                        tv_jabatan.text = document.getString("jabatan")
+                    } else{
+                        tv_jabatan.text = "Murid ${document.getString("kelas")}"
+                    }
 
+                }
+            }
+            tv_isi.text = data.isi
             itemView.setOnClickListener {
                 listener(data)
             }
-
             listener.invoke(data)
         }
     }
