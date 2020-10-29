@@ -5,11 +5,8 @@ import kotlinx.android.parcel.Parcelize
 
 @Parcelize
 data class ItemBayarSpp(
-   var avatar:String?,
-   var bukti:String?,
-   var bulan:String?,
-   var harga:String?,
-   var nama:String?,
-   var status:String?,
-   var tanggal:String?
+  var batas:String?,
+  var bulan:String?,
+  var harga:String?,
+  var semester:String?
 ): Parcelable

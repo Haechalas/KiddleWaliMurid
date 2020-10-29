@@ -7,6 +7,7 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
+import com.google.firebase.firestore.FirebaseFirestore
 import com.kiddle.kiddlewalimurid.R
 import com.kiddle.kiddlewalimurid.model.ItemBayarSpp
 import com.kiddle.kiddlewalimurid.ui.KonfirmasiPembayaranActivity
@@ -23,7 +24,19 @@ class ItemBayarSppAdapter(private var data: List<ItemBayarSpp>, private val list
 
         fun bindItem(data: ItemBayarSpp, listener: (ItemBayarSpp) -> Unit, context: Context, position: Int) {
             tv_bulan_bayar.text = data.bulan
-            tv_status_bayar.text = data.status
+            val sharedPreferences = context.getSharedPreferences("KIDDLE", Context.MODE_PRIVATE)
+            FirebaseFirestore.getInstance().collection("Pembayaran Murid/${data.bulan}/Bukti").whereEqualTo("id_murid", sharedPreferences.getString("id_murid", "")).addSnapshotListener { result, e ->
+                if(e != null){
+                    return@addSnapshotListener
+                }
+                if(result!!.isEmpty){
+                    tv_status_bayar.text = "Belum Dibayar"
+                } else {
+                    for(document in result!!){
+                        tv_status_bayar.text = document.getString("status")
+                    }
+                }
+            }
 
             itemView.setOnClickListener {
                 listener(data)
