@@ -18,6 +18,8 @@ import com.kiddle.kiddlewalimurid.R
 import com.kiddle.kiddlewalimurid.model.ItemBayarSpp
 import kotlinx.android.synthetic.main.activity_konfirmasi_pembayaran.*
 import java.lang.StringBuilder
+import java.text.SimpleDateFormat
+import java.util.*
 
 class KonfirmasiPembayaranActivity : AppCompatActivity() {
 
@@ -33,33 +35,32 @@ class KonfirmasiPembayaranActivity : AppCompatActivity() {
         val sharedPreferences = getSharedPreferences("KIDDLE", Context.MODE_PRIVATE)
         var flag:Boolean = false
 
-        if(data != null) {
-            Glide.with(this).load(data.avatar).into(civ_profil_konfirmspp)
-            tv_nama_murid_konfirm.text = data.nama
-            tv_value_bulankonfirm.text = "${data.tanggal} ${data.bulan}"
-            tv_value_jumlahkonfirm.text = "Rp. ${data.harga}"
-            tv_value_statuskonfirm.text = data.status
-            Glide.with(this).load(data.bukti).into(img_konfrim)
+        Glide.with(this).load(sharedPreferences.getString("avatar", "")).into(civ_profil_konfirmspp)
+        tv_nama_murid_konfirm.text = sharedPreferences.getString("nama", "")
 
-            if(!data.bukti.isNullOrEmpty()) {
-                btn_unggah_bayar.visibility = View.INVISIBLE
-                btn_simpan_bayar.visibility = View.INVISIBLE
-            }
-        } else {
-            Glide.with(this).load(sharedPreferences.getString("avatar", "")).into(civ_profil_konfirmspp)
-            tv_nama_murid_konfirm.text = sharedPreferences.getString("nama", "")
-            tv_value_bulankonfirm.text = intent.getStringExtra("bulan")
-            tv_value_jumlahkonfirm.text = "Rp. " + intent.getStringExtra("jumlah")
-            img_konfrim.visibility = View.INVISIBLE
-
-            db.document("Pembayaran Murid/${sharedPreferences.getString("kelas", "")}/${sharedPreferences.getString("id_murid", "")}/${tv_value_bulankonfirm.text.toString().substring(3)}").get().addOnSuccessListener {
-                if(it.exists()) {
+        if(data != null){
+            db.document("Pembayaran Murid/${data.bulan}/Bukti/${sharedPreferences.getString("id_murid", "")}").get().addOnSuccessListener {
+                if(it.exists()){
+                    tv_value_bulankonfirm.text = it.getString("bulan")
+                    tv_value_jumlahkonfirm.text = "Rp.${it.getString("harga")}"
                     tv_value_statuskonfirm.text = it.getString("status")
                     Glide.with(this).load(it.getString("bukti")).into(img_konfrim)
-                } else {
+                } else{
+                    tv_value_bulankonfirm.text = data.bulan
+                    tv_value_jumlahkonfirm.text = "Rp." + data.harga
                     tv_value_statuskonfirm.text = "Belum Dibayar"
                 }
+
+                if(it.getString("status") == "Diterima") {
+                    btn_unggah_bayar.visibility = View.INVISIBLE
+                    btn_simpan_bayar.visibility = View.INVISIBLE
+                }
             }
+        } else {
+            tv_value_bulankonfirm.text = intent.getStringExtra("bulan")
+            tv_value_jumlahkonfirm.text = "Rp." + intent.getStringExtra("harga")
+            tv_value_statuskonfirm.text = intent.getStringExtra("status")
+            Glide.with(this).load(intent.getStringExtra("bukti")).into(img_konfrim)
         }
 
         img_back_konfirm_spp.setOnClickListener {
@@ -82,18 +83,20 @@ class KonfirmasiPembayaranActivity : AppCompatActivity() {
                val builder = StringBuilder()
                builder.append(sharedPreferences.getString("id_murid", "")).append("_").append(tv_value_bulankonfirm.text.toString().substring(3)).append(".").append(getFileExtension(img_location))
 
+               var builder2 = StringBuilder()
+               builder2.append(SimpleDateFormat("dd MMMM yyyy", Locale.getDefault()).format(Date()))
+
                storage = FirebaseStorage.getInstance().reference.child("Pembayaran Murid").child("${sharedPreferences.getString("kelas", "")}").child("${sharedPreferences.getString("id_murid", "")}").child(builder.toString())
                storage.putFile(img_location).addOnSuccessListener {
                     storage.downloadUrl.addOnSuccessListener {
-                        db.document("Pembayaran Murid/${sharedPreferences.getString("kelas", "")}/${sharedPreferences.getString("id_murid", "")}/${tv_value_bulankonfirm.text.toString().substring(3)}").set(
+                        db.document("Pembayaran Murid/${tv_value_bulankonfirm.text}/Bukti/${sharedPreferences.getString("id_murid","")}").set(
                             mapOf(
-                                "avatar" to sharedPreferences.getString("avatar", ""),
                                 "bukti" to it.toString(),
-                                "bulan" to tv_value_bulankonfirm.text.toString().substring(3),
-                                "harga" to tv_value_jumlahkonfirm.text.toString().substring(4),
-                                "nama" to sharedPreferences.getString("nama", ""),
+                                "bulan" to tv_value_bulankonfirm.text.toString(),
+                                "harga" to tv_value_jumlahkonfirm.text.toString().substring(3),
+                                "id_murid" to sharedPreferences.getString("id_murid", ""),
                                 "status" to "Belum Dikonfirmasi",
-                                "tanggal" to tv_value_bulankonfirm.text.toString().substring(0, 2)
+                                "tanggal" to builder2.toString()
                             )
                         ).addOnCompleteListener {
                             startActivity(Intent(this, MainActivity::class.java))
@@ -106,7 +109,6 @@ class KonfirmasiPembayaranActivity : AppCompatActivity() {
         }
     }
 
-    //buat dapetin extension gambar. dipake nanti buat firebase
     private fun getFileExtension(imgLocation: Uri): String? {
         val contentResolver = contentResolver
         val mimeTypeMap = MimeTypeMap.getSingleton()
