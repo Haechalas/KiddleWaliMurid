@@ -40,7 +40,7 @@ class DetailPengumumanActivity : AppCompatActivity() {
 
         val simpleDateFormat = SimpleDateFormat("yyyyMMddHHmmss")
         val currentDateAndTime: String = simpleDateFormat.format(Date())
-        
+
         img_back_detail_pengumuman.setOnClickListener {
             onBackPressed()
         }
